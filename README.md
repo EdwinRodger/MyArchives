@@ -15,6 +15,11 @@ Write as many entries as you want (until you run out of space on your computer)
 
 Click [here](https://imgur.com/a/7v4WuSR) to see how CMD-Diary Works
 
+# How To Use
+1. Download project as .zip file<br>
+2. Extract the zip folder and<br>
+3. Run CMD-Diary.py
+
 # Important
 By default, the entry folder path is "C:\CMD-Diary" which is applicable for windows and I am not sure about Linux and mac's folder path<br>
 so change the entry folder path to your desired location by going into<br>
