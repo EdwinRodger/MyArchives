@@ -1,0 +1,14 @@
+Hi! I am Edwin Rodger, 17 years old.
+I always wanted to make a application,
+as I am learning about python in school
+I thought to make a simple pyhton
+application. Now what is more good than
+a total offline diary\journal which runs
+on command prompt and has a pretty good UI
+
+This is my first ever project so there are
+too many mistakes and I apologize for that.
+Besides mistakes, feel free to review the
+code and run the apllication.
+
+First release - 15/04/2022
