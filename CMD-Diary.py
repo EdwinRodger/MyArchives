@@ -29,15 +29,14 @@ def new_entry():
     clear()
     path1 = read_path()
     name_of_file = today
-    completeName = os.path.join(path1, name_of_file+".txt")         
-    entry = open(completeName, "w")
-    entry.write("Date : " + today + "\n")
-    entry.write("Time : " + time + "\n\n\n")
-    title = input("Title of Entry : ")
-    entry.write("Title - " + title + "\n\n")
-    toFile = input("\n\nWrite into your entry\t")
-    entry.write(toFile)
-    entry.close()
+    completeName = os.path.join(path1, name_of_file+".txt") 
+    with open(completeName, "w") as entry:
+        entry.write("Date : " + today + "\n")
+        entry.write("Time : " + time + "\n\n\n")
+        title = input("Title of Entry : ")
+        entry.write("Title - " + title + "\n\n")
+        toFile = input("\n\nWrite into your entry\t")
+        entry.write(toFile)
 
 # other_entry command to make another day's entry
 
@@ -45,14 +44,13 @@ def other_entry():
     clear()
     path1 = read_path()
     name_of_file = input("Enter a date in YYYY-MM-DD format: ")
-    completeName = os.path.join(path1, name_of_file+".txt")         
-    entry = open(completeName, "w")
-    entry.write("Date : " + today + "\n\n")
-    title = input("\nTitle of Entry : ")
-    entry.write("Title - " + title + "\n\n")
-    toFile = input("\n\nWrite into your entry\t")
-    entry.write(toFile)
-    entry.close()
+    completeName = os.path.join(path1, name_of_file+".txt")
+    with open(completeName, "w") as entry:
+        entry.write("Date : " + today + "\n\n")
+        title = input("\nTitle of Entry : ")
+        entry.write("Title - " + title + "\n\n")
+        toFile = input("\n\nWrite into your entry\t")
+        entry.write(toFile)
 
 # edit_entry command to append information in an already existing entry
 
@@ -62,11 +60,10 @@ def edit_entry():
         path1 = read_path()
         date = input("Enter Entry Date That You Want To Add To(YYYY-MM-DD): ")
         save_path = path1 + date
-        entry = open(save_path + ".txt", "a")
-        print("\nAdd to the entry\n")
-        edit = input()
-        entry.write("\n" + edit)
-        entry.close
+        with open(save_path + ".txt", "a") as entry:
+            print("\nAdd to the entry\n")
+            edit = input()
+            entry.write("\n" + edit)
     except:
         print("Date not found... Check the date again...")
 
@@ -78,11 +75,11 @@ def view_entry():
         path1 = read_path()
         view = input("Enter the date of entry to view(YYYY-MM-DD): ")
         save_path = path1 + view
-        entry = open(save_path + ".txt", "r")
-        see = entry.read()
-        print("\n\n\n" + see)
-        print("\n\n\nPress Enter to proceed")
-        wait = input()
+        with open(save_path + ".txt", "r") as entry:
+            see = entry.read()
+            print("\n\n\n" + see)
+            print("\n\n\nPress Enter to proceed")
+            wait = input()
     except:
         print("Date not found... Check the date again...")
 
@@ -90,42 +87,42 @@ def view_entry():
 
 def entry_path():
     clear()
-    path = open('path.txt','w')
-    ogpath = input("Enter a valid folder path: ")
-    newpath = ogpath.replace('\\','/')
-    newpath = newpath + '/'
-    path.write(newpath)
+    with open('path.txt','w') as path:
+        ogpath = input("Enter a valid folder path: ")
+        newpath = ogpath.replace('\\','/')
+        newpath = newpath + '/'
+        path.write(newpath)
 
 # read_path command to read the path of the directory or folder where the text files are kept
 
 def read_path():
-    path = open('path.txt', 'r')
-    a = path.readline()
-    return a
+    with open('path.txt', 'r') as path:
+        a = path.readline()
+        return a
 
 # helpme command shows information related to some problems faced during running of program
 
 def helpme():
     clear()
-    helpmeh = open('Help.txt', 'r')
-    print(helpmeh.read())
-    wait = input("\nPress enter to continue")
+    with open('Help.txt', 'r') as helpmeh:
+        print(helpmeh.read())
+        wait = input("\nPress enter to continue")
 
 # contribution command to read the information present in Contribution.txt
 
 def contribution():
     clear()
-    contri = open("Contribution.txt", "r")
-    print(contri.read())
-    wait = input("\nPress enter to continue...")
+    with open("Contribution.txt", "r") as contri:
+        print(contri.read())
+        wait = input("\nPress enter to continue...")
 
 # about commant to read the information present in About.txt
 
 def about():
     clear()
-    about = open("About.txt", "r")
-    print(about.read())
-    wait = input("\nPress enter to continue...")
+    with open("About.txt", "r") as about:
+        print(about.read())
+        wait = input("\nPress enter to continue...")
 
 # Settings UI for CMD-Diary
 
@@ -190,4 +187,3 @@ def main_menu():
 
 
 main_menu()
-
