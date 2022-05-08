@@ -1,6 +1,0 @@
-If you want to contribute -
-1. Make a issue on github
-2. Download the source code
-3. Modify the code present in CMD-Diary.py
-4. Make a PR on github related to the issue
-NOTE: No translations for now so English language is the only option"
