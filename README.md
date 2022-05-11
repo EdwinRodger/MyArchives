@@ -1,5 +1,5 @@
 # CMD-Diary is getting a new GUI
-Right now I am working on a new GUI for CMD-Diary. I am using tkinter to make GUI. PR and issues (if there will be any) will not be reviwed till the next update.
+Right now I am working on a new GUI for CMD-Diary. I am using tkinter to make GUI. PR and issues (if there will be any) will not be reviwed till the next update. Progress can be found under gui branch.
 
 # CMD-Diary
 It uses the command line as its UI and helps you to write an entry in a simple, minimalistic and easy way -
