@@ -11,7 +11,7 @@ class root():
     root = Tk()
     root.title("CMD Diary")
     root.iconbitmap("images/py.ico")
-    root.geometry("1100x600")
+    root.geometry("1235x600")
     root.resizable(0,0)
 
     # Menubar

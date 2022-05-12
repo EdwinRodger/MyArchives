@@ -6,8 +6,8 @@ class calen():
 		cal = Calendar(master, selectmode="day", date_pattern="dd-mm-yyyy", borderwidth=5, font="Arial 18")
 		cal.place(x=50, y=75)
 		#cal = Calendar(master, selectmode="day", date_pattern="dd-mm-yyyy", borderwidth=5, font="Arial 18")
-		#cal.grid(row=1, column=0)
-
+		#cal.grid(row=1, column=0, rowspan=2)
+		
 		def grab_date():
 			my_label.config(text="Selected date is " + cal.get_date())
 
@@ -20,3 +20,4 @@ class calen():
 		my_label.place(x=180, y=475)
 		#my_label = Label(master, text="", pady=40)
 		#my_label.grid(row= 4, column=0)
+		
