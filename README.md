@@ -1,4 +1,4 @@
-# CMD-Diary
+# CMD-Diary (Currently Paused)
 It uses the command line as its UI and helps you to write an entry in a simple, minimalistic and easy way -
 1. Write a title
 2. Write the body and
@@ -33,18 +33,3 @@ If any error comes, go to the help section of the program by following these ste
 5. Settings -> 2. Help<br>
 
 Or you can just open Help.txt to find the answers to your problems.
-
-# License
-    Copyright 2022 EdwinRodger
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
