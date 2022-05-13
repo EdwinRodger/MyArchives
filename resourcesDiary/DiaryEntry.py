@@ -81,6 +81,39 @@ def view_entry():
     except:
         print("Date not found... Check the date again...")
 
+# diary_template command to provide a template to write the diary entry
+
+def diary_template():
+    with open("textFiles/template.txt", "r") as tempt:
+        mode = tempt.read()
+
+    if mode == "1":
+        clear()
+        path1 = read_path()
+        name_of_file = today
+        completeName = os.path.join(path1, name_of_file+".txt") 
+        title = input("Title: ")
+        print("\n\n")
+        time = input("Time I am writing this: ")
+        print("\n\n")
+        objective = input("What I did today -\n\n")
+        print("\n\n")
+        print("What I learned today -")
+        learn1 = input("1. ")
+        learn2 = input("2. ")
+        learn3 = input("3. ")
+        print("\n\n")
+        tomo = input("plans for tomorrow -")
+        with open(completeName, "w") as entry:
+            entry.write(f"Title: {title}\n\n")
+            entry.write(f"Time: {time}\n\n")
+            entry.write(f"What I did today -\n\n{objective}\n\n")
+            entry.write(f"What I learned today -\n1. {learn1}\n2. {learn2}\n3. {learn3}\n\n")
+            entry.write(f"Plans for tomorrow -\n\n{tomo}")
+    else:
+        new_entry()
+    
+
 # entry_path command to specify the directory or folder where the text files will be kept
 
 def entry_path():

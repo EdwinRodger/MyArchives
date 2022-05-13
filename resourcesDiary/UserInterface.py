@@ -19,7 +19,8 @@ def settingsUI():
         print("2. About")
         print("3. Contribution")
         print("4. Help")
-        print("5. Back To Main Menu")
+        print("5. Diary Template")
+        print("6. Back To Main Menu")
         try:
             choice = int(input("Enter Your Choice (1 - 5): "))
             if choice==1:
@@ -30,7 +31,9 @@ def settingsUI():
                 ss.contribution()
             elif choice==4:
                 ss.help()
-            elif choice==5:
+            elif choice == 5:
+                ss.template()
+            elif choice==6:
                 break
             else:
                 print("Please Choose From 1 to 5 Only")
@@ -54,7 +57,7 @@ def main_menuUI():
         print("6. Exit")
         choice = int(input("\n\nEnter Your Choice (1 - 6): "))
         if choice==1:
-            ds.new_entry()
+            ds.diary_template()
         elif choice==2:
             ds.other_entry()
         elif choice==3:
