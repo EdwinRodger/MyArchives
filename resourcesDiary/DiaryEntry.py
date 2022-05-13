@@ -85,7 +85,7 @@ def view_entry():
 
 def entry_path():
     clear()
-    with open('path.txt', 'r') as path:
+    with open('textFiles/path.txt', 'r') as path:
         print("This is your current path ", path.readline(), "\n")
     with open('path.txt','w') as path:
         ogpath = input("Enter a valid folder path: ")
@@ -96,6 +96,6 @@ def entry_path():
 # read_path command to read the path of the directory or folder where the text files are kept
 
 def read_path():
-    with open('path.txt', 'r') as path:
+    with open('textFiles/path.txt', 'r') as path:
         a = path.readline()
         return a
