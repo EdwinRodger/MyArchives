@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src=https://user-images.githubusercontent.com/92982808/168424673-e320d6eb-cf52-419d-be10-4fc7dafb8936.png />
+</p>
+
 # CMD-Diary
 It uses the command line as its UI and helps you to write an entry in a simple, minimalistic and easy way -
 1. Write a title
