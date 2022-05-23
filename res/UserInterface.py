@@ -1,6 +1,6 @@
 # Python Modules Used
 from tkinter import *
-from res import DiaryEntry as ds, ShowSettings as ss, OnlineHelp as oh
+from res import ChangePath as cp, OnlineHelp as oh, ShowSettings as ss
 from res.GUI import today_entry as te, another_entry as ae, edit_entry as ee, view_entry as ve
 
 # Clear command to make a five line space to lessen the congestion
@@ -61,7 +61,7 @@ def settingsUI():
         try:
             choice = int(input("Enter Your Choice (1 - 7): "))
             if choice==1:
-                ds.entry_path()
+                cp.read_path()
             elif choice==2:
                 ss.about()
             elif choice==3:
