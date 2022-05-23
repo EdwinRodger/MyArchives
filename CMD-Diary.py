@@ -7,5 +7,4 @@ if not os.path.exists(newpath):
     os.makedirs(newpath)
 
 if __name__=="__main__":
-    from res import DiaryEntry
     from res import UserInterface
