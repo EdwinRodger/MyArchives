@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src=https://user-images.githubusercontent.com/92982808/168424673-e320d6eb-cf52-419d-be10-4fc7dafb8936.png />
+  <img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/small.png />
 </p>
 
 # CMD-Diary
