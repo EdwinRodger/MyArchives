@@ -18,8 +18,6 @@ You can -
 Use it to write your different experiences in the form of an entry.<br>
 Write as many entries as you want (until you run out of space on your computer)
 
-Click [here](https://imgur.com/a/7v4WuSR) to see how CMD-Diary Works
-
 # How To Use
 1. Download project as .zip file<br>
 2. Extract the zip folder and<br>
