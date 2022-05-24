@@ -33,7 +33,7 @@ You can -
 <br>
 Use it to write your different experiences in the form of an entry.<br>
 Write as many entries as you want (until you run out of space on your computer)<br>
-
+<br>
 <details>
 <summary>Features</summary>
 <br>
