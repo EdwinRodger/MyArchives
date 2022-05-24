@@ -32,16 +32,38 @@ You can -
 </details>
 <br>
 Use it to write your different experiences in the form of an entry.<br>
-Write as many entries as you want (until you run out of space on your computer)
+Write as many entries as you want (until you run out of space on your computer)<br>
+
+<details>
+<summary>Features</summary>
+<br>
+1. Enter todays entry on the go<br>
+2. Select a date and start writing entry for it<br>
+3. Edit entries again and again<br>
+4. View your old enrtries for a memory refresh<br>
+5. Don't know how to start an entry? Turn ON diary template in settings<br>
+6. Save entries in desired location by changing Entry Folder Path in settings (not available in v3.0)<br>
+7. Visit vairious sections of github site by Online Help section in settings<br>
+</details>
+<details>
+<summary>Roadmap</summary>
+<br>
+1. Adding Password (may come in latest update, maybe v4.0)<br>
+2. Adding basic text editing features (undo, redo, cut, copy, paste etc.)<br>
+3. Encrypting saved text files<br>
+4. Using encrypted SQLite database to store entries (will be offline, will not need another software)<br>
+5. Making a complete GUI for the software<br>
+6. Remove logging in the prompt (may come in latest update, maybe v4.0)<br>
+</details>
 
 # How To Use
-1. Download project as .zip file<br>
-2. Extract the zip folder and<br>
+1. Download .zip file from latest [release](https://github.com/Edwinrodger/CMD-Diary/releases)<br>
+2. Extract the zip folder<br>
 3. Run CMD-Diary.exe
 
 # Important
 By default, the entry folder path is "C:\CMD-Diary" which is applicable for windows and I am not sure about Linux and mac's folder path<br>
-so change the entry folder path to your desired location by going into<br>
+So, change the entry folder path to your desired location by going into<br>
 
 5. Settings -> 1. Entry Folder Path<br>
 
