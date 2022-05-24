@@ -87,7 +87,7 @@ def main_menuUI():
     while True:
         try:
             clear()
-            print("   P y D i a r y")
+            print("  C m d D i a r y")
             print("-"*19)
             print("1. Add Today's Entry")
             print("2. Add Other Day Entry")

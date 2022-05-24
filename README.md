@@ -4,17 +4,33 @@
 </p>
 
 # CMD-Diary
-It uses the command line as its UI and helps you to write an entry in a simple, minimalistic and easy way -
-1. Write a title
+It uses the command line as its main UI with a little bit of tkinter UI and helps you to write an entry in a simple, minimalistic and easy way -
+1. Select a date
 2. Write the body and
 3. Boom your entry is complete
 
 You can -
-- Add today's entry
-- Add another day's entry
-- Add to an entry and
-- View your already existing entry
-
+<details>
+<summary>Add today's entry</summary>
+<br>
+<img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/add_today_entry.png />
+</details>
+<details>
+<summary>Add another day's entry</summary>
+<br>
+<img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/another_day_entry.png />
+</details>
+<details>
+<summary>Edit entry and</summary>
+<br>
+<img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/edit_entry.png />
+</details>
+<details>
+<summary>View your already existing entry</summary>
+<br>
+<img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/view_entry.png />
+</details>
+<br>
 Use it to write your different experiences in the form of an entry.<br>
 Write as many entries as you want (until you run out of space on your computer)
 
@@ -33,6 +49,6 @@ And write a valid path for your entries to be kept<br>
 
 If any error comes, go to the help section of the program by following these steps-<br>
 
-5. Settings -> 2. Help<br>
+5. Settings -> 4. Help<br>
 
 Or you can just open Help.txt to find the answers to your problems.
