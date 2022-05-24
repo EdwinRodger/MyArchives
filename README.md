@@ -51,4 +51,4 @@ If any error comes, go to the help section of the program by following these ste
 
 5. Settings -> 4. Help<br>
 
-Or you can just open Help.txt to find the answers to your problems.
+Or you can just open Help.txt in textFiles folder to find the answers to your problems.
