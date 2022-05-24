@@ -16,6 +16,24 @@ def help():
     wait = input("\n\nPress enter to continue...")
 
 
+# Will use tkinter file dialogue feature to get folder path
+"""
+def change_path():
+    with open("textFiles/path.txt", "r") as path:
+        print(f"\n\n\n\nYour current save folder is: {path.read()}\n\n")
+        print(" - If not already present, add a \ (back slash) at the end of the folder path")
+        print(" - Type 'cancel' to exit without any changes\n\n")
+    new_path = input("Enter new folder to save your entries: ")
+    if new_path == "cancel" or new_path=="'cancel'":
+        pass
+    else:
+        with open("textFiles/path.txt", "w") as f:
+            f.write(str(f))
+        print(f"Your new save folder is: {new_path}")
+        wait = input("Press enter to continue...")
+"""
+
+
 def template():
     print("\n" * 5)
     tempt = input("Do you want a template to write your diary?(y/n)")

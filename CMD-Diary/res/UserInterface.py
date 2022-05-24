@@ -2,7 +2,6 @@
 from os import name, system
 from tkinter import *
 
-from res import ChangePath as cp
 from res import OnlineHelp as oh
 from res import PassWord as pw
 from res import ShowSettings as ss
@@ -80,7 +79,7 @@ def settingsUI():
         try:
             choice = int(input("Enter Your Choice (1 - 7): "))
             if choice == 1:
-                cp.read_path()
+                ss.change_path()
             elif choice == 2:
                 ss.about()
             elif choice == 3:
