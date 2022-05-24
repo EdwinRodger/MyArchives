@@ -1,6 +1,5 @@
-from tkinter import *
 from datetime import date
-
+from tkinter import *
 
 todaydate = str(date.today())
 listed_todaydate = todaydate.split("-")

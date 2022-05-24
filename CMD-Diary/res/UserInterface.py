@@ -1,12 +1,13 @@
 # Python Modules Used
 from tkinter import *
-from res import ChangePath as cp, OnlineHelp as oh, ShowSettings as ss
-from res.GUI import (
-    today_entry as te,
-    another_entry as ae,
-    edit_entry as ee,
-    view_entry as ve,
-)
+
+from res import ChangePath as cp
+from res import OnlineHelp as oh
+from res import ShowSettings as ss
+from res.GUI import another_entry as ae
+from res.GUI import edit_entry as ee
+from res.GUI import today_entry as te
+from res.GUI import view_entry as ve
 
 # Clear command to make a five line space to lessen the congestion
 
