@@ -17,15 +17,19 @@ def help():
 
 
 def template():
+    print("\n" * 5)
     tempt = input("Do you want a template to write your diary?(y/n)")
     if tempt == "y":
         with open("textFiles/template.txt", "w") as tt:
             tt.write("1")
+        print("\n" * 5)
         text = input("Diary template ON")
     elif tempt == "n":
         with open("textFiles/template.txt", "w") as tt:
             tt.write("0")
+        print("\n" * 5)
         text = input("Diary template OFF")
     else:
+        print("\n" * 5)
         print("Enter on y or n (y = yes, n = no)")
         template()
