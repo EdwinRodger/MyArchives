@@ -31,5 +31,5 @@ def template():
         text = input("Diary template OFF")
     else:
         print("\n" * 5)
-        print("Enter on y or n (y = yes, n = no)")
+        print("Enter y or n (y = yes, n = no)")
         template()
