@@ -5,6 +5,7 @@ from tkinter import *
 from res import ChangePath as cp
 from res import OnlineHelp as oh
 from res import ShowSettings as ss
+from res import PassWord as pw
 from res.GUI import another_entry as ae
 from res.GUI import edit_entry as ee
 from res.GUI import today_entry as te
@@ -135,5 +136,5 @@ def main_menuUI():
             print("\n\nInvalid choice")
             wait = input()
 
-
+pw.passwordUI()
 main_menuUI()
