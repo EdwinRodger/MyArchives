@@ -1,4 +1,5 @@
 # Python Modules Used
+from os import name, system
 from tkinter import *
 
 from res import ChangePath as cp
@@ -12,8 +13,14 @@ from res.GUI import view_entry as ve
 # Clear command to make a five line space to lessen the congestion
 
 
+# define our clear function
 def clear():
-    print("\n" * 5)
+    # for windows
+    if name == "nt":
+        _ = system("cls")
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system("clear")
 
 
 # Online Help UI for CMD-Diary
