@@ -16,7 +16,7 @@ def change_path():
         pass
     else:
         with open("textFiles/path.txt", "w") as new_folder:
-            new_folder.write(f"{foldername}/")
+            new_folder.write(f"{foldername}\\")
             root.destroy()
 
 
