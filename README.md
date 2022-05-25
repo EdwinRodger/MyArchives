@@ -65,12 +65,12 @@ Write as many entries as you want (until you run out of space on your computer)<
 By default, the entry folder path is "C:\CMD-Diary" which is applicable for windows and I am not sure about Linux and mac's folder path<br>
 So, change the entry folder path to your desired location by going into<br>
 
-5. Settings -> 1. Entry Folder Path<br>
+5. Settings -> 1. Change Diary Folder<br>
 
 And write a valid path for your entries to be kept<br>
 
 If any error comes, go to the help section of the program by following these steps-<br>
 
-5. Settings -> 4. Help<br>
+5. Settings -> 5. Help<br>
 
 Or you can just open Help.txt in textFiles folder to find the answers to your problems.
