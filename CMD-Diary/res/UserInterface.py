@@ -69,7 +69,7 @@ def settingsUI():
         clear()
         print("  S e t t i n g s")
         print("-" * 19)
-        print("1. Entry Folder Path")
+        print("1. Change Diary Folder")
         print("2. Change Password")
         print("3. About")
         print("4. Contribution")

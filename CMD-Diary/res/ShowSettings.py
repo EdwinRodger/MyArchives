@@ -4,10 +4,12 @@ from tkinter import filedialog
 def change_path():
     root = Tk()
     root.iconbitmap("Diary.ico")
-    root.title("Change Path")
-    info = Label(root, text="Select a valid directory to save files").pack()
+    root.title("Change Folder")
+    with open("textFiles/path.txt", "r") as f:
+        path = f.read()
+    info = Label(root, text=f"Your current Diary Folder: {path}").pack()
     foldername = filedialog.askdirectory(
-        initialdir="~", title="Select a folder to save text files", mustexist=True
+        initialdir="~", title="Select folder to save Diary files", mustexist=True
     )
     if foldername == "":
         root.destroy()
