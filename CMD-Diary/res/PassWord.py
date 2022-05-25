@@ -26,14 +26,14 @@ def check_password():
     passwrd_key = passwrd[32:]
 
     password_to_check = input(
-        "Enter Password: "
+        "Enter Your Current Password: "
     )  # The password provided by the user to check
 
     # Use the exact same setup you used to generate the key, but this
     # time put in the password to check
     new_key = hashlib.pbkdf2_hmac(
         "sha256",
-        password_to_check.encode("utf-8"),  # Convert the password to bytes
+        password_to_check.encode("utf-8"),
         passwrd_salt,
         100000,
     )
@@ -73,3 +73,8 @@ def passwordUI():
         new_password()
     else:
         check_password()
+
+def change_password():
+    check_password()
+    new_password()
+    wait = input("\n\n\n\nNew password set!")

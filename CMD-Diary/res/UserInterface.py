@@ -70,30 +70,33 @@ def settingsUI():
         print("  S e t t i n g s")
         print("-" * 19)
         print("1. Entry Folder Path")
-        print("2. About")
-        print("3. Contribution")
-        print("4. Help")
-        print("5. Diary Template")
-        print("6. Online Help")
-        print("7. Back To Main Menu")
+        print("2. Change Password")
+        print("3. About")
+        print("4. Contribution")
+        print("5. Help")
+        print("6. Diary Template")
+        print("7. Online Help")
+        print("8. Back To Main Menu")
         try:
-            choice = int(input("Enter Your Choice (1 - 7): "))
+            choice = int(input("Enter Your Choice (1 - 8): "))
             if choice == 1:
                 ss.change_path()
             elif choice == 2:
+                pw.change_password()
+            elif choice==3:
                 ss.about()
-            elif choice == 3:
-                ss.contribution()
             elif choice == 4:
-                ss.help()
+                ss.contribution()
             elif choice == 5:
-                ss.template()
+                ss.help()
             elif choice == 6:
-                onlinehelpUI()
+                ss.template()
             elif choice == 7:
+                onlinehelpUI()
+            elif choice == 8:
                 break
             else:
-                print("Please Choose From 1 to 7 Only")
+                print("Please Choose From 1 to 8 Only")
                 wait = input()
         except:
             print("\n\nInvalid choice")

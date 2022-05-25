@@ -1,6 +1,22 @@
 from tkinter import *
 from tkinter import filedialog
 
+def change_path():
+    root = Tk()
+    root.iconbitmap("Diary.ico")
+    root.title("Change Path")
+    info = Label(root, text="Select a valid directory to save files").pack()
+    foldername = filedialog.askdirectory(
+        initialdir="~", title="Select a folder to save text files", mustexist=True
+    )
+    if foldername == "":
+        root.destroy()
+        pass
+    else:
+        with open("textFiles/path.txt", "w") as new_folder:
+            new_folder.write(f"{foldername}/")
+            root.destroy()
+
 
 def about():
     with open("textFiles/about.txt", "r") as abt:
@@ -20,21 +36,6 @@ def help():
     wait = input("\n\nPress enter to continue...")
 
 
-def change_path():
-    root = Tk()
-    root.iconbitmap("Diary.ico")
-    root.title("Change Path")
-    info = Label(root, text="Select a valid directory to save files").pack()
-    foldername = filedialog.askdirectory(
-        initialdir="~", title="Select a folder to save text files", mustexist=True
-    )
-    if foldername == "":
-        root.destroy()
-        pass
-    else:
-        with open("textFiles/path.txt", "w") as new_folder:
-            new_folder.write(f"{foldername}/")
-            root.destroy()
 
 
 def template():
