@@ -26,12 +26,8 @@ def license():
 
 
 def releases():
-    webbrowser.open_new_tab(
-        "https://github.com/EdwinRodger/CMD-Diary/releases"
-        )
+    webbrowser.open_new_tab("https://github.com/EdwinRodger/CMD-Diary/releases")
 
 
 def website():
-    webbrowser.open_new_tab(
-        "https://github.com/EdwinRodger/CMD-Diary"
-        )
+    webbrowser.open_new_tab("https://github.com/EdwinRodger/CMD-Diary")
