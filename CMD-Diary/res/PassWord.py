@@ -1,7 +1,6 @@
+import hashlib
 import os
 from os import name, system
-import hashlib
-from time import sleep
 
 with open("textFiles/password.txt", "r") as f:
     check = int(f.read())
@@ -73,6 +72,7 @@ def passwordUI():
         new_password()
     else:
         check_password()
+
 
 def change_password():
     check_password()

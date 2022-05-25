@@ -83,7 +83,7 @@ def settingsUI():
                 ss.change_path()
             elif choice == 2:
                 pw.change_password()
-            elif choice==3:
+            elif choice == 3:
                 ss.about()
             elif choice == 4:
                 ss.contribution()

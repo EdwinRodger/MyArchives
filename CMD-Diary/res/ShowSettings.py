@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
 
+
 def change_path():
     root = Tk()
     root.iconbitmap("Diary.ico")
@@ -36,8 +37,6 @@ def help():
     with open("textFiles/helpme.txt", "r") as helpmeh:
         print("\n\n" + helpmeh.read())
     wait = input("\n\nPress enter to continue...")
-
-
 
 
 def template():

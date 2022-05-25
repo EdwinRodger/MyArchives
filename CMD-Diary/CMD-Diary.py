@@ -1,4 +1,4 @@
-from os.path import expanduser, exists, os
+from os.path import exists, expanduser, os
 
 # newpath command to create a CMD-Diary folder in Programfiles if not already exists
 home = expanduser("~")
