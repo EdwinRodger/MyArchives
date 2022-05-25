@@ -51,9 +51,8 @@ Write as many entries as you want (until you run out of space on your computer)<
 1. Adding Password (may come in latest update, maybe v4.0)<br>
 2. Adding basic text editing features (undo, redo, cut, copy, paste etc.)<br>
 3. Encrypting saved text files<br>
-4. Using encrypted SQLite database to store entries (will be offline, will not need another software)<br>
-5. Making a complete GUI for the software<br>
-6. Remove logging in the prompt (may come in latest update, maybe v4.0)<br>
+4. Making a complete GUI for the software<br>
+5. Remove logging in the prompt (may come in latest update, maybe v4.0)<br>
 </details>
 
 # How To Use
