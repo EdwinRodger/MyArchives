@@ -44,7 +44,7 @@ dayrange = (
 
 def another_entry():
     root = Tk()
-    root.title("Enter Another Day Entry")
+    root.title("Write Another Day Entry")
     root.geometry("750x450")
     root.resizable(0, 0)
     root.iconbitmap("Diary.ico")

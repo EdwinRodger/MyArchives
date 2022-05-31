@@ -13,7 +13,7 @@ with open(r"textFiles\template.txt", "r") as f:
 
 def today_entry():
     root = Tk()
-    root.title("Enter Today Entry")
+    root.title("Write Today Entry")
     root.geometry("700x450")
     root.resizable(0, 0)
     root.iconbitmap("Diary.ico")

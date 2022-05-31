@@ -84,12 +84,16 @@ def edit_entry():
     scroll.config(command=textbox.yview)
 
     def get_date():
-        with open(
-            f"{path}{thisyear.get()}-{thismonth.get()}-{day.get()}.txt", "r"
-        ) as entry:
+        try:
+            with open(
+                f"{path}{thisyear.get()}-{thismonth.get()}-{day.get()}.txt", "r"
+            ) as entry:
+                textbox.delete(1.0, END)
+                textbox.insert(0.0, entry.read())
+        except:
             textbox.delete(1.0, END)
-            textbox.insert(0.0, entry.read())
-
+            textbox.insert(0.0, "No entry on this date")
+            
     def save_entry():
         with open(
             f"{path}{thisyear.get()}-{thismonth.get()}-{day.get()}.txt", "w"
