@@ -1,4 +1,4 @@
-# CMD-Diary (Currently Paused)
+# CMD-Diary
 It uses the command line as its UI and helps you to write an entry in a simple, minimalistic and easy way -
 1. Write a title
 2. Write the body and
