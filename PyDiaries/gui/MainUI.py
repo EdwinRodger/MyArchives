@@ -5,6 +5,7 @@ from gui.MenubarUI import menubar
 
 def main():
     root = ctk.CTk()
+    root.title("PyDiaries")
     root.geometry("1100x600")
     # root.resizable(0,0)
 
