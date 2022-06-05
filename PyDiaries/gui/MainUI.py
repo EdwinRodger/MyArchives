@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from gui.CalendarUI import calendar
 from gui.EntryboxUI import entrybox
-# from gui.MenubarUI import menubar
+from gui.MenubarUI import menubar
 
 def main():
     root = ctk.CTk()
@@ -11,6 +11,8 @@ def main():
     cal = calendar(root)
 
     entry = entrybox(root)
+
+    menu_bar = menubar(root)
 
 
 
