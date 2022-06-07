@@ -4,15 +4,15 @@ from setup.tasks import home_directory
 import datetime
 
 date = datetime.datetime.today()
-_, path = home_directory()
+_, newapth = home_directory()
 
 try:
-    with open(f"{path}Textfiles\json.txt", "r") as f:
+    with open(f"{newapth}\\Textfiles\json.txt", "r") as f:
         condition = int(f.read())
 except:
-    with open(f"{path}Textfiles\json.txt", "w") as f:
+    with open(f"{newapth}\\Textfiles\json.txt", "w") as f:
         f.write("0")
-    with open(f"{path}Textfiles\json.txt", "r") as f:
+    with open(f"{newapth}\\Textfiles\json.txt", "r") as f:
         condition = int(f.read())
 
 contents = {
@@ -27,9 +27,9 @@ contents = {
 
 def setup_json():
     if condition==0:
-        with open(f"{path}\\MyArchive.json", "w") as f:
+        with open(f"{newapth}MyArchive.json", "w") as f:
             json.dump(contents, f, indent=4)
-        with open(f"{path}Textfiles\json.txt", "w") as f:
+        with open(f"{newapth}Textfiles\json.txt", "w") as f:
             f.write("1")
     elif condition==1:
         pass
