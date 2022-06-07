@@ -3,6 +3,7 @@
   <img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/small.png />
 </p>
 
+A new GUI is in progress (see 'gui' branch for updates), no issues or PR's (if there will be any :/) won't get accepted till the new update. Here's what cureent version can do and what will be the base of next version -
 # CMD-Diary
 CMD-Diary uses the command line as its main UI with a little mix of tkinter UI and helps you to write an entry in a simple, minimalistic and easy way -
 1. Select 'Write Today Entry'
