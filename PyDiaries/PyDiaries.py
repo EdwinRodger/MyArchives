@@ -1,10 +1,10 @@
 from gui.MainUI import main
-from setup.database_setup import database
-from setup.folder_setup import folder
+from setup.json_setup import setup_json
+from setup.folder_setup import setup_folder
 
 
 
 if __name__=="__main__":
-    folder()
-    database()
+    setup_folder()
+    setup_json()
     main()

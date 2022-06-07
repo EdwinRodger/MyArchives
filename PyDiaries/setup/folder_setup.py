@@ -1,11 +1,13 @@
-from os.path import expanduser, os
+from setup.tasks import home_directory
+import os
+
+home, newpath = home_directory()
 
 
 
-def folder():
-    # Command to create a CMD-Diary folder in User directory if not already exists
-    home = expanduser("~")
-    newpath = f"{home}\\PyDiaries\\"
+# Command to create a CMD-Diary folder in User directory if not already exists
+def setup_folder():
+    
     if not os.path.exists(newpath):
         os.makedirs(newpath)
     if not os.path.exists(f"{newpath}\\Textfiles\\"):
