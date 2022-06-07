@@ -2,8 +2,8 @@
 
 from os.path import expanduser, os
 
-# Finds user home directory on different OS and makes a PyDiaries folder
+# Finds user home directory on different OS and makes a MyArchives folder
 def home_directory():
     home = expanduser("~")
-    newpath = f"{home}\\PyDiaries\\"
+    newpath = f"{home}\\MyArchives\\"
     return home, newpath

@@ -6,7 +6,7 @@ from gui.TitleboxUI import titlebox
 
 def main():
     root = ctk.CTk()
-    root.title("PyDiaries")
+    root.title("MyArchives")
     root.geometry("1100x600")
     # root.resizable(0,0)
 
