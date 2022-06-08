@@ -20,7 +20,8 @@ contents = {
         "application":"MyArchives",
         "version":"v5.0",
         "dateUpdated":f"{date}"
-    }
+    },
+    "entries":[]
 }
 
 
