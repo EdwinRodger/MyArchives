@@ -14,5 +14,3 @@ def setup_folder():
         os.makedirs(f"{newpath}Textfiles\\")
     with open(f"{newpath}Textfiles\\path.txt", "w") as homedir:
         homedir.write(newpath)
-
-setup_folder()
