@@ -1,35 +1,40 @@
 # Python file to create JSON file
+import os.path
 import json
 from setup.tasks import home_directory
-import datetime
+from datetime import datetime, date
 
-date = datetime.datetime.today()
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+
+date = date.today()
 _, newapth = home_directory()
 
-try:
-    with open(f"{newapth}\\Textfiles\json.txt", "r") as f:
-        condition = int(f.read())
-except:
-    with open(f"{newapth}\\Textfiles\json.txt", "w") as f:
-        f.write("0")
-    with open(f"{newapth}\\Textfiles\json.txt", "r") as f:
-        condition = int(f.read())
 
-contents = {
+
+metadata = {
     "metadata":{
         "application":"MyArchives",
         "version":"v5.0",
-        "dateUpdated":f"{date}"
-    },
-    "entries":[]
+        "author":"EdwinRodger"
+    }
 }
 
+entries = {
+    "entries":[
+        {
+            "date": f"{date}",
+            "time": f"{current_time}",
+            "title": "Some Title",
+            "text": "Some Text"
+        }
+    ]
+}
 
 def setup_json():
-    if condition==0:
-        with open(f"{newapth}MyArchive.json", "w") as f:
-            json.dump(contents, f, indent=4)
-        with open(f"{newapth}Textfiles\json.txt", "w") as f:
-            f.write("1")
-    elif condition==1:
-        pass
+    with open(f"{newapth}metadata.json", "w") as f:
+        json.dump(metadata, f, indent=4)
+    if not os.path.exists(f"{newapth}MyArchives.json"):
+        with open(f"{newapth}MyArchives.json", "w") as f:
+            json.dump(entries, f, indent=4)

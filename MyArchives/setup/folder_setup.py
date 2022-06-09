@@ -12,5 +12,5 @@ def setup_folder():
         os.makedirs(newpath)
     if not os.path.exists(f"{newpath}Textfiles\\"):
         os.makedirs(f"{newpath}Textfiles\\")
-    with open(f"{newpath}Textfiles\\path.txt", "w") as homedir:
-        homedir.write(newpath)
+        with open(f"{newpath}Textfiles\\path.txt", "w") as homedir:
+            homedir.write(newpath)
