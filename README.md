@@ -11,9 +11,3 @@ You can -
 
 Use it to write your different experiences in one place<br>
 Write as many entries as you want until you run out of space on your computer
-
-<details>
-<summary>This is what it looks for now (this is just base, end product may change)</summary>
-<br>
-<img src=https://github.com/EdwinRodger/CMD-Diary/blob/gui/.github/images/MyArchives1.png />
-</details>
