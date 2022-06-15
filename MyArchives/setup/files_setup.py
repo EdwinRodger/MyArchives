@@ -1,18 +1,20 @@
-import os
-from setup.tasks import home_directory
 import json
+import os
+
+from setup.tasks import home_directory
 
 newpath = home_directory()
 
 metadata = {
-    "metadata":{
-        "application":"MyArchives",
-        "version":"v5.0",
-        "author":"EdwinRodger"
+    "metadata": {
+        "application": "MyArchives",
+        "version": "v5.0",
+        "author": "EdwinRodger",
     }
 }
 
-class file_setup():
+
+class file_setup:
     def pathtxt_setup():
         if not os.path.exists(f"{newpath}Textfiles\\path.txt"):
             with open(f"{newpath}Textfiles\\path.txt", "w") as f:
@@ -24,7 +26,7 @@ class file_setup():
                 json.dump(metadata, f, indent=4)
 
         with open(f"{newpath}metadata.json", "r") as f:
-                data = json.load(f)
+            data = json.load(f)
 
         if metadata == data:
             pass
