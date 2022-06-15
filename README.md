@@ -20,5 +20,7 @@ Choose a date then move cursor out of date box to see the respective day entry
 
 Saving an entry is done automatically
 
+It is reccommended to press enter key at the end of your entry to prevent from some minor bugs
+
 # License
 [MIT](https://github.com/EdwinRodger/CMD-Diary/blob/main/LICENSE)
