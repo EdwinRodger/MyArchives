@@ -18,6 +18,12 @@ Saving an entry is done automatically
 
 It is reccommended to press enter key at the end of your entry to prevent from some minor bugs
 
+<details>
+<summary>MyArchives GUI</summary>
+<br>
+<img src=https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-16).png />
+</details>
+
 # Want to Contribute?
 Firslty check the [contributing guidlines](https://github.com/EdwinRodger/MyArchives/blob/main/.github/CONTRIBUTING.md)
 
