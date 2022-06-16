@@ -7,6 +7,7 @@ import customtkinter as ctk
 
 from .home_dir import home_directory
 from .online_sites import *
+from .password import password_ui, new_pass
 
 today = date.today()
 y = today.strftime("%Y")
@@ -16,6 +17,7 @@ newpath = home_directory()
 
 
 def main():
+    password_ui()
     master = ctk.CTk()
     master.geometry("837x484")
     master.title("MyArchives")
@@ -141,7 +143,7 @@ def main():
     edit_menu.add_command(label="Select All", command=lambda: select_all(True), accelerator="(Ctrl+a)")
     edit_menu.add_command(label="Clear", command=clear_all)
 
-    #Create an Options menu item
+    # Create an Options menu item
     help_menu = Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Online", menu=help_menu)
     help_menu.add_command(label="Website", command=website)
@@ -152,4 +154,9 @@ def main():
     help_menu.add_separator()
     help_menu.add_command(label="Contributing", command=contributing)
     help_menu.add_command(label="Releases", command=releases)
+
+    # Change Password menu
+    password_menu = Menu(my_menu, tearoff=False)
+    my_menu.add_cascade(label="Change Password", menu=password_menu)
+    password_menu.add_command(label="Change Password", command=new_pass)
     master.mainloop()
