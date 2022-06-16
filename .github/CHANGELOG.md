@@ -1,3 +1,11 @@
+# v5.0🎉🎉🎉
+###### Released: 16 June 2022
+### What's new -
+- ✨ **A whole new GUI**
+- ❌ Removed command line operations
+- 📅 Changing date is now done with date spinbox
+- 📖 Saving entries is done automatically
+
 # v4.0🎉🎉🎉
 
 ###### Released: 1 June 2022
