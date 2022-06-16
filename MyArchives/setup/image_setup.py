@@ -13,7 +13,7 @@ newpath = home_directory()
 def icon_download():
     if not os.path.exists(f"{newpath}Diary.ico"):
         ## Set up the image URL and filename
-        image_url = "https://raw.githubusercontent.com/EdwinRodger/CMD-Diary/main/.github/images/Diary.ico"
+        image_url = "https://raw.githubusercontent.com/EdwinRodger/MyArchives/main/.github/images/Diary.ico"
         filename = image_url.split("/")[-1]
 
         # Open the url image, set stream to True, this will return the stream content.
