@@ -1,9 +1,9 @@
 # MyArchives
-Yes this gui update will come with name change because it won't be using command line or terminal as it's main UI instead it is designed using many Tkinter modules but it's main purpose remains same, write an entry in a simple, minimalistic and easy way 
+MyArchives is a software apllication to write your entries in a simple, minimalistic and easy way 
 
 You can -
 - Write entries (obviously, duh!)
-- Navigate to other day entries with use of calendar (looks pretty neat!)
+- Navigate to other day entries by using spinboxes
 - Edit entries anytime and it will be stored and saved at that time, no need to save it manually 🥳🥳
 
 Use it to write your different experiences in one place<br>
