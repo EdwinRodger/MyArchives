@@ -12,12 +12,6 @@ Write as many entries as you want until you run out of space on your computer
 # How to use
 Choose a date then move cursor out of date box to see the respective day entry
 
-<details>
-<summary>Example</summary>
-<br>
-<img src=https://github.com/EdwinRodger/CMD-Diary/blob/main/.github/images/Tutorial.gif />
-</details>
-
 Saving an entry is done automatically
 
 It is reccommended to press enter key at the end of your entry to prevent from some minor bugs
