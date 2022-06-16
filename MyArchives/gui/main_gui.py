@@ -1,3 +1,4 @@
+from tkinter.scrolledtext import ScrolledText
 import tkinter.ttk as tk
 from datetime import date
 from tkinter import *
@@ -24,7 +25,7 @@ def main():
     # date_frame.place(x=0,y=0)
     date_frame.pack()
 
-    box = Text(master, width=104, height=27, undo=True)
+    box = ScrolledText(master, width=104, height=27, undo=True)
     box.insert(
         0.0, "Choose a date then leave the date box with cursor to see the entry"
     )
