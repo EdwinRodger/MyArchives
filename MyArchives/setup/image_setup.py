@@ -30,7 +30,7 @@ def icon_download():
         else:
             messagebox.showerror(
                 "Image Download Error",
-                "The cannot able to download Diary.ico at the moment\nPlease try again later",
+                "Cannot able to download Diary.ico at the moment\nPlease try again later",
             )
             quit()
     else:
