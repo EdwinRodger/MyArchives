@@ -15,6 +15,7 @@ newpath = home_directory()
 
 def main():
     password_ui()
+    ctk.set_default_color_theme("dark-blue")
     master = ctk.CTk()
     master.geometry("1077x600")
     master.title("MyArchives")
@@ -59,7 +60,7 @@ def main():
         label.config(text=string)
         label.after(1000, time)
 
-    label = Label(master, font=("Arial", 50), background="#212325", foreground="White")
+    label = Label(master, font=("Arial", 50), background="#1a1a1a", foreground="Green")
     label.place(y=270, x=7)
     time()
 
