@@ -57,7 +57,6 @@ def main():
     # Clock
     def time():
         try:
-            master.wm_attributes("-transparentcolor", "#1a1a1a") #This removes clock's background
             string = strftime("%I:%M:%S %p")
             ctime = Label(master, font=("Arial", 50), background="#1a1a1a", foreground="Green")
             ctime.config(text=string)
