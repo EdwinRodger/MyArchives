@@ -1,7 +1,8 @@
 from tkinter.scrolledtext import ScrolledText
 import tkinter.ttk as tk
-from datetime import date
+from time import strftime
 from tkinter import *
+import tkcalendar
 
 import customtkinter as ctk
 
@@ -9,64 +10,23 @@ from .home_dir import home_directory
 from .online_sites import *
 from .password import password_ui, new_pass
 
-today = date.today()
-y = today.strftime("%Y")
-m = today.strftime("%m")
-d = today.strftime("%d")
+
 newpath = home_directory()
 
 
 def main():
     password_ui()
     master = ctk.CTk()
-    master.geometry("837x484")
+    master.geometry("1077x600")
     master.title("MyArchives")
     master.iconbitmap(f"{newpath}Diary.ico")
 
-    date_frame = Frame(master, background="#2a2d2e")
-    # date_frame.place(x=0,y=0)
-    date_frame.pack()
-
-    box = ScrolledText(master, width=104, height=27, undo=True)
-    box.insert(
-        0.0, "Choose a date then leave the date box with cursor to see the entry"
-    )
-    # box.place(x=0, y=40)
-    box.pack()
-
-    def save(e):
-        with open(
-            f"{newpath}MyArchive/{year.get()}-{month.get()}-{date1.get()}.txt", "w"
-        ) as f:
-            f.write(box.get(0.0, END))
-
-    box.bind("<Key>", save)
-
-    yearL = ctk.CTkLabel(date_frame, text="Year :")
-    yearL.grid(row=0, column=0)
-
-    year = tk.Spinbox(date_frame, from_=1990, to=2100)
-    year.insert(1, y)
-    year.grid(row=0, column=1)
-
-    monthL = ctk.CTkLabel(date_frame, text="Month :")
-    monthL.grid(row=0, column=2)
-
-    month = tk.Spinbox(date_frame, from_=1, to=12)
-    month.insert(1, m)
-    month.grid(row=0, column=3)
-
-    dateL = ctk.CTkLabel(date_frame, text="Date :")
-    dateL.grid(row=0, column=4)
-
-    date1 = tk.Spinbox(date_frame, from_=1, to=31)
-    date1.insert(1, d)
-    date1.grid(row=0, column=5)
-
-    def printer(e):
+    cal = tkcalendar.Calendar(master, font="comic_sans 18", showweeknumbers=False)
+    cal.place(x=0,y=0)
+    def get_date(e):
         try:
             with open(
-                f"{newpath}MyArchive/{year.get()}-{month.get()}-{date1.get()}.txt", "r"
+                f"{newpath}MyArchive/{cal.selection_get()}.txt", "r"
             ) as f:
                 box.delete(0.0, END)
                 box.insert(0.0, f.read())
@@ -74,8 +34,34 @@ def main():
             box.delete(0.0, END)
             box.insert(0.0, "No entry found! Start typing to save an entry...")
 
-    date1.bind("<Leave>", printer)
+    cal.bind("<Leave>", get_date)
 
+    box = ScrolledText(master, width=82, height=30, undo=True)
+    box.insert(
+        0.0, "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly"
+    )
+    box.place(x=400)
+    def save(e):
+        if "<Key>" == "<Return>":
+            box.insert("\n\n")
+        with open(
+            f"{newpath}MyArchive/{cal.selection_get()}.txt", "w"
+        ) as f:
+            f.write(box.get(0.0, END))
+    def two_spaces(e):
+        box.insert(float(box.index(INSERT)), "\n")
+    box.bind("<Key>", save)
+    box.bind("<Return>", two_spaces)
+
+    # Clock
+    def time():
+        string = strftime("%I:%M:%S %p")
+        label.config(text=string)
+        label.after(1000, time)
+    
+    label = Label(master, font=("Arial", 50), background = "#212325", foreground="White")
+    label.place(y=270, x=7)
+    time()
 
     # Menubar
     my_menu = Menu(master)
