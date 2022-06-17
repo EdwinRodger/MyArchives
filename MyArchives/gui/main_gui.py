@@ -1,4 +1,3 @@
-import tkinter.ttk as tk
 from time import strftime
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
