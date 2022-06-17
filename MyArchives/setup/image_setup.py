@@ -28,7 +28,10 @@ def icon_download():
             with open(f"{newpath}Diary.ico", "wb") as f:
                 shutil.copyfileobj(r.raw, f)
         else:
-            messagebox.showerror("Image Download Error", "The cannot able to download Diary.ico at the moment\nPlease try again later")
+            messagebox.showerror(
+                "Image Download Error",
+                "The cannot able to download Diary.ico at the moment\nPlease try again later",
+            )
             quit()
     else:
         pass

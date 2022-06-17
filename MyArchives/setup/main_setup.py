@@ -1,6 +1,7 @@
-from .image_setup import icon_download
 from setup.files_setup import file_setup
 from setup.folders_setup import folder_setup
+
+from .image_setup import icon_download
 
 
 def setup():

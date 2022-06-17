@@ -1,15 +1,14 @@
-from tkinter.scrolledtext import ScrolledText
 import tkinter.ttk as tk
 from time import strftime
 from tkinter import *
-import tkcalendar
+from tkinter.scrolledtext import ScrolledText
 
 import customtkinter as ctk
+import tkcalendar
 
 from .home_dir import home_directory
 from .online_sites import *
-from .password import password_ui, new_pass
-
+from .password import new_pass, password_ui
 
 newpath = home_directory()
 
@@ -22,12 +21,11 @@ def main():
     master.iconbitmap(f"{newpath}Diary.ico")
 
     cal = tkcalendar.Calendar(master, font="comic_sans 18", showweeknumbers=False)
-    cal.place(x=0,y=0)
+    cal.place(x=0, y=0)
+
     def get_date(e):
         try:
-            with open(
-                f"{newpath}MyArchive/{cal.selection_get()}.txt", "r"
-            ) as f:
+            with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "r") as f:
                 box.delete(0.0, END)
                 box.insert(0.0, f.read())
         except:
@@ -38,18 +36,20 @@ def main():
 
     box = ScrolledText(master, width=82, height=30, undo=True)
     box.insert(
-        0.0, "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly"
+        0.0,
+        "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
     )
     box.place(x=400)
+
     def save(e):
         if "<Key>" == "<Return>":
             box.insert("\n\n")
-        with open(
-            f"{newpath}MyArchive/{cal.selection_get()}.txt", "w"
-        ) as f:
+        with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "w") as f:
             f.write(box.get(0.0, END))
+
     def two_spaces(e):
         box.insert(float(box.index(INSERT)), "\n")
+
     box.bind("<Key>", save)
     box.bind("<Return>", two_spaces)
 
@@ -58,8 +58,8 @@ def main():
         string = strftime("%I:%M:%S %p")
         label.config(text=string)
         label.after(1000, time)
-    
-    label = Label(master, font=("Arial", 50), background = "#212325", foreground="White")
+
+    label = Label(master, font=("Arial", 50), background="#212325", foreground="White")
     label.place(y=270, x=7)
     time()
 
@@ -82,6 +82,7 @@ def main():
                 # Clear the clipboard then append
                 master.clipboard_clear()
                 master.clipboard_append(selected)
+
     # Copy Text
     def copy_text(e):
         global selected
@@ -99,18 +100,18 @@ def main():
     # Paste Text
     def paste_text(e):
         global selected
-        #Check to see if keyboard shortcut used
+        # Check to see if keyboard shortcut used
         if e:
             selected = master.clipboard_get()
         else:
             if selected:
                 position = box.index(INSERT)
                 box.insert(position, selected)
-    
+
     # Select all Text
     def select_all(e):
         # Add sel tag to select all text
-        box.tag_add('sel', '1.0', 'end')
+        box.tag_add("sel", "1.0", "end")
 
     # Clear All Text
     def clear_all():
@@ -119,14 +120,22 @@ def main():
     # Add Edit Menu
     edit_menu = Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Edit", menu=edit_menu)
-    edit_menu.add_command(label="Cut", command=lambda: cut_text(False), accelerator="(Ctrl+x)")
-    edit_menu.add_command(label="Copy", command=lambda: copy_text(False), accelerator="(Ctrl+c)")
-    edit_menu.add_command(label="Paste", command=lambda: paste_text(False), accelerator="(Ctrl+v)")
+    edit_menu.add_command(
+        label="Cut", command=lambda: cut_text(False), accelerator="(Ctrl+x)"
+    )
+    edit_menu.add_command(
+        label="Copy", command=lambda: copy_text(False), accelerator="(Ctrl+c)"
+    )
+    edit_menu.add_command(
+        label="Paste", command=lambda: paste_text(False), accelerator="(Ctrl+v)"
+    )
     edit_menu.add_separator()
     edit_menu.add_command(label="Undo", command=box.edit_undo, accelerator="(Ctrl+Z)")
     edit_menu.add_command(label="Redo", command=box.edit_redo, accelerator="(Ctrl+y)")
     edit_menu.add_separator()
-    edit_menu.add_command(label="Select All", command=lambda: select_all(True), accelerator="(Ctrl+a)")
+    edit_menu.add_command(
+        label="Select All", command=lambda: select_all(True), accelerator="(Ctrl+a)"
+    )
     edit_menu.add_command(label="Clear", command=clear_all)
 
     # Create an Options menu item

@@ -20,14 +20,12 @@ def contributing():
 
 
 def license():
-    open_new_tab(
-        "https://github.com/EdwinRodger/CMD-Diary/blob/main/LICENSE"
-    )
+    open_new_tab("https://github.com/EdwinRodger/CMD-Diary/blob/main/LICENSE")
 
 
 def releases():
     open_new_tab("https://github.com/EdwinRodger/CMD-Diary/releases")
 
 
-def website():#
+def website():  #
     open_new_tab("https://github.com/EdwinRodger/CMD-Diary")
