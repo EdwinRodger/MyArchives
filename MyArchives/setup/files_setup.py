@@ -8,7 +8,7 @@ newpath = home_directory()
 metadata = {
     "metadata": {
         "application": "MyArchives",
-        "version": "v5.0",
+        "version": "v6.0",
         "author": "EdwinRodger",
     }
 }
