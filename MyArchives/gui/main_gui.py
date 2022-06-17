@@ -158,4 +158,6 @@ def main():
     password_menu = Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Change Password", menu=password_menu)
     password_menu.add_command(label="Change Password", command=new_pass)
+    #If we comment the below line, the window will get close but the whole program will remain to run in background (In windows, you can see it using task manager under "background processes"). While developing, you will know it when you will close main window but the program won't get out of terminal
+    master.protocol("WM_DELETE_WINDOW", quit)
     master.mainloop()
