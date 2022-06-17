@@ -3,7 +3,7 @@ MyArchives is a software apllication to write your entries in a simple, minimali
 
 You can -
 - Write entries (obviously, duh!)
-- Navigate to other day entries by using spinboxes
+- Navigate to other day entries using calendar
 - Edit entries anytime and it will be stored and saved at that time, no need to save it manually 🥳🥳
 
 Use it to write your different experiences in one place<br>
@@ -23,6 +23,16 @@ It is reccommended to press enter key at the end of your entry to prevent from s
 <br>
 <img src=https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-16).png />
 </details>
+
+# Features
+- [x] Integrated Calendar
+- [x] Zero buttons, everything done with mouse cursor
+- [x] Online site section
+- [x] Password Feature
+- [x] Integrated Clock
+- [ ] Entry encryption
+- [ ] Export/Imports
+- [ ] Different modes (Dark/Light)
 
 # Want to Contribute?
 Firslty check the [contributing guidlines](https://github.com/EdwinRodger/MyArchives/blob/main/.github/CONTRIBUTING.md)
