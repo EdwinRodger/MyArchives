@@ -21,7 +21,7 @@ It is reccommended to press enter key at the end of your entry to prevent from s
 <details>
 <summary>MyArchives GUI</summary>
 <br>
-<img src=https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-16).png />
+<img src=https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-18).png />
 </details>
 
 # Features
