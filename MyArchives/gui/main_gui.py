@@ -58,11 +58,10 @@ def main():
     def time():
         try:
             string = strftime("%I:%M:%S %p")
-            label.config(text=string)
-            label.after(1000, time)
-
-            label = Label(master, font=("Arial", 50), background="#1a1a1a", foreground="Green")
-            label.place(y=270, x=7)
+            ctime = Label(master, font=("Arial", 50), background="#1a1a1a", foreground="Green")
+            ctime.config(text=string)
+            ctime.after(1000, time)
+            ctime.place(y=270, x=7)
         except:
             pass
     time()
