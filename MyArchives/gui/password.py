@@ -8,7 +8,7 @@ from .home_dir import home_directory
 
 newpath = home_directory()
 
-master = ctk.CTk()
+master = ctk.CTk() #I don't know why or how but this line prevents generation of a new window by tkinter
 
 
 def new_pass():
