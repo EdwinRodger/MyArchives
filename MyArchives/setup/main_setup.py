@@ -5,9 +5,7 @@ from .image_setup import icon_download
 
 
 def setup():
-    folder_setup.myarchive()
-    folder_setup.myarchives()
-    folder_setup.textfiles()
+    folder_setup()
     file_setup.md_setup()
     file_setup.pathtxt_setup()
     icon_download()
