@@ -1,8 +1,8 @@
 import hashlib
 import os
+from sys import exit
 from tkinter import messagebox
 from tkinter.simpledialog import askstring
-from sys import exit
 
 from .home_dir import home_directory
 
@@ -10,9 +10,7 @@ newpath = home_directory()
 
 
 def new_pass():
-    dialog = askstring(
-        title="Password", prompt="\t\tEnter New Password\t\t"
-    )
+    dialog = askstring(title="Password", prompt="\t\tEnter New Password\t\t")
 
     if dialog == None:
         exit()
@@ -39,7 +37,7 @@ def new_pass():
 def check_pass():
     dialog = askstring(
         title="Password", prompt="\t\tEnter Your Password\t\t"
-    ) # The password provided by the user to check
+    )  # The password provided by the user to check
 
     if dialog == None:
         exit()

@@ -1,7 +1,7 @@
+from sys import exit
 from time import strftime
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
-from sys import exit
 
 import customtkinter as ctk
 import tkcalendar
