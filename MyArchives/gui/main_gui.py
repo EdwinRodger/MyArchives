@@ -17,7 +17,7 @@ def main():
     password_ui()
     ctk.set_default_color_theme("dark-blue")
     master = ctk.CTk()
-    master.geometry("1077x600")
+    master.geometry("1077x600+0+0")
     master.title("MyArchives")
     master.iconbitmap(f"{newpath}Diary.ico")
 
