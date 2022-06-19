@@ -1,32 +1,28 @@
 import hashlib
 import os
 from tkinter import messagebox
-
-import customtkinter as ctk
+from tkinter.simpledialog import askstring
+from sys import exit
 
 from .home_dir import home_directory
 
 newpath = home_directory()
 
-# I don't know why or how but below line prevents generation of a new window by tkinter
-master = ctk.CTk()
-
 
 def new_pass():
-    dialog = ctk.CTkInputDialog(
-        master=None, text="Enter New Password", title="Password"
+    dialog = askstring(
+        title="Password", prompt="\t\tEnter New Password\t\t"
     )
-    password = dialog.get_input()
 
-    if password == None:
-        quit()
-    elif password == "":
+    if dialog == None:
+        exit()
+    elif dialog == "":
         messagebox.showinfo("Invailid Password", "Password can't be a empty string")
         new_pass()
     else:
         # Password generation
         salt = os.urandom(32)
-        key = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt, 100000)
+        key = hashlib.pbkdf2_hmac("sha256", dialog.encode("utf-8"), salt, 100000)
 
         # Store them as:
         storage = salt + key
@@ -41,13 +37,12 @@ def new_pass():
 
 
 def check_pass():
-    dialog = ctk.CTkInputDialog(
-        master=None, text="Enter Your Password", title="Password"
-    )
-    password_to_check = dialog.get_input()  # The password provided by the user to check
+    dialog = askstring(
+        title="Password", prompt="\t\tEnter Your Password\t\t"
+    ) # The password provided by the user to check
 
-    if password_to_check == None:
-        quit()
+    if dialog == None:
+        exit()
     else:
         with open(f"{newpath}Textfiles/pass.key", "rb") as f:
             passwrd = f.read()
@@ -59,7 +54,7 @@ def check_pass():
         # time put in the password to check
         new_key = hashlib.pbkdf2_hmac(
             "sha256",
-            password_to_check.encode("utf-8"),
+            dialog.encode("utf-8"),
             passwrd_salt,
             100000,
         )
