@@ -1,3 +1,17 @@
+# v6.0
+###### Released: 23 June 2022
+### What’s New -
+- 📅Added Calendar
+- 🕛Added clock
+- 🔐Added password feature
+- ✨Added menu bar for different functions
+- ✨New Icon (may change in future)
+### Enhanced Features -
+- Added shortcuts for text box
+- Added scrollbar in text box
+- Main window will always spawn at top right corner of screen
+- **Massive** code improvements
+
 # v5.0🎉🎉🎉
 ###### Released: 16 June 2022
 ### What's new -
