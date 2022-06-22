@@ -2,6 +2,7 @@ from sys import exit
 from time import strftime
 from tkinter import *
 from tkinter.scrolledtext import ScrolledText
+import pyttsx3
 
 import customtkinter as ctk
 import tkcalendar
@@ -11,7 +12,7 @@ from .online_sites import *
 from .password import new_pass, password_ui
 
 newpath = home_directory()
-
+engine = pyttsx3.init()
 
 def main():
     password_ui()
@@ -123,6 +124,20 @@ def main():
     def clear_all():
         box.delete(1.0, END)
 
+    def tts():
+        voices = engine.getProperty('voices')
+        engine.setProperty('voice', voices[1].id) 
+        engine.say(box.get(0.0, END))
+        engine.runAndWait()
+
+    # MyArchives menu
+    myarchives_menu = Menu(my_menu, tearoff=False)
+    my_menu.add_cascade(label="MyArc", menu=myarchives_menu)
+    myarchives_menu.add_command(label="Text-To-Speech", command=tts)
+    myarchives_menu.add_separator()
+    myarchives_menu.add_command(label="Change Password", command=new_pass)
+
+
     # Add Edit Menu
     edit_menu = Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Edit", menu=edit_menu)
@@ -156,10 +171,6 @@ def main():
     help_menu.add_command(label="Contributing", command=contributing)
     help_menu.add_command(label="Releases", command=releases)
 
-    # Change Password menu
-    password_menu = Menu(my_menu, tearoff=False)
-    my_menu.add_cascade(label="Change Password", menu=password_menu)
-    password_menu.add_command(label="Change Password", command=new_pass)
     # If we comment the below line, the window will get close but the whole program will remain to run in background (In windows, you can see it using task manager under "background processes"). While developing, you will know it when you will close main window but the program won't get out of terminal
     master.protocol("WM_DELETE_WINDOW", exit)
     master.mainloop()
