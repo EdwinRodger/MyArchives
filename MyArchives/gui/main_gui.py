@@ -1,23 +1,26 @@
+# Python Libraries
 from sys import exit
 from time import strftime
 from tkinter import *
 from tkinter import messagebox
 from tkinter.scrolledtext import ScrolledText
-import pyttsx3
 
+# Third Party Libraries
 import customtkinter as ctk
+import pyttsx3
+import sounddevice as sd
+import speech_recognition as sr
 import tkcalendar
+import wavio as wv
 
+# User Made Libraries
 from .home_dir import home_directory
 from .online_sites import *
 from .password import new_pass, password_ui
 
-import sounddevice as sd
-import wavio as wv
-import speech_recognition as sr
-
 newpath = home_directory()
 engine = pyttsx3.init()
+
 
 def main():
     password_ui()
@@ -128,11 +131,11 @@ def main():
     # Clear All Text
     def clear_all():
         box.delete(1.0, END)
-
+    # Text-To-Speech
     def tts():
         engine.say(box.get(0.0, END))
         engine.runAndWait()
-    
+    # Speech-To-Text
     def stt():
         # Initialize the recognizer
         r = sr.Recognizer()
@@ -143,15 +146,19 @@ def main():
         # Recording duration in seconds
         duration = 20
         try:
-            imp = messagebox.askyesno(title="Important!", message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, do not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. After completion of STT, type some words or just add a space at last in your entry to save it or else the entry won't get saved\n8. The results may not meet your expectations\n9. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n")
+            imp = messagebox.askyesno(
+                title="Important!",
+                message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, do not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. After completion of STT, type some words or just add a space at last in your entry to save it or else the entry won't get saved\n8. The results may not meet your expectations\n9. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
+            )
             if imp == True:
                 engine.say("Listening!")
                 engine.runAndWait()
 
                 # to record audio from
                 # sound-device into a Numpy
-                recording = sd.rec(int(duration * frequency),
-                                samplerate = frequency, channels = 2)
+                recording = sd.rec(
+                    int(duration * frequency), samplerate=frequency, channels=2
+                )
 
                 # Wait for the audio to complete
                 sd.wait()
@@ -164,19 +171,21 @@ def main():
                 # file with the given sampling frequency
                 wv.write(f"{newpath}recording1.wav", recording, frequency, sampwidth=2)
 
-                file_audio = sr.AudioFile(f'{newpath}recording1.wav')
+                file_audio = sr.AudioFile(f"{newpath}recording1.wav")
 
                 with file_audio as source:
                     audio_text = r.record(source)
-                
+
                 rt = r.recognize_google(audio_text)
-                
+
                 box.insert(0.0, f"\n\n{rt}\n\n")
             else:
                 pass
         except:
-            messagebox.showerror(title="Error!", message="Can't able to use speech to text right now\nTry again later")
-
+            messagebox.showerror(
+                title="Error!",
+                message="Can't able to use speech to text right now\nTry again later",
+            )
 
     # MyArchives menu
     myarchives_menu = Menu(my_menu, tearoff=False)
@@ -185,7 +194,6 @@ def main():
     myarchives_menu.add_command(label="Speech-To-Text", command=stt)
     myarchives_menu.add_separator()
     myarchives_menu.add_command(label="Change Password", command=new_pass)
-
 
     # Add Edit Menu
     edit_menu = Menu(my_menu, tearoff=False)
