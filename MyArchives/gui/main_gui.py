@@ -22,11 +22,20 @@ newpath = home_directory()
 engine = pyttsx3.init()
 
 
+
 def main():
     password_ui()
     ctk.set_default_color_theme("dark-blue")
     master = ctk.CTk()
-    master.geometry("1077x600+0+0")
+    app_height = 600
+    app_width = 1077
+    # Taking primary monitor's screen height and width
+    screen_width = master.winfo_screenwidth()
+    screen_height = master.winfo_screenheight()
+    # Placing app in the middle of the screen
+    x = (screen_width / 2) - (app_width / 2)
+    y = (screen_height / 2 ) - (app_height / 2)
+    master.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     master.title("MyArchives")
     master.iconbitmap(f"{newpath}Diary.ico")
 
