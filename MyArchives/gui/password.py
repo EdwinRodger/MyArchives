@@ -10,7 +10,7 @@ newpath = home_directory()
 
 
 def new_pass():
-    dialog = askstring(title="Password", prompt="\t\tEnter New Password\t\t")
+    dialog = askstring(title="Password", prompt="\t\tEnter New Password\t\t", show="●")
 
     if dialog == None:
         exit()
@@ -36,7 +36,7 @@ def new_pass():
 
 def check_pass():
     dialog = askstring(
-        title="Password", prompt="\t\tEnter Your Password\t\t"
+        title="Password", prompt="\t\tEnter Your Password\t\t", show="●"
     )  # The password provided by the user to check
 
     if dialog == None:
