@@ -1,4 +1,4 @@
-# v6.0
+# 3.1.0
 ###### Released: 23 June 2022
 ### What’s New -
 - 📅Added Calendar
@@ -12,7 +12,7 @@
 - Main window will always spawn at top right corner of screen
 - **Massive** code improvements
 
-# v5.0🎉🎉🎉
+# 3.0.0🎉🎉🎉
 ###### Released: 16 June 2022
 ### What's new -
 - ✨ **A whole new GUI**
@@ -20,7 +20,7 @@
 - 📅 Changing date is now done with date spinbox
 - 📖 Saving entries is done automatically
 
-# v4.0🎉🎉🎉
+# 2.1.0🎉🎉🎉
 
 ###### Released: 1 June 2022
 
@@ -41,7 +41,7 @@
     - Organized imports
     - Code cleanup
 
-# v3.0🎉🎉🎉
+# 2.0.0🎉🎉🎉
 
 ###### Released: 23 May 2022
 
@@ -63,7 +63,7 @@ Get direct links to following sites -
 5. License
 6. Releases
 
-# v2.0🎉🎉🎉
+# 1.3.0🎉🎉🎉
 
 ###### Released: 14 May 2022
 
@@ -71,19 +71,19 @@ Get direct links to following sites -
 * 🥳 New Icon
 * 📜🔫 Removed unnecessary scripts
 
-# v1.2
+# 1.2.0
 
 ###### Released: 8 May 2022
 
 * ✨Code enhancements
 
-# v1.1
+# 1.1.0
 
 ###### Released: 3 May 2022
 
 * ✨Code enhancements
 
-# v1.0
+# 1.0.0
 
 ###### Released: 27 April 2022
 
