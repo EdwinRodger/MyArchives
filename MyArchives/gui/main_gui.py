@@ -16,14 +16,13 @@ import wavio as wv
 # User Made Libraries
 from .home_dir import home_directory
 from .online_sites import *
-from .password import new_pass, password_ui
+from .password import new_pass
 
 homepath = home_directory()
 engine = pyttsx3.init()
 
 
 def main():
-    password_ui()
     ctk.set_default_color_theme("dark-blue")
     master = ctk.CTk()
     app_height = 600
