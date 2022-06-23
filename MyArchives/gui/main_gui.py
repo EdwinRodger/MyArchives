@@ -44,32 +44,32 @@ def main():
     def get_date(e):
         try:
             with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "r") as f:
-                box.delete(0.0, END)
-                box.insert(0.0, f.read())
+                text_box.delete(0.0, END)
+                text_box.insert(0.0, f.read())
         except:
-            box.delete(0.0, END)
-            box.insert(0.0, "No entry found! Start typing to save an entry...")
+            text_box.delete(0.0, END)
+            text_box.insert(0.0, "No entry found! Start typing to save an entry...")
 
     cal.bind("<Leave>", get_date)
 
-    box = ScrolledText(master, width=82, height=30, undo=True)
-    box.insert(
+    text_box = ScrolledText(master, width=82, height=30, undo=True)
+    text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
     )
-    box.place(x=400)
+    text_box.place(x=400)
 
     def save(e):
         if "<Key>" == "<Return>":
-            box.insert("\n\n")
+            text_box.insert("\n\n")
         with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "w") as f:
-            f.write(box.get(0.0, END))
+            f.write(text_box.get(0.0, END))
 
     def two_spaces(e):
-        box.insert(float(box.index(INSERT)), "\n")
+        text_box.insert(float(text_box.index(INSERT)), "\n")
 
-    box.bind("<Key>", save)
-    box.bind("<Return>", two_spaces)
+    text_box.bind("<Key>", save)
+    text_box.bind("<Return>", two_spaces)
 
     # Clock
     def time():
@@ -97,11 +97,11 @@ def main():
         if e:
             selected = master.clipboard_get()
         else:
-            if box.selection_get():
+            if text_box.selection_get():
                 # Grab selected text from text box
-                selected = box.selection_get()
+                selected = text_box.selection_get()
                 # Delete Selected Text from text box
-                box.delete("sel.first", "sel.last")
+                text_box.delete("sel.first", "sel.last")
                 # Clear the clipboard then append
                 master.clipboard_clear()
                 master.clipboard_append(selected)
@@ -113,9 +113,9 @@ def main():
         if e:
             selected = master.clipboard_get()
 
-        if box.selection_get():
+        if text_box.selection_get():
             # Grab selected text from text box
-            selected = box.selection_get()
+            selected = text_box.selection_get()
             # Clear the clipboard then append
             master.clipboard_clear()
             master.clipboard_append(selected)
@@ -128,21 +128,21 @@ def main():
             selected = master.clipboard_get()
         else:
             if selected:
-                position = box.index(INSERT)
-                box.insert(position, selected)
+                position = text_box.index(INSERT)
+                text_box.insert(position, selected)
 
     # Select all Text
     def select_all(e):
         # Add sel tag to select all text
-        box.tag_add("sel", "1.0", "end")
+        text_box.tag_add("sel", "1.0", "end")
 
     # Clear All Text
     def clear_all():
-        box.delete(1.0, END)
+        text_box.delete(1.0, END)
 
     # Text-To-Speech
     def tts():
-        engine.say(box.get(0.0, END))
+        engine.say(text_box.get(0.0, END))
         engine.runAndWait()
 
     # Speech-To-Text
@@ -188,7 +188,7 @@ def main():
 
                 rt = r.recognize_google(audio_text)
 
-                box.insert(0.0, f"\n\n{rt}\n\n")
+                text_box.insert(0.0, f"\n\n{rt}\n\n")
             else:
                 pass
         except:
@@ -218,8 +218,12 @@ def main():
         label="Paste", command=lambda: paste_text(False), accelerator="(Ctrl+v)"
     )
     edit_menu.add_separator()
-    edit_menu.add_command(label="Undo", command=box.edit_undo, accelerator="(Ctrl+Z)")
-    edit_menu.add_command(label="Redo", command=box.edit_redo, accelerator="(Ctrl+y)")
+    edit_menu.add_command(
+        label="Undo", command=text_box.edit_undo, accelerator="(Ctrl+Z)"
+    )
+    edit_menu.add_command(
+        label="Redo", command=text_box.edit_redo, accelerator="(Ctrl+y)"
+    )
     edit_menu.add_separator()
     edit_menu.add_command(
         label="Select All", command=lambda: select_all(True), accelerator="(Ctrl+a)"
