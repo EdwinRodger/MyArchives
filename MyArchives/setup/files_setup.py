@@ -9,7 +9,7 @@ metadata = {
     "metadata": {
         "application": "MyArchives",
         "version": "3.2.0",
-        "author": "EdwinRodger"
+        "author": "EdwinRodger",
     }
 }
 

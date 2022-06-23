@@ -22,7 +22,6 @@ newpath = home_directory()
 engine = pyttsx3.init()
 
 
-
 def main():
     password_ui()
     ctk.set_default_color_theme("dark-blue")
@@ -34,7 +33,7 @@ def main():
     screen_height = master.winfo_screenheight()
     # Placing app in the middle of the screen
     x = (screen_width / 2) - (app_width / 2)
-    y = (screen_height / 2 ) - (app_height / 2)
+    y = (screen_height / 2) - (app_height / 2)
     master.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     master.title("MyArchives")
     master.iconbitmap(f"{newpath}Diary.ico")
@@ -140,10 +139,12 @@ def main():
     # Clear All Text
     def clear_all():
         box.delete(1.0, END)
+
     # Text-To-Speech
     def tts():
         engine.say(box.get(0.0, END))
         engine.runAndWait()
+
     # Speech-To-Text
     def stt():
         # Initialize the recognizer
