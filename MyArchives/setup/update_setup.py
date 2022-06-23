@@ -1,6 +1,6 @@
 import hashlib
 import os.path
-from tkinter.messagebox import showinfo
+from tkinter.messagebox import askyesno
 from urllib.request import Request, urlopen
 from webbrowser import open_new_tab
 
@@ -13,17 +13,6 @@ url = Request(
     "https://api.github.com/repos/EdwinRodger/MyArchives/releases/latest",
     headers={"User-Agent": "Mozilla/5.0"},
 )
-
-
-def updater():
-    # again read the website
-    response = urlopen(url).read()
-
-    # create a hash
-    currentHash = hashlib.sha224(response).hexdigest()
-
-    with open(f"{newpath}Textfiles/versionhash.txt", "w") as f:
-        f.write(currentHash)
 
 
 # to perform a GET request and load the
@@ -53,16 +42,24 @@ def update():
             # if something changed in the hashes
             else:
                 # notify
-                upd = showinfo(
+                upd = askyesno(
                     title="Update Available!",
                     message="A new version of MyArchives has been released!\nDo you want to download it?",
                 )
+
                 if upd == True:
-                    updater()
                     open_new_tab(
                         "https://github.com/EdwinRodger/MyArchives/releases/latest/"
                     )
-                else:
-                    updater()
+
+                # again read the website
+                response = urlopen(url).read()
+
+                # create a hash
+                currentHash = hashlib.sha224(response).hexdigest()
+
+                with open(f"{newpath}Textfiles/versionhash.txt", "w") as f:
+                    f.write(currentHash)
+
         except Exception:
             pass
