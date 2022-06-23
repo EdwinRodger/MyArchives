@@ -6,5 +6,5 @@ from os.path import expanduser
 # Finds user home directory on different OS and makes a MyArchives folder
 def home_directory():
     home = expanduser("~")
-    newpath = f"{home}\\MyArchives\\"
-    return newpath
+    homepath = f"{home}\\MyArchives\\"
+    return homepath

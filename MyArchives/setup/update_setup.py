@@ -6,7 +6,7 @@ from webbrowser import open_new_tab
 
 from .tasks import home_directory
 
-newpath = home_directory()
+homepath = home_directory()
 
 # setting the URL you want to monitor
 url = Request(
@@ -19,14 +19,14 @@ url = Request(
 # content of the website and store it in a var
 def update():
     # to create and save the initial hash
-    if not os.path.exists(f"{newpath}/Textfiles/versionhash.txt"):
+    if not os.path.exists(f"{homepath}/Textfiles/versionhash.txt"):
         response = urlopen(url).read()
         currentHash = hashlib.sha224(response).hexdigest()
-        with open(f"{newpath}Textfiles/versionhash.txt", "w") as f:
+        with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
             f.write(currentHash)
     else:
         try:
-            with open(f"{newpath}Textfiles/versionhash.txt", "r") as f:
+            with open(f"{homepath}Textfiles/versionhash.txt", "r") as f:
                 currentHash = f.read()
 
             # perform the get request
@@ -58,7 +58,7 @@ def update():
                 # create a hash
                 currentHash = hashlib.sha224(response).hexdigest()
 
-                with open(f"{newpath}Textfiles/versionhash.txt", "w") as f:
+                with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
                     f.write(currentHash)
 
         except Exception:

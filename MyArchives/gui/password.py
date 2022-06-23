@@ -6,7 +6,7 @@ from tkinter.simpledialog import askstring
 
 from .home_dir import home_directory
 
-newpath = home_directory()
+homepath = home_directory()
 
 
 def new_pass():
@@ -29,7 +29,7 @@ def new_pass():
         salt_from_storage = storage[:32]  # 32 is the length of the salt
         key_from_storage = storage[32:]
 
-        with open(f"{newpath}Textfiles/pass.key", "wb") as f:
+        with open(f"{homepath}Textfiles/pass.key", "wb") as f:
             f.write(storage)
         messagebox.showinfo("Password Set", "New Password Set!")
 
@@ -42,7 +42,7 @@ def check_pass():
     if dialog == None:
         exit()
     else:
-        with open(f"{newpath}Textfiles/pass.key", "rb") as f:
+        with open(f"{homepath}Textfiles/pass.key", "rb") as f:
             passwrd = f.read()
 
         passwrd_salt = passwrd[:32]
@@ -68,7 +68,7 @@ def check_pass():
 
 
 def password_ui():
-    if not os.path.exists(f"{newpath}Textfiles/pass.key"):
+    if not os.path.exists(f"{homepath}Textfiles/pass.key"):
         new_pass()
     else:
         check_pass()

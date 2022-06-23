@@ -18,7 +18,7 @@ from .home_dir import home_directory
 from .online_sites import *
 from .password import new_pass, password_ui
 
-newpath = home_directory()
+homepath = home_directory()
 engine = pyttsx3.init()
 
 
@@ -36,14 +36,14 @@ def main():
     y = (screen_height / 2) - (app_height / 2)
     master.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     master.title("MyArchives")
-    master.iconbitmap(f"{newpath}Diary.ico")
+    master.iconbitmap(f"{homepath}Diary.ico")
 
     cal = tkcalendar.Calendar(master, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
 
     def get_date(e):
         try:
-            with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "r") as f:
+            with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "r") as f:
                 text_box.delete(0.0, END)
                 text_box.insert(0.0, f.read())
         except:
@@ -62,7 +62,7 @@ def main():
     def save(e):
         if "<Key>" == "<Return>":
             text_box.insert("\n\n")
-        with open(f"{newpath}MyArchive/{cal.selection_get()}.txt", "w") as f:
+        with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
             f.write(text_box.get(0.0, END))
 
     def two_spaces(e):
@@ -179,9 +179,9 @@ def main():
                 # using wavio to save the recording in .wav format
                 # This will convert the NumPy array to an audio
                 # file with the given sampling frequency
-                wv.write(f"{newpath}recording1.wav", recording, frequency, sampwidth=2)
+                wv.write(f"{homepath}recording1.wav", recording, frequency, sampwidth=2)
 
-                file_audio = sr.AudioFile(f"{newpath}recording1.wav")
+                file_audio = sr.AudioFile(f"{homepath}recording1.wav")
 
                 with file_audio as source:
                     audio_text = r.record(source)

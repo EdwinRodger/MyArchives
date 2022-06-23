@@ -7,11 +7,11 @@ import requests  # to get image from the web
 
 from .tasks import home_directory
 
-newpath = home_directory()
+homepath = home_directory()
 
 
 def icon_download():
-    if not os.path.exists(f"{newpath}Diary.ico"):
+    if not os.path.exists(f"{homepath}Diary.ico"):
         ## Set up the image URL and filename
         image_url = "https://raw.githubusercontent.com/EdwinRodger/MyArchives/main/.github/images/Diary.ico"
         filename = image_url.split("/")[-1]
@@ -25,7 +25,7 @@ def icon_download():
             r.raw.decode_content = True
 
             # Open a local file with wb ( write binary ) permission.
-            with open(f"{newpath}Diary.ico", "wb") as f:
+            with open(f"{homepath}Diary.ico", "wb") as f:
                 shutil.copyfileobj(r.raw, f)
         else:
             messagebox.showerror(
