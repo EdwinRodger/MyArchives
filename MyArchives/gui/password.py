@@ -3,10 +3,14 @@ import os
 from sys import exit
 from tkinter import messagebox
 from tkinter.simpledialog import askstring
+from customtkinter import CTk
 
 from .home_dir import home_directory
 
 homepath = home_directory()
+
+# Uses MyArchives password for messagebox
+CTk().iconbitmap(default=f"{homepath}Diary.ico")
 
 
 def new_pass():
