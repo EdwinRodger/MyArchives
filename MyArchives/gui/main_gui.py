@@ -5,6 +5,7 @@ from tkinter import *
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
 from tkinter.ttk import Entry
+from os import remove
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -198,6 +199,8 @@ def main():
                     audio_text = r.record(source)
 
                 rt = r.recognize_google(audio_text)
+
+                remove(f"{homepath}recording1.wav")
 
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
 
