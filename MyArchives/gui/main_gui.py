@@ -193,10 +193,10 @@ def main():
                     f.write(text_box.get(0.0, END))
             else:
                 pass
-        except:
+        except Exception as e:
             messagebox.showerror(
                 title="Error!",
-                message="Can't able to use speech to text right now\nTry again later",
+                message=f"There is some error while using speech to text\n\n{e}",
             )
 
     # MyArchives menu
