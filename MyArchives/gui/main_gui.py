@@ -70,8 +70,6 @@ def main():
     text_box.place(x=400, y=40)
 
     def save(e):
-        if "<Key>" == "<Return>":
-            text_box.insert("\n\n")
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
             f.write(entry_box.get())
             f.write("\n")
