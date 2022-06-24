@@ -25,20 +25,20 @@ engine = pyttsx3.init()
 
 def main():
     ctk.set_default_color_theme("dark-blue")
-    master = ctk.CTk()
+    window = ctk.CTk()
     app_height = 444
     app_width = 1077
     # Taking primary monitor's screen height and width
-    screen_width = master.winfo_screenwidth()
-    screen_height = master.winfo_screenheight()
+    screen_width = window.winfo_screenwidth()
+    screen_height = window.winfo_screenheight()
     # Placing app in the middle of the screen
     x = (screen_width / 2) - (app_width / 2)
     y = (screen_height / 2) - (app_height / 2)
-    master.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
-    master.title("MyArchives")
-    master.iconbitmap(f"{homepath}Diary.ico")
+    window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
+    window.title("MyArchives")
+    window.iconbitmap(f"{homepath}Diary.ico")
 
-    cal = tkcalendar.Calendar(master, font="comic_sans 18", showweeknumbers=False)
+    cal = tkcalendar.Calendar(window, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
 
     def get_date(e):
@@ -58,11 +58,11 @@ def main():
 
     cal.bind("<Leave>", get_date)
 
-    entry_box = Entry(master, font="Calibri 21", width=48)
+    entry_box = Entry(window, font="Calibri 21", width=48)
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
 
-    text_box = ScrolledText(master, width=82, height=20, font="Calibri", undo=True)
+    text_box = ScrolledText(window, width=82, height=20, font="Calibri", undo=True)
     text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
@@ -89,7 +89,7 @@ def main():
         try:
             string = strftime("%I:%M:%S %p")
             ctime = Label(
-                master, font=("Arial", 50), background="#1a1a1a", foreground="Green"
+                window, font=("Arial", 50), background="#1a1a1a", foreground="Green"
             )
             ctime.config(text=string)
             ctime.after(1000, time)
@@ -100,15 +100,15 @@ def main():
     time()
 
     # Menubar
-    my_menu = Menu(master)
-    master.config(menu=my_menu)
+    my_menu = Menu(window)
+    window.config(menu=my_menu)
 
     # Cut Text
     def cut_text(e):
         global selected
         # Check to see if keyboard shortcut used
         if e:
-            selected = master.clipboard_get()
+            selected = window.clipboard_get()
         else:
             if text_box.selection_get():
                 # Grab selected text from text box
@@ -116,29 +116,29 @@ def main():
                 # Delete Selected Text from text box
                 text_box.delete("sel.first", "sel.last")
                 # Clear the clipboard then append
-                master.clipboard_clear()
-                master.clipboard_append(selected)
+                window.clipboard_clear()
+                window.clipboard_append(selected)
 
     # Copy Text
     def copy_text(e):
         global selected
         # check to see if we used keyboard shortcuts
         if e:
-            selected = master.clipboard_get()
+            selected = window.clipboard_get()
 
         if text_box.selection_get():
             # Grab selected text from text box
             selected = text_box.selection_get()
             # Clear the clipboard then append
-            master.clipboard_clear()
-            master.clipboard_append(selected)
+            window.clipboard_clear()
+            window.clipboard_append(selected)
 
     # Paste Text
     def paste_text(e):
         global selected
         # Check to see if keyboard shortcut used
         if e:
-            selected = master.clipboard_get()
+            selected = window.clipboard_get()
         else:
             if selected:
                 position = text_box.index(INSERT)
@@ -259,5 +259,5 @@ def main():
     help_menu.add_command(label="Releases", command=releases)
 
     # If we comment the below line, the window will get close but the whole program will remain to run in background (In windows, you can see it using task manager under "background processes"). While developing, you will know it when you will close main window but the program won't get out of terminal
-    master.protocol("WM_DELETE_WINDOW", exit)
-    master.mainloop()
+    window.protocol("WM_DELETE_WINDOW", exit)
+    window.mainloop()
