@@ -157,7 +157,7 @@ def main():
         try:
             imp = messagebox.askyesno(
                 title="Important!",
-                message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, do not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. After completion of STT, type some words or just add a space at last in your entry to save it or else the entry won't get saved\n8. The results may not meet your expectations\n9. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
+                message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, do not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
             )
             if imp == True:
                 engine.say("Listening!")
@@ -188,6 +188,9 @@ def main():
                 rt = r.recognize_google(audio_text)
 
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
+
+                with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
+                    f.write(text_box.get(0.0, END))
             else:
                 pass
         except:
