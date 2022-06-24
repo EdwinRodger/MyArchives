@@ -4,6 +4,7 @@ from time import strftime
 from tkinter import *
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
+from tkinter.ttk import Entry
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -43,25 +44,37 @@ def main():
     def get_date(e):
         try:
             with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "r") as f:
-                text_box.delete(0.0, END)
-                text_box.insert(0.0, f.read())
-        except:
+                lines = f.readlines()
+            entry_box.delete(0, END)
             text_box.delete(0.0, END)
-            text_box.insert(0.0, "No entry found! Start typing to save an entry...")
+            entry_box.insert(0, lines[0])
+            for j in lines[-1:0:-1]:
+                text_box.insert(0.0, j)
+        except:
+            entry_box.delete(0, END)
+            text_box.delete(0.0, END)
+            entry_box.insert(0, "No entry found!")
+            text_box.insert(0.0, "Start typing to save an entry...")
 
     cal.bind("<Leave>", get_date)
 
-    text_box = ScrolledText(master, width=82, height=30, undo=True)
+    entry_box = Entry(master, font="Calibri 21", width=48)
+    entry_box.insert(0, "Title")
+    entry_box.place(x=400)
+
+    text_box = ScrolledText(master, width=82, height=30, font="Calibri", undo=True)
     text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
     )
-    text_box.place(x=400)
+    text_box.place(x=400, y=40)
 
     def save(e):
         if "<Key>" == "<Return>":
             text_box.insert("\n\n")
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
+            f.write(entry_box.get())
+            f.write("\n")
             f.write(text_box.get(0.0, END))
 
     def two_spaces(e):
@@ -69,6 +82,7 @@ def main():
 
     text_box.bind("<Key>", save)
     text_box.bind("<Return>", two_spaces)
+    entry_box.bind("<Key>", save)
 
     # Clock
     def time():
