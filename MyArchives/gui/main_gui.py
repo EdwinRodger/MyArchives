@@ -2,7 +2,7 @@
 from sys import exit
 from time import strftime
 from tkinter import *
-from tkinter import messagebox
+from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
 
 # Third Party Libraries
@@ -155,7 +155,7 @@ def main():
         # Recording duration in seconds
         duration = 20
         try:
-            imp = messagebox.askyesno(
+            imp = askyesno(
                 title="Important!",
                 message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
             )
@@ -194,7 +194,7 @@ def main():
             else:
                 pass
         except Exception as e:
-            messagebox.showerror(
+            showerror(
                 title="Error!",
                 message=f"There is some error while using speech to text\n\n{e}",
             )
