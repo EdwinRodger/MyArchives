@@ -26,7 +26,7 @@ engine = pyttsx3.init()
 def main():
     ctk.set_default_color_theme("dark-blue")
     master = ctk.CTk()
-    app_height = 600
+    app_height = 444
     app_width = 1077
     # Taking primary monitor's screen height and width
     screen_width = master.winfo_screenwidth()
@@ -62,7 +62,7 @@ def main():
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
 
-    text_box = ScrolledText(master, width=82, height=30, font="Calibri", undo=True)
+    text_box = ScrolledText(master, width=82, height=20, font="Calibri", undo=True)
     text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
