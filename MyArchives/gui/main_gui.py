@@ -19,6 +19,7 @@ import wavio as wv
 from .home_dir import home_directory
 from .online_sites import *
 from .password import new_pass
+from .import_export import *
 
 homepath = home_directory()
 engine = pyttsx3.init()
@@ -57,7 +58,7 @@ def main():
             entry_box.insert(0, "No entry found!")
             text_box.insert(0.0, "Start typing to save an entry...")
 
-    cal.bind("<Leave>", get_date)
+    # cal.bind("<Leave>", get_date)
 
     entry_box = Entry(window, font="Calibri 21", width=48)
     entry_box.insert(0, "Title")
@@ -219,6 +220,11 @@ def main():
     my_menu.add_cascade(label="File", menu=myarchives_menu)
     myarchives_menu.add_command(label="Text-To-Speech", command=tts)
     myarchives_menu.add_command(label="Speech-To-Text", command=stt)
+    myarchives_menu.add_separator()
+    myarchives_menu.add_cascade(label="Import (zip file)", command=import_zip)
+    myarchives_menu.add_separator()
+    myarchives_menu.add_cascade(label="Export (text file)", command=export_txt)
+    myarchives_menu.add_cascade(label="Export (zip file)",command=export_zip)
     myarchives_menu.add_separator()
     myarchives_menu.add_command(label="Change Password", command=new_pass)
 

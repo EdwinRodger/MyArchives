@@ -2,7 +2,7 @@ from shutil import make_archive
 import zipfile
 from tkinter.filedialog import askdirectory, askopenfile
 from tkinter import filedialog
-from home_dir import home_directory
+from .home_dir import home_directory
 from os import listdir
 
 homepath = home_directory()
@@ -32,4 +32,3 @@ def export_txt():
                 outfile.write("\n")
                 outfile.write(infile.read())
                 outfile.write("-----\n\n")
-
