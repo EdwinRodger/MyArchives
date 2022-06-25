@@ -58,7 +58,7 @@ def main():
             entry_box.insert(0, "No entry found!")
             text_box.insert(0.0, "Start typing to save an entry...")
 
-    # cal.bind("<Leave>", get_date)
+    cal.bind("<Leave>", get_date)
 
     entry_box = Entry(window, font="Calibri 21", width=48)
     entry_box.insert(0, "Title")
@@ -255,7 +255,7 @@ def main():
 
     # Create an Options menu item
     help_menu = Menu(my_menu, tearoff=False)
-    my_menu.add_cascade(label="Online", menu=help_menu)
+    my_menu.add_cascade(label="Help", menu=help_menu)
     help_menu.add_command(label="Website", command=website)
     help_menu.add_separator()
     help_menu.add_command(label="Changelog", command=changelog)
