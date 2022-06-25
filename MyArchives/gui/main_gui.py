@@ -1,11 +1,11 @@
 # Python Libraries
+from os import remove
 from sys import exit
 from time import strftime
 from tkinter import *
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
 from tkinter.ttk import Entry
-from os import remove
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -17,9 +17,9 @@ import wavio as wv
 
 # User Made Libraries
 from .home_dir import home_directory
+from .import_export import *
 from .online_sites import *
 from .password import new_pass
-from .import_export import *
 
 homepath = home_directory()
 engine = pyttsx3.init()

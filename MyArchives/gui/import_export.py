@@ -1,8 +1,9 @@
-from shutil import make_archive
 import zipfile
-from tkinter.filedialog import askdirectory, askopenfilename
-from .home_dir import home_directory
 from os import listdir
+from shutil import make_archive
+from tkinter.filedialog import askdirectory, askopenfilename
+
+from .home_dir import home_directory
 
 homepath = home_directory()
 
