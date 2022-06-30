@@ -1,7 +1,7 @@
-from zipfile import ZipFile
 from os import listdir
 from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
+from zipfile import ZipFile
 
 from .home_dir import home_directory
 

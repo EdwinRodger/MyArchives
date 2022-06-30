@@ -1,9 +1,9 @@
 ## Importing Necessary Modules
 from os.path import exists
-from shutil  import copyfileobj # to save it locally
+from shutil import copyfileobj  # to save it locally
 from tkinter import messagebox
 
-from requests  import get # to get image from the web
+from requests import get  # to get image from the web
 
 from .tasks import home_directory
 

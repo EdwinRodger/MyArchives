@@ -11,7 +11,7 @@ from tkinter.ttk import Entry
 import customtkinter as ctk
 from pyttsx3 import init
 from sounddevice import rec, wait
-from speech_recognition import Recognizer, AudioFile
+from speech_recognition import AudioFile, Recognizer
 from tkcalendar import Calendar
 from wavio import write
 
