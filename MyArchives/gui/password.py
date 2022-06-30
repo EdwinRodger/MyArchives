@@ -11,7 +11,10 @@ from .home_dir import home_directory
 homepath = home_directory()
 
 # Uses MyArchives password for messagebox
-CTk().iconbitmap(default=f"{homepath}Diary.ico")
+try:
+    CTk().iconbitmap(default=f"{homepath}Diary.ico")
+except:
+    pass
 
 
 def new_pass():
