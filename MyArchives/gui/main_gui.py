@@ -9,11 +9,11 @@ from tkinter.ttk import Entry
 
 # Third Party Libraries
 import customtkinter as ctk
-import pyttsx3
-import sounddevice as sd
-import speech_recognition as sr
-import tkcalendar
-import wavio as wv
+from pyttsx3 import init
+from sounddevice import rec, wait
+from speech_recognition import Recognizer, AudioFile
+from tkcalendar import Calendar
+from wavio import write
 
 # User Made Libraries
 from .home_dir import home_directory
@@ -22,7 +22,7 @@ from .online_sites import *
 from .password import new_pass
 
 homepath = home_directory()
-engine = pyttsx3.init()
+engine = init()
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
     window.title("MyArchives")
     window.iconbitmap(f"{homepath}Diary.ico")
 
-    cal = tkcalendar.Calendar(window, font="comic_sans 18", showweeknumbers=False)
+    cal = Calendar(window, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
 
     def get_date(e):
@@ -161,7 +161,7 @@ def main():
     # Speech-To-Text
     def stt():
         # Initialize the recognizer
-        r = sr.Recognizer()
+        r = Recognizer()
 
         # Sampling frequency
         frequency = 44400
@@ -179,12 +179,12 @@ def main():
 
                 # to record audio from
                 # sound-device into a Numpy
-                recording = sd.rec(
+                recording = rec(
                     int(duration * frequency), samplerate=frequency, channels=2
                 )
 
                 # Wait for the audio to complete
-                sd.wait()
+                wait()
 
                 engine.say("Processing Audio, Please wait")
                 engine.runAndWait()
@@ -192,9 +192,9 @@ def main():
                 # using wavio to save the recording in .wav format
                 # This will convert the NumPy array to an audio
                 # file with the given sampling frequency
-                wv.write(f"{homepath}recording1.wav", recording, frequency, sampwidth=2)
+                write(f"{homepath}recording1.wav", recording, frequency, sampwidth=2)
 
-                file_audio = sr.AudioFile(f"{homepath}recording1.wav")
+                file_audio = AudioFile(f"{homepath}recording1.wav")
 
                 with file_audio as source:
                     audio_text = r.record(source)

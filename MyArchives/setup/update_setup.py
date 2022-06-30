@@ -1,5 +1,5 @@
-import hashlib
-import os.path
+from hashlib import sha224
+from os.path import exists
 from tkinter.messagebox import askyesno
 from urllib.request import Request, urlopen
 from webbrowser import open_new_tab
@@ -19,9 +19,9 @@ url = Request(
 # content of the website and store it in a var
 def update():
     # to create and save the initial hash
-    if not os.path.exists(f"{homepath}/Textfiles/versionhash.txt"):
+    if not exists(f"{homepath}/Textfiles/versionhash.txt"):
         response = urlopen(url).read()
-        currentHash = hashlib.sha224(response).hexdigest()
+        currentHash = sha224(response).hexdigest()
         with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
             f.write(currentHash)
     else:
@@ -33,7 +33,7 @@ def update():
             response = urlopen(url).read()
 
             # create a new hash
-            newHash = hashlib.sha224(response).hexdigest()
+            newHash = sha224(response).hexdigest()
 
             # check if new hash is same as the previous hash
             if newHash == currentHash:
@@ -56,7 +56,7 @@ def update():
                 response = urlopen(url).read()
 
                 # create a hash
-                currentHash = hashlib.sha224(response).hexdigest()
+                currentHash = sha224(response).hexdigest()
 
                 with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
                     f.write(currentHash)

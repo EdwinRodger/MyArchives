@@ -1,5 +1,6 @@
-import hashlib
-import os
+from hashlib import pbkdf2_hmac
+from os import urandom
+from os.path import exists
 from sys import exit
 from tkinter import messagebox
 from tkinter.simpledialog import askstring
@@ -23,8 +24,8 @@ def new_pass():
         new_pass()
     else:
         # Password generation
-        salt = os.urandom(32)
-        key = hashlib.pbkdf2_hmac("sha256", dialog.encode("utf-8"), salt, 100000)
+        salt = urandom(32)
+        key = pbkdf2_hmac("sha256", dialog.encode("utf-8"), salt, 100000)
 
         # Store them as:
         storage = salt + key
@@ -54,7 +55,7 @@ def check_pass():
 
         # Use the exact same setup you used to generate the key, but this
         # time put in the password to check
-        new_key = hashlib.pbkdf2_hmac(
+        new_key = pbkdf2_hmac(
             "sha256",
             dialog.encode("utf-8"),
             passwrd_salt,
@@ -72,7 +73,7 @@ def check_pass():
 
 
 def password_ui():
-    if not os.path.exists(f"{homepath}Textfiles/pass.key"):
+    if not exists(f"{homepath}Textfiles/pass.key"):
         new_pass()
     else:
         check_pass()

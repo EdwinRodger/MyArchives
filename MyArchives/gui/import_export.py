@@ -1,4 +1,4 @@
-import zipfile
+from zipfile import ZipFile
 from os import listdir
 from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
@@ -19,7 +19,7 @@ def import_zip():
         filetypes=(("zip files", "*.zip"), ("all files", "*.*")),
     )
     # print(zip_dir)
-    with zipfile.ZipFile(zip_dir, "r") as zip_ref:
+    with ZipFile(zip_dir, "r") as zip_ref:
         zip_ref.extractall(f"{homepath}/MyArchive")
 
 
