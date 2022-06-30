@@ -4,6 +4,6 @@ from .update_setup import update
 
 
 def setup():
-    update()
     folder_setup()
+    update()
     icon_download()
