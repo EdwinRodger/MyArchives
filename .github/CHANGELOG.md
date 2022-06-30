@@ -1,3 +1,36 @@
+# 3.2.0
+
+###### Released: 1 July 2022
+
+### What’s New -
+
+- 📄➡🔊 Text To Speech Feature
+    - Currently available in female voice only
+- 🗣➡📄 Speech To Text Feature
+    - Uses google speech recognizer to extract text from audio
+    - Requires internet connection
+- 🔔🔔🔔 Automatically notifies when there is new version update
+    - Prevents manual checking for updates
+    - Requires internet connection
+- ✨✨✨ Added new Title Box
+    - Summarise your entry in one line using titles
+- 📤📤📤 Export to -
+    - zip file
+    - plain text file
+- 📥📥📥 Import from -
+    - zip file
+
+### **Enhanced Features -**
+
+- Window will now spawn in the middle of the screen
+    - Previously it was used to spawn anywhere
+- Password will be hidden when typing
+    - Previously password would have shown if written in password box
+- Code enhancements
+    - Code cleanup
+    - Removal of unused and bad code
+    - Changed some Menu Bar titles
+
 # 3.1.0
 ###### Released: 23 June 2022
 ### What’s New -
