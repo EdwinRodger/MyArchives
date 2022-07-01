@@ -1,6 +1,7 @@
 from os import listdir
 from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
+from tkinter.messagebox import showerror
 from zipfile import ZipFile
 
 from .home_dir import home_directory
@@ -14,13 +15,20 @@ def export_zip():
 
 
 def import_zip():
-    zip_dir = askopenfilename(
-        title="Select A .zip File To Import",
-        filetypes=(("zip files", "*.zip"), ("all files", "*.*")),
-    )
-    # print(zip_dir)
-    with ZipFile(zip_dir, "r") as zip_ref:
-        zip_ref.extractall(f"{homepath}/MyArchive")
+    try:
+        zip_dir = askopenfilename(
+            title="Select A .zip File To Import",
+            filetypes=(("zip files", "*.zip"), ("all files", "*.*")),
+        )
+        if zip_dir == "":
+            pass
+        else:
+            # print(zip_dir)
+            with ZipFile(zip_dir, "r") as zip_ref:
+                zip_ref.extractall(f"{homepath}/MyArchive")
+    except:
+        showerror("Import Error!", "Only import zip files!")
+        import_zip()
 
 
 def export_txt():
