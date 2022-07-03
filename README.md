@@ -1,7 +1,10 @@
-# MyArchives
-MyArchives is a software to write your entries in a simple, minimalistic and easy way
+<div align="center">
+  <h1><strong>MyArchives</strong></h1>
+  <img src=".github/images/MyArchives(2022-06-25).png" width="100%" alt="Screenshot">
+  <p>MyArchives is a software to write your entries in a simple, minimalistic and easy way</p>
+</div>
 
-You can -
+With MyArchives, you can -
 
 - Write entries (obviously, duh!)
 - Navigate to other day entries using calendar
@@ -14,13 +17,8 @@ Write as many entries as you want until you run out of space on your computer
 
 [How to use guide](https://github.com/EdwinRodger/MyArchives/blob/main/docs/how_to_use.md)
 
-<details>
-<summary>MyArchives GUI</summary>
-<br>
-<img src=https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-25).png />
-</details>
-
 # Features
+- [ ] 24 Hour Clock Format
 - [x] Calendar
 - [ ] Changeable fonts
 - [ ] Changeable themes (Dark/Light/Community Made)
@@ -38,7 +36,7 @@ Write as many entries as you want until you run out of space on your computer
 # Want to Contribute?
 Firslty, check the [contributing guidlines](https://github.com/EdwinRodger/MyArchives/blob/main/.github/CONTRIBUTING.md)
 
-MyArchives is made in python 3.10
+MyArchives is made in [python 3.10](https://www.python.org/downloads/release/python-3101/)
 
 You can download the repository by going into 'Code' and then clicking 'Download ZIP' or just click [here](https://github.com/EdwinRodger/MyArchives/archive/refs/heads/main.zip) to download the same zip file
 
