@@ -28,7 +28,7 @@ engine = init()
 def main():
     ctk.set_default_color_theme("dark-blue")
     window = ctk.CTk()
-    app_height = 444
+    app_height = 443
     app_width = 1077
     # Taking primary monitor's screen height and width
     screen_width = window.winfo_screenwidth()
@@ -69,7 +69,7 @@ def main():
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
     )
-    text_box.place(x=400, y=40)
+    text_box.place(x=400, y=39)
 
     def save(e):
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
