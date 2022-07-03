@@ -263,6 +263,9 @@ def main():
     help_menu.add_command(label="Contributing", command=contributing)
     help_menu.add_command(label="Releases", command=releases)
 
-    # If we comment the below line, the window will get close but the whole program will remain to run in background (In windows, you can see it using task manager under "background processes"). While developing, you will know it when you will close main window but the program won't get out of terminal
+    # If we comment the below line, the window will get close but the whole program
+    # will remain to run in background (In windows, you can see it using task manager
+    # under "background processes"). While developing, you will know it when you will
+    # close main window but the program won't get out of terminal
     window.protocol("WM_DELETE_WINDOW", exit)
     window.mainloop()
