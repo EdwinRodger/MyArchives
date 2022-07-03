@@ -1,3 +1,14 @@
+# 3.2.1
+
+###### Released: 4 July 2022
+
+### Fixes -
+
+- Fixed a bug where you have to add an extra character at the end to save an entry properly
+- Fixed an error when we try to import any other file instead of zip file
+- File dialogs will now work properly
+- Updated README.md
+
 # 3.2.0
 
 ###### Released: 1 July 2022
