@@ -1,10 +1,12 @@
 # MyArchives
-MyArchives is a software apllication to write your entries in a simple, minimalistic and easy way 
+MyArchives is a software to write your entries in a simple, minimalistic and easy way
 
 You can -
+
 - Write entries (obviously, duh!)
 - Navigate to other day entries using calendar
-- Edit entries anytime and it will be stored and saved at that time, no need to save it manually 🥳🥳
+- Edit entries anytime
+- Save entries automatically, no buttons needed
 
 Use it to write your different experiences in one place
 
