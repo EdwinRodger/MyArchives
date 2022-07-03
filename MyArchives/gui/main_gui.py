@@ -5,7 +5,7 @@ from time import strftime
 from tkinter import *
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
-from tkinter.ttk import Entry
+# from tkinter.ttk import Entry
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -60,11 +60,11 @@ def main():
 
     cal.bind("<Leave>", get_date)
 
-    entry_box = Entry(window, font="Calibri 21", width=48)
+    entry_box = Entry(window, font="Calibri 21 bold", width=48, bg="#353538", foreground="white", relief=FLAT)
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
 
-    text_box = ScrolledText(window, width=82, height=20, font="Calibri", undo=True)
+    text_box = ScrolledText(window, width=82, height=20, font="Calibri", bg="#353538", foreground="white", undo=True, relief=FLAT)
     text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
@@ -74,7 +74,7 @@ def main():
     def save(e):
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
             f.write(str(entry_box.get()))
-            f.write(str(text_box.get(0.0, END + "-1c") + e.char))
+            f.write("\n" + str(text_box.get(0.0, END + "-1c") + e.char))
 
     def two_spaces(e):
         text_box.insert(float(text_box.index(INSERT)), "\n")
