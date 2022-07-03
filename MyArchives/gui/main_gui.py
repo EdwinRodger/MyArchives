@@ -73,9 +73,8 @@ def main():
 
     def save(e):
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
-            f.write(entry_box.get())
-            f.write("\n")
-            f.write(text_box.get(0.0, END))
+            f.write(str(entry_box.get()))
+            f.write(str(text_box.get(0.0, END + "-1c") + e.char))
 
     def two_spaces(e):
         text_box.insert(float(text_box.index(INSERT)), "\n")
@@ -206,7 +205,7 @@ def main():
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
 
                 with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
-                    f.write(text_box.get(0.0, END))
+                    f.write(text_box.get(0.0, END + "-1c") + e.char)
             else:
                 pass
         except Exception as e:
