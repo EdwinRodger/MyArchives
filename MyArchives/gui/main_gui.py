@@ -21,6 +21,7 @@ from .online_sites import *
 from .password import new_pass
 
 homepath = home_directory()
+
 # pyttsx3.init()
 engine = init()
 
@@ -30,18 +31,22 @@ def main():
     window = ctk.CTk()
     app_height = 443
     app_width = 1077
+
     # Taking primary monitor's screen height and width
     screen_width = window.winfo_screenwidth()
     screen_height = window.winfo_screenheight()
+
     # Placing app in the middle of the screen
     x = (screen_width / 2) - (app_width / 2)
     y = (screen_height / 2) - (app_height / 2)
     window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     window.title("MyArchives")
     window.iconbitmap(f"{homepath}Diary.ico")
+
     # tkcaltk.endar.Caltk.endar()
     cal = Calendar(window, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
+
     # Checking if given date has a entry to it or not
     def get_date(e):
         try:
@@ -70,6 +75,7 @@ def main():
     )
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
+
     # tkinter.scrolledtext.ScrolledText()
     text_box = ScrolledText(
         window,
@@ -129,8 +135,10 @@ def main():
             if text_box.selection_get():
                 # Grab selected text from text box
                 selected = text_box.selection_get()
+
                 # Delete Selected Text from text box
                 text_box.delete("sel.first", "sel.last")
+
                 # Clear the clipboard then apptk.end
                 window.clipboard_clear()
                 window.clipboard_apptk.end(selected)
@@ -145,6 +153,7 @@ def main():
         if text_box.selection_get():
             # Grab selected text from text box
             selected = text_box.selection_get()
+
             # Clear the clipboard then apptk.end
             window.clipboard_clear()
             window.clipboard_apptk.end(selected)
@@ -212,6 +221,7 @@ def main():
                 write(
                     f"{homepath}recording1.wav", recording, frequency, sampwidth=2
                 )  # wavio.write()
+
                 # speech_recognition.AudioFile()
                 file_audio = AudioFile(f"{homepath}recording1.wav")
 
@@ -219,6 +229,7 @@ def main():
                     audio_text = r.record(source)
 
                 rt = r.recognize_google(audio_text)
+                
                 # os.remove()
                 remove(f"{homepath}recording1.wav")
 
