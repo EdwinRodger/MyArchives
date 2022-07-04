@@ -26,6 +26,9 @@ def license():
 def releases():
     open_new_tab("https://github.com/EdwinRodger/MyArchives/releases")
 
+def github_star():
+    open_new_tab("https://github.com/EdwinRodger/MyArchives/stargazers")
+
 
 def website():  #
     open_new_tab("https://github.com/EdwinRodger/MyArchives")

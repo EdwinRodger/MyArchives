@@ -262,6 +262,7 @@ def main():
     help_menu.add_separator()
     help_menu.add_command(label="Contributing", command=contributing)
     help_menu.add_command(label="Releases", command=releases)
+    help_menu.add_command(label="Give A Star", command=github_star)
 
     # If we comment the below line, the window will get close but the whole program
     # will remain to run in background (In windows, you can see it using task manager
