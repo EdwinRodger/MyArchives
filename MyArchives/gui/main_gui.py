@@ -2,7 +2,7 @@
 from os import remove
 from sys import exit
 from time import strftime
-from tkinter import *
+import tkinter as tk
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
 
@@ -39,7 +39,7 @@ def main():
     window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     window.title("MyArchives")
     window.iconbitmap(f"{homepath}Diary.ico")
-    # tkcalendar.Calendar()
+    # tkcaltk.endar.Caltk.endar()
     cal = Calendar(window, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
     # Checking if given date has a entry to it or not
@@ -47,26 +47,26 @@ def main():
         try:
             with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "r") as f:
                 lines = f.readlines()
-            entry_box.delete(0, END)
-            text_box.delete(0.0, END)
+            entry_box.delete(0, tk.END)
+            text_box.delete(0.0, tk.END)
             entry_box.insert(0, lines[0])
             for j in lines[-1:0:-1]:
                 text_box.insert(0.0, j)
         except:
-            entry_box.delete(0, END)
-            text_box.delete(0.0, END)
+            entry_box.delete(0, tk.END)
+            text_box.delete(0.0, tk.END)
             entry_box.insert(0, "No entry found!")
             text_box.insert(0.0, "Start typing to save an entry...")
 
     cal.bind("<Leave>", get_date)
 
-    entry_box = Entry(
+    entry_box = tk.Entry(
         window,
         font="Calibri 21 bold",
         width=48,
         bg="#353538",
         foreground="white",
-        relief=FLAT,
+        relief=tk.FLAT,
     )
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
@@ -79,21 +79,21 @@ def main():
         bg="#353538",
         foreground="white",
         undo=True,
-        relief=FLAT,
+        relief=tk.FLAT,
     )
     text_box.insert(
         0.0,
-        "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
+        "Choose a date then leave the caltk.endar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
     )
     text_box.place(x=400, y=39)
 
     def save(e):
         with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
             f.write(str(entry_box.get()))
-            f.write("\n" + str(text_box.get(0.0, END + "-1c") + e.char))
+            f.write("\n" + str(text_box.get(0.0, tk.END + "-1c") + e.char))
 
     def two_spaces(e):
-        text_box.insert(float(text_box.index(INSERT)), "\n")
+        text_box.insert(float(text_box.index(tk.INSERT)), "\n")
 
     text_box.bind("<Key>", save)
     text_box.bind("<Return>", two_spaces)
@@ -104,7 +104,7 @@ def main():
         try:
             # time.strftime()
             string = strftime("%I:%M:%S %p")
-            ctime = Label(
+            ctime = tk.Label(
                 window, font=("Arial", 50), background="#1a1a1a", foreground="Green"
             )
             ctime.config(text=string)
@@ -116,7 +116,7 @@ def main():
     time()
 
     # Menubar
-    my_menu = Menu(window)
+    my_menu = tk.Menu(window)
     window.config(menu=my_menu)
 
     # Cut Text
@@ -131,9 +131,9 @@ def main():
                 selected = text_box.selection_get()
                 # Delete Selected Text from text box
                 text_box.delete("sel.first", "sel.last")
-                # Clear the clipboard then append
+                # Clear the clipboard then apptk.end
                 window.clipboard_clear()
-                window.clipboard_append(selected)
+                window.clipboard_apptk.end(selected)
 
     # Copy Text
     def copy_text(e):
@@ -145,9 +145,9 @@ def main():
         if text_box.selection_get():
             # Grab selected text from text box
             selected = text_box.selection_get()
-            # Clear the clipboard then append
+            # Clear the clipboard then apptk.end
             window.clipboard_clear()
-            window.clipboard_append(selected)
+            window.clipboard_apptk.end(selected)
 
     # Paste Text
     def paste_text(e):
@@ -157,21 +157,21 @@ def main():
             selected = window.clipboard_get()
         else:
             if selected:
-                position = text_box.index(INSERT)
+                position = text_box.index(tk.INSERT)
                 text_box.insert(position, selected)
 
     # Select all Text
     def select_all(e):
         # Add sel tag to select all text
-        text_box.tag_add("sel", "1.0", "end")
+        text_box.tag_add("sel", "1.0", "tk.end")
 
     # Clear All Text
     def clear_all():
-        text_box.delete(1.0, END)
+        text_box.delete(1.0, tk.END)
 
     # Text-To-Speech
     def tts():
-        engine.say(text_box.get(0.0, END))
+        engine.say(text_box.get(0.0, tk.END))
         engine.runAndWait()
 
     # Speech-To-Text
@@ -225,7 +225,7 @@ def main():
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
 
                 with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
-                    f.write(text_box.get(0.0, END + "-1c") + e.char)
+                    f.write(text_box.get(0.0, tk.END + "-1c") + e.char)
             else:
                 pass
         except Exception as e:
@@ -236,7 +236,7 @@ def main():
             )
 
     # MyArchives menu
-    myarchives_menu = Menu(my_menu, tearoff=False)
+    myarchives_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="File", menu=myarchives_menu)
     myarchives_menu.add_command(label="Text-To-Speech", command=tts)
     myarchives_menu.add_command(label="Speech-To-Text", command=stt)
@@ -251,7 +251,7 @@ def main():
     )  # password.py/new_pass()
 
     # Add Edit Menu
-    edit_menu = Menu(my_menu, tearoff=False)
+    edit_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Edit", menu=edit_menu)
     edit_menu.add_command(
         label="Cut", command=lambda: cut_text(False), accelerator="(Ctrl+x)"
@@ -276,7 +276,7 @@ def main():
     edit_menu.add_command(label="Clear", command=clear_all)
 
     # Create an Options menu item
-    help_menu = Menu(my_menu, tearoff=False)
+    help_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="Help", menu=help_menu)
     help_menu.add_command(label="Website", command=website)
     help_menu.add_separator()
