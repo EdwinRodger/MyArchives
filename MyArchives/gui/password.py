@@ -11,7 +11,7 @@ from .home_dir import home_directory
 
 homepath = home_directory()
 
-# Uses MyArchives password for messagebox
+# Uses MyArchives icon for messagebox
 try:
     CTk().iconbitmap(default=f"{homepath}Diary.ico")
 except:
@@ -53,7 +53,7 @@ def check_pass():
     else:
         with open(f"{homepath}Textfiles/pass.key", "rb") as f:
             passwrd = f.read()
-
+        # Password generation
         passwrd_salt = passwrd[:32]
         passwrd_key = passwrd[32:]
 
@@ -65,7 +65,7 @@ def check_pass():
             passwrd_salt,
             100000,
         )
-
+        # Password checking
         if new_key == passwrd_key:
             pass
 

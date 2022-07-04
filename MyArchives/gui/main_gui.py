@@ -21,6 +21,7 @@ from .online_sites import *
 from .password import new_pass
 
 homepath = home_directory()
+# pyttsx3.init()
 engine = init()
 
 
@@ -38,10 +39,10 @@ def main():
     window.geometry(f"{app_width}x{app_height}+{int(x)}+{int(y)}")
     window.title("MyArchives")
     window.iconbitmap(f"{homepath}Diary.ico")
-
+    # tkcalendar.Calendar()
     cal = Calendar(window, font="comic_sans 18", showweeknumbers=False)
     cal.place(x=0, y=0)
-
+    # Checking if given date has a entry to it or not
     def get_date(e):
         try:
             with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "r") as f:
@@ -59,11 +60,27 @@ def main():
 
     cal.bind("<Leave>", get_date)
 
-    entry_box = Entry(window, font="Calibri 21 bold", width=48, bg="#353538", foreground="white", relief=FLAT)
+    entry_box = Entry(
+        window,
+        font="Calibri 21 bold",
+        width=48,
+        bg="#353538",
+        foreground="white",
+        relief=FLAT,
+    )
     entry_box.insert(0, "Title")
     entry_box.place(x=400)
-
-    text_box = ScrolledText(window, width=82, height=20, font="Calibri", bg="#353538", foreground="white", undo=True, relief=FLAT)
+    # tkinter.scrolledtext.ScrolledText()
+    text_box = ScrolledText(
+        window,
+        width=82,
+        height=20,
+        font="Calibri",
+        bg="#353538",
+        foreground="white",
+        undo=True,
+        relief=FLAT,
+    )
     text_box.insert(
         0.0,
         "Choose a date then leave the calendar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
@@ -85,6 +102,7 @@ def main():
     # Clock
     def time():
         try:
+            # time.strftime()
             string = strftime("%I:%M:%S %p")
             ctime = Label(
                 window, font=("Arial", 50), background="#1a1a1a", foreground="Green"
@@ -159,7 +177,7 @@ def main():
     # Speech-To-Text
     def stt():
         # Initialize the recognizer
-        r = Recognizer()
+        r = Recognizer()  # speech_recognition.Recognizer()
 
         # Sampling frequency
         frequency = 44400
@@ -167,6 +185,7 @@ def main():
         # Recording duration in seconds
         duration = 20
         try:
+            # tkinter.messagebox.askyesno()
             imp = askyesno(
                 title="Important!",
                 message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
@@ -179,10 +198,10 @@ def main():
                 # sound-device into a Numpy
                 recording = rec(
                     int(duration * frequency), samplerate=frequency, channels=2
-                )
+                )  # sounddevice.rec()
 
                 # Wait for the audio to complete
-                wait()
+                wait()  # sounddevice.wait()
 
                 engine.say("Processing Audio, Please wait")
                 engine.runAndWait()
@@ -190,15 +209,17 @@ def main():
                 # using wavio to save the recording in .wav format
                 # This will convert the NumPy array to an audio
                 # file with the given sampling frequency
-                write(f"{homepath}recording1.wav", recording, frequency, sampwidth=2)
-
+                write(
+                    f"{homepath}recording1.wav", recording, frequency, sampwidth=2
+                )  # wavio.write()
+                # speech_recognition.AudioFile()
                 file_audio = AudioFile(f"{homepath}recording1.wav")
 
                 with file_audio as source:
                     audio_text = r.record(source)
 
                 rt = r.recognize_google(audio_text)
-
+                # os.remove()
                 remove(f"{homepath}recording1.wav")
 
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
@@ -208,6 +229,7 @@ def main():
             else:
                 pass
         except Exception as e:
+            # tkinter.messagebox.showerror()
             showerror(
                 title="Error!",
                 message=f"There is some error while using speech to text\n\n{e}",
@@ -224,7 +246,9 @@ def main():
     myarchives_menu.add_cascade(label="Export (text file)", command=export_txt)
     myarchives_menu.add_cascade(label="Export (zip file)", command=export_zip)
     myarchives_menu.add_separator()
-    myarchives_menu.add_command(label="Change Password", command=new_pass)
+    myarchives_menu.add_command(
+        label="Change Password", command=new_pass
+    )  # password.py/new_pass()
 
     # Add Edit Menu
     edit_menu = Menu(my_menu, tearoff=False)
@@ -268,5 +292,5 @@ def main():
     # will remain to run in background (In windows, you can see it using task manager
     # under "background processes"). While developing, you will know it when you will
     # close main window but the program won't get out of terminal
-    window.protocol("WM_DELETE_WINDOW", exit)
+    window.protocol("WM_DELETE_WINDOW", exit)  # sys.exit()
     window.mainloop()

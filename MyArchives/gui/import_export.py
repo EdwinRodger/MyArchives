@@ -23,7 +23,6 @@ def import_zip():
         if zip_dir == "":
             pass
         else:
-            # print(zip_dir)
             with ZipFile(zip_dir, "r") as zip_ref:
                 zip_ref.extractall(f"{homepath}/MyArchive")
     except:
