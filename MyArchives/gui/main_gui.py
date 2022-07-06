@@ -5,6 +5,7 @@ from sys import exit
 from time import strftime
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
+import threading
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -178,10 +179,14 @@ def main():
     def clear_all():
         text_box.delete(1.0, tk.END)
 
-    # Text-To-Speech
-    def tts():
-        engine.say(text_box.get(0.0, tk.END))
-        engine.runAndWait()
+    # Text-To-Speech (threading)
+    def ttst():
+        def tts():
+            engine.say(text_box.get(0.0, tk.END))
+            engine.runAndWait()
+        tts_threading = threading.Thread(target=tts)
+        tts_threading.start()
+        
 
     # Speech-To-Text
     def stt():
@@ -249,7 +254,7 @@ def main():
     # MyArchives menu
     myarchives_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="File", menu=myarchives_menu)
-    myarchives_menu.add_command(label="Text-To-Speech", command=tts)
+    myarchives_menu.add_command(label="Text-To-Speech", command=ttst)
     myarchives_menu.add_command(label="Speech-To-Text", command=stt)
     myarchives_menu.add_separator()
     myarchives_menu.add_cascade(label="Import (zip file)", command=import_zip)
