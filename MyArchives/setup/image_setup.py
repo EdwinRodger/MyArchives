@@ -1,10 +1,10 @@
-## Importing Necessary Modules
+# Python Libraries
 from os.path import exists
-from shutil import copyfileobj  # to save it locally
+from shutil import copyfileobj
 from tkinter import messagebox
-
-from requests import get  # to get image from the web
-
+# Third Party Libraries
+from requests import get
+# MyArchives Libraries
 from .tasks import home_directory
 
 homepath = home_directory()

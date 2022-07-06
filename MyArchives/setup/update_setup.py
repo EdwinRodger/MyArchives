@@ -1,24 +1,25 @@
+# Python Libraries
 from hashlib import sha224
 from os.path import exists
 from tkinter.messagebox import askyesno
 from urllib.request import Request, urlopen
 from webbrowser import open_new_tab
-
+# MyArchives Libraries
 from .tasks import home_directory
 
 homepath = home_directory()
 
-# setting the URL you want to monitor
+# Setting the URL you want to monitor
 url = Request(
     "https://api.github.com/repos/EdwinRodger/MyArchives/releases/latest",
     headers={"User-Agent": "Mozilla/5.0"},
 )
 
 
-# to perform a GET request and load the
+# To perform a GET request and load the
 # content of the website and store it in a var
 def update():
-    # to create and save the initial hash
+    # To create and save the initial hash
     if not exists(f"{homepath}/Textfiles/versionhash.txt"):
         response = urlopen(url).read()
         currentHash = sha224(response).hexdigest()
@@ -29,17 +30,17 @@ def update():
             with open(f"{homepath}Textfiles/versionhash.txt", "r") as f:
                 currentHash = f.read()
 
-            # perform the get request
+            # Perform the get request
             response = urlopen(url).read()
 
-            # create a new hash
+            # Create a new hash
             newHash = sha224(response).hexdigest()
 
-            # check if new hash is same as the previous hash
+            # Check if new hash is same as the previous hash
             if newHash == currentHash:
                 pass
 
-            # if something changed in the hashes
+            # If something changed in the hashes
             else:
                 # notify
                 upd = askyesno(
@@ -52,10 +53,10 @@ def update():
                         "https://github.com/EdwinRodger/MyArchives/releases/latest/"
                     )
 
-                # again read the website
+                # Again read the website
                 response = urlopen(url).read()
 
-                # create a hash
+                # Create a hash
                 currentHash = sha224(response).hexdigest()
 
                 with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:

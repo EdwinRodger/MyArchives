@@ -15,7 +15,7 @@ from speech_recognition import AudioFile, Recognizer
 from tkcalendar import Calendar
 from wavio import write
 
-# User Made Libraries
+# MyArchives Libraries
 from .home_dir import home_directory
 from .import_export import *
 from .online_sites import *
