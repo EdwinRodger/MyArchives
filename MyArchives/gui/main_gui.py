@@ -188,23 +188,23 @@ def main():
         tts_threading.start()
         
 
-    # Speech-To-Text
-    def stt():
-        # Initialize the recognizer
-        r = Recognizer()  # speech_recognition.Recognizer()
+    # Speech-To-Text (threading)
+    def sttt():
+        # tkinter.messagebox.askyesno()
+        imp = askyesno(
+            title="Important!",
+            message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
+        )
+        def stt():
+            # Initialize the recognizer
+            r = Recognizer()  # speech_recognition.Recognizer()
 
-        # Sampling frequency
-        frequency = 44400
+            # Sampling frequency
+            frequency = 44400
 
-        # Recording duration in seconds
-        duration = 20
-        try:
-            # tkinter.messagebox.askyesno()
-            imp = askyesno(
-                title="Important!",
-                message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
-            )
-            if imp == True:
+            # Recording duration in seconds
+            duration = 20
+            try:
                 engine.say("Listening!")
                 engine.runAndWait()
 
@@ -241,21 +241,24 @@ def main():
                 text_box.insert(0.0, f"\n\n{rt}\n\n")
 
                 with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
-                    f.write(text_box.get(0.0, tk.END + "-1c") + e.char)
-            else:
-                pass
-        except Exception as e:
-            # tkinter.messagebox.showerror()
-            showerror(
-                title="Error!",
-                message=f"There is some error while using speech to text\n\n{e}",
-            )
+                    f.write(text_box.get(0.0, tk.END))
+            except Exception as e:
+                # tkinter.messagebox.showerror()
+                showerror(
+                    title="Error!",
+                    message=f"There is some error while using speech to text\n\n{e}",
+                )
+        if imp == True:
+            stt_threading = threading.Thread(target=stt)
+            stt_threading.start()
+        else:
+            pass
 
     # MyArchives menu
     myarchives_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="File", menu=myarchives_menu)
     myarchives_menu.add_command(label="Text-To-Speech", command=ttst)
-    myarchives_menu.add_command(label="Speech-To-Text", command=stt)
+    myarchives_menu.add_command(label="Speech-To-Text", command=sttt)
     myarchives_menu.add_separator()
     myarchives_menu.add_cascade(label="Import (zip file)", command=import_zip)
     myarchives_menu.add_separator()
