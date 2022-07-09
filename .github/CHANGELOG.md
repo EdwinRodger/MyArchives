@@ -1,3 +1,33 @@
+# 3.3.0
+
+###### Released: 10 July 2022
+
+### What’s New-
+
+- 🌟 Give A Star option in help menu in menu-bar
+- 📤 Export to json file format
+- 📥 Import from json file format
+
+### Enhancements -
+
+- Default theme is now dark theme
+- Removed partition between title box and entry box
+    - Now it looks more clean
+- Changed the guide in the Text Box
+- When using STT, the text will be placed at the cursor position
+    - Previously it was used to be placed at beginning of the entry
+- Code enhancements
+    - ~~Tried~~ Code commenting
+    - Adjusted Imports
+    - Corrected Grammar
+
+### Fixed -
+
+- Using Text-To-Speech and Speech-To-Text will no longer stop the program
+    - Previously, the program would not respond while using STT and TTS
+- Typos in README.md
+- Wrong syntax
+
 # 3.2.1
 
 ###### Released: 4 July 2022
