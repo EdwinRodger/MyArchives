@@ -34,7 +34,7 @@ Write as many entries as you want until you run out of space on your computer
 - [x] Zero buttons, everything done with mouse cursor
 
 # Want to Contribute?
-Firslty, check the [contributing guidlines](https://github.com/EdwinRodger/MyArchives/blob/main/.github/CONTRIBUTING.md)
+Firstly, check the [contributing guidlines](https://github.com/EdwinRodger/MyArchives/blob/main/.github/CONTRIBUTING.md)
 
 MyArchives is made in [python 3.10](https://www.python.org/downloads/release/python-3101/)
 
