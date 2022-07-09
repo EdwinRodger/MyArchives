@@ -1,23 +1,17 @@
 # This guide gives inforamtion about currently active bugs in MyArchives
 
-bug - While loading the entry, last letter of last word gets removed
-
-current fix - Add a space after you complete the entry to avoid this bug
-
----
-
-bug - There are too many lines at the end of entry
-
-current fix - While completeing an entry, avoid having extra empty lines at the end of entry also after editing an entry, remove extra empty lines at the end from the entry
-
----
-
-bug - The text file export have uneven spaces between entries
+bug - The exported text file have uneven spaces between entries
 
 current fix - No fix, will patch this bug in future updates
 
 ---
 
-bug - Program stops responding while using TTS or STT
+bug - While importing other type of json file, error pops up just saying 'MyArchives'
 
-current fix - It is expected behaviour, the program will run normally after the respective processes complete.
+current fix - Import valid json file which you previously exported from MyArchives
+
+---
+
+bug - After importing from json file, there are spaces at new line
+
+current fix - no fix, will patch this bug in next update
