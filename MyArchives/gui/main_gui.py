@@ -193,7 +193,7 @@ def main():
         # tkinter.messagebox.askyesno()
         imp = askyesno(
             title="Important!",
-            message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The program may stop responding while you use STT but it is expected behaviour, wait for few moments and your speech will be converted to text\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
+            message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The text will be placed at the current position of your cursor in the text box, do not place cursor in the title box as it will give an error\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
         )
         def stt():
             # Initialize the recognizer
@@ -238,7 +238,7 @@ def main():
                 # os.remove()
                 remove(f"{homepath}recording1.wav")
 
-                text_box.insert(0.0, f"\n\n{rt}\n\n")
+                text_box.insert(text_box.index(tk.INSERT), rt)
 
                 with open(f"{homepath}MyArchive/{cal.selection_get()}.txt", "w") as f:
                     f.write(text_box.get(0.0, tk.END))
