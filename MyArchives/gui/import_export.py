@@ -68,9 +68,13 @@ def export_json():
         "Name":"MyArchives",
         "Export Date":f"{now}"
     }
+
+    data = {
+        "Metadata":metadata,
+        "MyArchives":MyArchives
+        }
     
     with open(f"{save_dir}/MyArchives-Export.json", "w") as outfile:
-        MyArchives.append(metadata)
         for fname in files:
             with open(f"{homepath}MyArchive/{fname}") as infile:
                 fname1 = fname.rstrip(".txt")
@@ -86,4 +90,24 @@ def export_json():
                     "Text":f"{text.strip()}"
                 }
                 MyArchives.append(entry)
-        dump(MyArchives, outfile, indent=4)
+        dump(data, outfile, indent=4)
+
+
+def import_json():
+    try:
+        json_dir = askopenfilename(
+            title="Select A json File To Import",
+            filetypes=(("json file", "*.json"), ("all files", "*.*")),
+        )
+        if json_dir == "":
+            pass
+        else:
+            with open(json_dir) as f:
+                data = load(f)
+            for i in data['MyArchives'][1:]:
+                with open(f"{homepath}MyArchive\{i['Date']}.txt", 'w') as f:
+                    f.write(i['Title']+"\n")
+                    f.write(i['Text'])
+    except Exception as e:
+        showerror("Import Error!", e)
+        import_json()
