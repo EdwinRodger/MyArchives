@@ -6,7 +6,7 @@ The program will take some time to run as it makes/ensures/download the files ne
 
 You will find the user interface as defined below
 
-<img src="https://github.com/EdwinRodger/MyArchives/blob/main/.github/images/MyArchives(2022-06-25).png" />
+<img src="../.github/images/MyArchives(2022-07-09).png" />
 
 To go to a date, select it from calendar and leave the calendar with mouse cursor to see the respective day entry
 
