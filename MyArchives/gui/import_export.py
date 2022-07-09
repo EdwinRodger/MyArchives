@@ -24,8 +24,8 @@ def export_zip():
 def import_zip():
     try:
         zip_dir = askopenfilename(
-            title="Select A .zip File To Import",
-            filetypes=(("zip files", "*.zip"), ("all files", "*.*")),
+            title="Select A zip File To Import",
+            filetypes=(("zip file", "*.zip"), ("all files", "*.*")),
         )
         if zip_dir == "":
             pass
@@ -33,7 +33,7 @@ def import_zip():
             with ZipFile(zip_dir, "r") as zip_ref:
                 zip_ref.extractall(f"{homepath}/MyArchive")
     except:
-        showerror("Import Error!", "Only import zip files!")
+        showerror("Import Error!", "Only import zip file!")
         import_zip()
 
 
