@@ -1,5 +1,5 @@
 # Python Libraries
-import json
+from json import load, dump
 from os import listdir
 from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
@@ -86,4 +86,4 @@ def export_json():
                     "Text":f"{text.strip()}"
                 }
                 MyArchives.append(entry)
-        json.dump(MyArchives, outfile, indent=4)
+        dump(MyArchives, outfile, indent=4)
