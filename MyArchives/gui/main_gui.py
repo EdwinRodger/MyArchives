@@ -184,9 +184,9 @@ def main():
         def tts():
             engine.say(text_box.get(0.0, tk.END))
             engine.runAndWait()
+
         tts_threading = threading.Thread(target=tts)
         tts_threading.start()
-        
 
     # Speech-To-Text (threading)
     def sttt():
@@ -195,6 +195,7 @@ def main():
             title="Important!",
             message="Some information before you use speech to text-\n\n1. You should have an active internet connection as STT uses google speech recognition to work\n2. If you don't say anything, the program will show an error\n3. Right now you can only record for 20 seconds in one go without able to stop the recording in between\n4. Because of privacy issues, you should not say very personal/explicit things as this recording first goes to google which then extracts text from it\n5. As of now, only English language is written irrespective of the language you speak\n6. The text will be placed at the current position of your cursor in the text box, do not place cursor in the title box as it will give an error\n7. The results may not meet your expectations\n8. You will hear a sound and then you can start to speak. When 20 seconds are up, another sound will be played asking you to wait\n\nDo you wish to continue?\n",
         )
+
         def stt():
             # Initialize the recognizer
             r = Recognizer()  # speech_recognition.Recognizer()
@@ -234,7 +235,7 @@ def main():
                     audio_text = r.record(source)
 
                 rt = r.recognize_google(audio_text)
-                
+
                 # os.remove()
                 remove(f"{homepath}recording1.wav")
 
@@ -248,6 +249,7 @@ def main():
                     title="Error!",
                     message=f"There is some error while using speech to text\n\n{e}",
                 )
+
         if imp == True:
             stt_threading = threading.Thread(target=stt)
             stt_threading.start()
