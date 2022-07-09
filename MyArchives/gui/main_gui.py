@@ -262,8 +262,11 @@ def main():
     myarchives_menu.add_separator()
     myarchives_menu.add_cascade(label="Import (zip file)", command=import_zip)
     myarchives_menu.add_separator()
-    myarchives_menu.add_cascade(label="Export (text file)", command=export_txt)
-    myarchives_menu.add_cascade(label="Export (zip file)", command=export_zip)
+    export_menu = tk.Menu(my_menu, tearoff=False)
+    myarchives_menu.add_cascade(label="Export", menu=export_menu)
+    export_menu.add_cascade(label="Export (text file)", command=export_txt)
+    export_menu.add_cascade(label="Export (zip file)", command=export_zip)
+    export_menu.add_cascade(label="Export (json file)", command=export_json)
     myarchives_menu.add_separator()
     myarchives_menu.add_command(
         label="Change Password", command=new_pass
