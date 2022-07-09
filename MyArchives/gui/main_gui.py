@@ -90,7 +90,7 @@ def main():
     )
     text_box.insert(
         0.0,
-        "Choose a date then leave the caltk.endar with cursor to see the entry\n\nAfter completing the writing, add an extra space to save the whole entry properly",
+        "Choose a date then leave the calendar with cursor to see the entry\n\nIf you edit the title then write something in entry to avoid bugs\n\nAvoid having <space>, <backspace> or any non-ascii character to be typped in the end to avoid bugs\n\nThat is all for instructions and bugs, you can start writing your entry :)",
     )
     text_box.place(x=400, y=39)
 
