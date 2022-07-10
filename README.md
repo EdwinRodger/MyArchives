@@ -19,8 +19,8 @@ Write as many entries as you want until you run out of space on your computer
 
 # Features
 - [ ] 24 Hour Clock Format
+- [ ] Weekly Backups
 - [x] Calendar
-- [ ] Changeable fonts
 - [ ] Changeable themes (Dark/Light/Community Made)
 - [x] Clock
 - [x] Commented Code
@@ -31,6 +31,7 @@ Write as many entries as you want until you run out of space on your computer
 - [x] Password
 - [x] Speech-To-Text (uses google api for STT)
 - [x] Text-To-Speech (Currenly only female voice available)
+- [ ] Diary Templates
 - [x] Zero buttons, everything done with mouse cursor
 
 # Want to Contribute?
