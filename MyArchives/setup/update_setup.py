@@ -1,7 +1,7 @@
 # Python Libraries
 from hashlib import sha224
 from os.path import exists
-from tkinter.messagebox import askyesno
+from tkinter.messagebox import askyesnocancel
 from urllib.request import Request, urlopen
 from webbrowser import open_new_tab
 
@@ -44,24 +44,27 @@ def update():
             # If something changed in the hashes
             else:
                 # notify
-                upd = askyesno(
+                upd = askyesnocancel(
                     title="Update Available!",
-                    message="A new version of MyArchives has been released!\nDo you want to download it?",
+                    message="A new version of MyArchives has been released!\nDo you want to download it?\n\nYes = Will take you to download website\nNo = Will promt you when next update will be available\nCancel = Will prompt you next time you open MyArchives",
                 )
 
-                if upd == True:
+                if upd == True or upd == False:
                     open_new_tab(
                         "https://github.com/EdwinRodger/MyArchives/releases/latest/"
                     )
 
-                # Again read the website
-                response = urlopen(url).read()
+                    # Again read the website
+                    response = urlopen(url).read()
 
-                # Create a hash
-                currentHash = sha224(response).hexdigest()
+                    # Create a hash
+                    currentHash = sha224(response).hexdigest()
 
-                with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
-                    f.write(currentHash)
+                    with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
+                        f.write(currentHash)
+                
+                else:
+                    pass
 
         except Exception:
             pass
