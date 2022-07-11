@@ -4,11 +4,19 @@ Firstly download the latest version of MyArchives from [releases](https://github
 
 The program will take some time to run as it makes/ensures/download the files needed to run the program
 
-You will find the user interface as defined below
+When you run the program for the first time, program will ask you for a new password
+
+<img src="../.github/images/new_password(2022-07-10).png" />
+
+After setting the password, when you will run the program again, you will be asked to enter your set password
+
+<img src="../.github/images/enter_password(2022-07-10).png" />
+
+After you give the correct password, you will find the user interface as defined below
 
 <img src="../.github/images/MyArchives(2022-07-09).png" />
 
-To go to a date, select it from calendar and leave the calendar with mouse cursor to see the respective day entry
+To see a respective day entry, select the date from calendar and leave the calendar with mouse cursor to see that day entry
 
 If there is no entry, program will tell you that there is no entry for that day
 
@@ -32,6 +40,6 @@ Help option in Menu Bar send you to web-pages according to title
 
 There is a live clock just for help
 
-If you have further questions, ask in the [disscussion](https://github.com/EdwinRodger/MyArchives/discussions/categories/q-a) section.
+If you have further questions, you can ask in the [disscussion](https://github.com/EdwinRodger/MyArchives/discussions/categories/q-a) section.
 
 If there are some mistakes in this guide, feel free to help and correct :)
