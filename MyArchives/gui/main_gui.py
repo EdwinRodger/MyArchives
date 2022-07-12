@@ -20,6 +20,7 @@ from .home_dir import home_directory
 from .import_export import *
 from .online_sites import *
 from .password import new_pass
+from .themes import *
 
 homepath = home_directory()
 
@@ -275,6 +276,10 @@ def main():
     myarchives_menu.add_command(
         label="Change Password", command=new_pass
     )  # password.py/new_pass()
+    theme_menu = tk.Menu(my_menu, tearoff=False)
+    myarchives_menu.add_cascade(label="Theme", menu=theme_menu)
+    theme_menu.add_command(label="Light", command=lambda: light_theme(window, entry_box, text_box))
+    theme_menu.add_command(label="Dark", command=lambda: dark_theme(window, entry_box, text_box))
 
     # Add Edit Menu
     edit_menu = tk.Menu(my_menu, tearoff=False)
@@ -313,6 +318,18 @@ def main():
     help_menu.add_command(label="Contributing", command=contributing)
     help_menu.add_command(label="Releases", command=releases)
     help_menu.add_command(label="Give A Star", command=github_star)
+
+    # Themeing Options
+
+    def check_theme():
+        with open(f"{homepath}Textfiles/theme.txt", 'r') as f:
+            mode = f.read()
+        if mode == '0':
+            light_theme(window, entry_box, text_box)
+        elif mode=='1':
+            dark_theme(window, entry_box, text_box)
+    
+    check_theme()
 
     # If we comment the below line, the window will get close but the whole program
     # will remain to run in background (In windows, you can see it using task manager
