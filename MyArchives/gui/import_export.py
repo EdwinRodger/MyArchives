@@ -5,10 +5,11 @@ from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
 from tkinter.messagebox import showerror
 from zipfile import ZipFile
-
+import datetime
+import calendar
 # MyArchives Libraries
 from .home_dir import home_directory
-from datetime import datetime
+from datetime import datetime, date
 
 # returns current date and time
 now = datetime.now()
@@ -106,3 +107,84 @@ def import_json():
     except Exception as e:
         showerror("Import Error!", e)
         import_json()
+
+
+
+def weekly_backup():
+    
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'r') as f:
+        day  =f.read()
+    
+    today = str(date.today())
+
+    day_number = datetime.strptime(today.replace('-',' '), '%Y %m %d').weekday()
+    today_day = calendar.day_name[day_number]
+    
+    def backup():
+        files = []
+
+        for i in listdir(f"{homepath}MyArchive/"):
+            files.append(i)
+
+        MyArchives = []
+
+        metadata = {"Author": "EdwinRodger", "Name": "MyArchives", "Export Date": f"{now}"}
+
+        data = {"Metadata": metadata, "MyArchives": MyArchives}
+
+        with open(f"{homepath}Backups/{today}_backup.json", "w") as outfile:
+            for fname in files:
+                with open(f"{homepath}MyArchive/{fname}") as infile:
+                    fname1 = fname.rstrip(".txt")
+                    lines = infile.readlines()
+                    title = lines[0]
+                    listed_text = []
+                    for line in lines[1:]:
+                        listed_text.append(line)
+                    text = " ".join(map(str, listed_text[0:]))
+                    entry = {
+                        "Date": f"{fname1}",
+                        "Title": f"{title.rstrip()}",
+                        "Text": f"{text.strip()}",
+                    }
+                    MyArchives.append(entry)
+            dump(data, outfile, indent=4)
+
+    try:
+        if day==today_day:
+            backup()
+        else:
+            pass
+    except Exception as e:
+        showerror("Weekly Export Error!", e)
+
+
+
+def monday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Monday")
+    weekly_backup()
+def tuesday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Tuesday")
+    weekly_backup()
+def wednesday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Wednesday")
+    weekly_backup()    
+def thursday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Thursday")
+    weekly_backup()
+def friday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Friday")
+    weekly_backup()
+def saturday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Saturday")
+    weekly_backup()
+def sunday_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("Sunday")
+    weekly_backup()

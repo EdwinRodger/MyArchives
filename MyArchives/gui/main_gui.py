@@ -280,6 +280,16 @@ def main():
     myarchives_menu.add_cascade(label="Theme", menu=theme_menu)
     theme_menu.add_command(label="Light", command=lambda: light_theme(window, entry_box, text_box))
     theme_menu.add_command(label="Dark", command=lambda: dark_theme(window, entry_box, text_box))
+    backup_menu = tk.Menu(my_menu, tearoff=False)
+    myarchives_menu.add_cascade(label="Weekly Backup", menu=backup_menu)
+    backup_menu.add_command(label="Monday", command=monday_backup)
+    backup_menu.add_command(label="Tuesday", command=tuesday_backup)
+    backup_menu.add_command(label="Wednesday", command=wednesday_backup)
+    backup_menu.add_command(label="Thursday", command=thursday_backup)
+    backup_menu.add_command(label="Friday", command=friday_backup)
+    backup_menu.add_command(label="Saturday", command=saturday_backup)
+    backup_menu.add_command(label="Sunday", command=sunday_backup)
+    weekly_backup()
 
     # Add Edit Menu
     edit_menu = tk.Menu(my_menu, tearoff=False)

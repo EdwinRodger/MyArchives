@@ -16,3 +16,6 @@ def folder_setup():
     # Create Textfiles folder (to store software config files)
     if not exists(f"{homepath}Textfiles"):
         makedirs(f"{homepath}Textfiles")
+    # Create Backup folder
+    if not exists(f"{homepath}Backups"):
+        makedirs(f"{homepath}Backups")

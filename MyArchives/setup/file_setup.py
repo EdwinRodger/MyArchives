@@ -9,3 +9,10 @@ def theme_setup():
             f.write("0")
     else:
         pass
+
+def weekly_backup_setup():
+    if not exists(f"{homepath}Textfiles/weekly_backup_day.txt"):
+        with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
+            f.write("None")
+    else:
+        pass
