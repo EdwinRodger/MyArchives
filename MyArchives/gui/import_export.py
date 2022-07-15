@@ -83,7 +83,7 @@ def export_json():
                 entry = {
                     "Date": f"{fname1}",
                     "Title": f"{title.rstrip()}",
-                    "Text": f"{text.strip()}",
+                    "Text": f"{text.lstrip()}",
                 }
                 MyArchives.append(entry)
         dump(data, outfile, indent=4)
