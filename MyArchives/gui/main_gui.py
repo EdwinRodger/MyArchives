@@ -107,21 +107,7 @@ def main():
     text_box.bind("<Return>", two_spaces)
     entry_box.bind("<Key>", save)
 
-    # Clock
-    def time():
-        try:
-            # time.strftime()
-            string = strftime("%I:%M:%S %p")
-            ctime = tk.Label(
-                window, font=("Arial", 50), background="#1a1a1a", foreground="Green"
-            )
-            ctime.config(text=string)
-            ctime.after(1000, time)
-            ctime.place(y=270, x=7)
-        except:
-            pass
 
-    time()
 
     # Menubar
     my_menu = tk.Menu(window)
