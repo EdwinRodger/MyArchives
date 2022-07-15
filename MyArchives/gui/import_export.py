@@ -34,8 +34,8 @@ def import_zip():
         else:
             with ZipFile(zip_dir, "r") as zip_ref:
                 zip_ref.extractall(f"{homepath}/MyArchive")
-    except:
-        showerror("Import Error!", "Only import zip file!")
+    except Exception as e:
+        showerror("Import Error!", f"An error has occurred\n\n{e}")
         import_zip()
 
 
@@ -105,7 +105,7 @@ def import_json():
                     f.write(i["Title"] + "\n")
                     f.write(i["Text"])
     except Exception as e:
-        showerror("Import Error!", e)
+        showerror("Import Error!", f"An error has occurred\n\n{e}")
         import_json()
 
 
