@@ -275,6 +275,7 @@ def main():
     backup_menu.add_command(label="Friday", command=friday_backup)
     backup_menu.add_command(label="Saturday", command=saturday_backup)
     backup_menu.add_command(label="Sunday", command=sunday_backup)
+    backup_menu.add_command(label="No Backup", command=no_backup)
     weekly_backup()
 
     # Add Edit Menu

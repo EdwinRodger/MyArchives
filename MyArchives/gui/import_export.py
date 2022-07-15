@@ -188,3 +188,6 @@ def sunday_backup():
     with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
         f.write("Sunday")
     weekly_backup()
+def no_backup():
+    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+        f.write("no backup day selected")

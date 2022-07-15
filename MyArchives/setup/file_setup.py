@@ -11,4 +11,4 @@ def files_setup():
     # Creates a file for Weekly Backup Day
     if not exists(f"{homepath}Textfiles/weekly_backup_day.txt"):
         with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
-            f.write("None")
+            f.write("none")
