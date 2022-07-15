@@ -62,7 +62,7 @@ def update():
 
                     with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
                         f.write(currentHash)
-                
+
                 else:
                     pass
 

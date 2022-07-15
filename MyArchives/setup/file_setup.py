@@ -3,6 +3,7 @@ from .tasks import home_directory
 
 homepath = home_directory()
 
+
 def files_setup():
     # Creates a files for theme configuration
     if not exists(f"{homepath}Textfiles/theme.txt"):

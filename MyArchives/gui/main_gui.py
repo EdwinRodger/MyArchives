@@ -107,8 +107,6 @@ def main():
     text_box.bind("<Return>", two_spaces)
     entry_box.bind("<Key>", save)
 
-
-
     # Menubar
     my_menu = tk.Menu(window)
     window.config(menu=my_menu)
@@ -251,12 +249,18 @@ def main():
     myarchives_menu.add_separator()
     import_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Import", menu=import_menu)
-    import_menu.add_command(label="JSON", command=import_json, accelerator="(MyArchives)")
+    import_menu.add_command(
+        label="JSON", command=import_json, accelerator="(MyArchives)"
+    )
     import_menu.add_command(label="Zip", command=import_zip, accelerator="(MyArchives)")
     export_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Export", menu=export_menu)
-    export_menu.add_command(label="JSON", command=export_json, accelerator="(MyArchives)")
-    export_menu.add_command(label="Text", command=export_txt, accelerator="(MyArchives)")
+    export_menu.add_command(
+        label="JSON", command=export_json, accelerator="(MyArchives)"
+    )
+    export_menu.add_command(
+        label="Text", command=export_txt, accelerator="(MyArchives)"
+    )
     export_menu.add_command(label="Zip", command=export_zip, accelerator="(MyArchives)")
     myarchives_menu.add_separator()
     myarchives_menu.add_command(
@@ -264,8 +268,12 @@ def main():
     )  # password.py/change_password()
     theme_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Theme", menu=theme_menu)
-    theme_menu.add_command(label="Light", command=lambda: light_theme(window, entry_box, text_box))
-    theme_menu.add_command(label="Dark", command=lambda: dark_theme(window, entry_box, text_box))
+    theme_menu.add_command(
+        label="Light", command=lambda: light_theme(window, entry_box, text_box)
+    )
+    theme_menu.add_command(
+        label="Dark", command=lambda: dark_theme(window, entry_box, text_box)
+    )
     backup_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Weekly Backup", menu=backup_menu)
     backup_menu.add_command(label="Monday", command=monday_backup)
@@ -319,13 +327,13 @@ def main():
     # Themeing Options
 
     def check_theme():
-        with open(f"{homepath}Textfiles/theme.txt", 'r') as f:
+        with open(f"{homepath}Textfiles/theme.txt", "r") as f:
             mode = f.read()
-        if mode == '0':
+        if mode == "0":
             light_theme(window, entry_box, text_box)
-        elif mode=='1':
+        elif mode == "1":
             dark_theme(window, entry_box, text_box)
-    
+
     check_theme()
 
     # If we comment the below line, the window will get close but the whole program

@@ -7,6 +7,7 @@ from tkinter.messagebox import showerror
 from zipfile import ZipFile
 import datetime
 import calendar
+
 # MyArchives Libraries
 from .home_dir import home_directory
 from datetime import datetime, date
@@ -109,17 +110,16 @@ def import_json():
         import_json()
 
 
-
 def weekly_backup():
-    
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'r') as f:
-        day  =f.read()
-    
+
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "r") as f:
+        day = f.read()
+
     today = str(date.today())
 
-    day_number = datetime.strptime(today.replace('-',' '), '%Y %m %d').weekday()
+    day_number = datetime.strptime(today.replace("-", " "), "%Y %m %d").weekday()
     today_day = calendar.day_name[day_number]
-    
+
     def backup():
         files = []
 
@@ -128,7 +128,11 @@ def weekly_backup():
 
         MyArchives = []
 
-        metadata = {"Author": "EdwinRodger", "Name": "MyArchives", "Export Date": f"{now}"}
+        metadata = {
+            "Author": "EdwinRodger",
+            "Name": "MyArchives",
+            "Export Date": f"{now}",
+        }
 
         data = {"Metadata": metadata, "MyArchives": MyArchives}
 
@@ -151,7 +155,7 @@ def weekly_backup():
             dump(data, outfile, indent=4)
 
     try:
-        if day==today_day:
+        if day == today_day:
             backup()
         else:
             pass
@@ -159,35 +163,48 @@ def weekly_backup():
         showerror("Weekly Export Error!", e)
 
 
-
 def monday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Monday")
     weekly_backup()
+
+
 def tuesday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Tuesday")
     weekly_backup()
+
+
 def wednesday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Wednesday")
-    weekly_backup()    
+    weekly_backup()
+
+
 def thursday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Thursday")
     weekly_backup()
+
+
 def friday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Friday")
     weekly_backup()
+
+
 def saturday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Saturday")
     weekly_backup()
+
+
 def sunday_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("Sunday")
     weekly_backup()
+
+
 def no_backup():
-    with open(f'{homepath}Textfiles/weekly_backup_day.txt', 'w') as f:
+    with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
         f.write("no backup day selected")

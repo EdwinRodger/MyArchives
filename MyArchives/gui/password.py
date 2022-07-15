@@ -78,6 +78,7 @@ def check_pass():
             )
             check_pass()
 
+
 def change_password():
     check_pass()
     new_pass()
