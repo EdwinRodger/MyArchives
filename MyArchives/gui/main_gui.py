@@ -19,7 +19,7 @@ from wavio import write
 from .home_dir import home_directory
 from .import_export import *
 from .online_sites import *
-from .password import new_pass
+from .password import new_pass, change_password
 from .themes import *
 
 homepath = home_directory()
@@ -274,8 +274,8 @@ def main():
     export_menu.add_command(label="Export (json file)", command=export_json)
     myarchives_menu.add_separator()
     myarchives_menu.add_command(
-        label="Change Password", command=new_pass
-    )  # password.py/new_pass()
+        label="Change Password", command=change_password
+    )  # password.py/change_password()
     theme_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Theme", menu=theme_menu)
     theme_menu.add_command(label="Light", command=lambda: light_theme(window, entry_box, text_box))
