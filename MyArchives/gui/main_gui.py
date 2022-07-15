@@ -265,13 +265,13 @@ def main():
     myarchives_menu.add_separator()
     import_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Import", menu=import_menu)
-    import_menu.add_command(label="Import (zip file)", command=import_zip)
-    import_menu.add_command(label="Import (json file)", command=import_json)
+    import_menu.add_command(label="JSON", command=import_json, accelerator="(MyArchives)")
+    import_menu.add_command(label="Zip", command=import_zip, accelerator="(MyArchives)")
     export_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Export", menu=export_menu)
-    export_menu.add_command(label="Export (text file)", command=export_txt)
-    export_menu.add_command(label="Export (zip file)", command=export_zip)
-    export_menu.add_command(label="Export (json file)", command=export_json)
+    export_menu.add_command(label="JSON", command=export_json, accelerator="(MyArchives)")
+    export_menu.add_command(label="Text", command=export_txt, accelerator="(MyArchives)")
+    export_menu.add_command(label="Zip", command=export_zip, accelerator="(MyArchives)")
     myarchives_menu.add_separator()
     myarchives_menu.add_command(
         label="Change Password", command=change_password
