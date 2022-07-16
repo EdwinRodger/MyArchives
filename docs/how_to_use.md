@@ -14,7 +14,7 @@ After setting the password, when you will run the program again, you will be ask
 
 After you give the correct password, you will find the user interface as defined below
 
-<img src="../.github/images/MyArchives(2022-07-09).png" />
+<img src="../.github/images/MyArchives(2022-07-17).png" />
 
 To see a respective day entry, select the date from calendar and leave the calendar with mouse cursor to see that day entry
 

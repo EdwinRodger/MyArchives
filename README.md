@@ -1,6 +1,6 @@
 <div align="center">
   <h1><strong>MyArchives</strong></h1>
-  <img src=".github/images/MyArchives(2022-07-09).png" width="100%" alt="Screenshot">
+  <img src=".github/images/MyArchives(2022-07-17).png" width="100%" alt="Screenshot">
   <p>MyArchives is a software to write your entries in a simple, minimalistic and easy way</p>
 </div>
 
