@@ -28,7 +28,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. iOS]
- - CMD-Diary Version [e.g. v1.1]
+ - MyArchives Version [e.g. 3.4.0]
 
 **Additional context**
 Add any other context about the problem here.
