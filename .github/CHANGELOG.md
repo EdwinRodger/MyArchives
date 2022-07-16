@@ -1,3 +1,30 @@
+# 3.4.0
+
+###### Released: 17 July 2022
+
+### What’s New -
+
+- ➕ Added password guide in how_to_use.md
+- 💡 New Light Mode
+- 📅 Weekly Backups are now available
+
+### Enhancements -
+
+- Updated “Software Update” Message box
+- Changing password will now require current password
+    - Previously it directly prompts for new password
+- More precise Import Error message
+- Updated Import Export menu names and order
+- Code Enhancements
+
+### Fixed -
+
+- No extra spaces at entry start when imported json file
+
+### Removed -
+
+- Clock
+
 # 3.3.0
 
 ###### Released: 10 July 2022
