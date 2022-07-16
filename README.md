@@ -18,11 +18,9 @@ Write as many entries as you want until you run out of space on your computer
 [How to use guide](docs/how_to_use.md)
 
 # Features
-- [ ] 24 Hour Clock Format
-- [ ] Weekly Backups
+- [x] Weekly Backups
 - [x] Calendar
-- [ ] Changeable themes (Dark/Light/Community Made)
-- [x] Clock
+- [x] Changeable themes (Dark/Light/Community Made)
 - [x] Commented Code
 - [ ] Different voices for TTS
 - [ ] Entry encryption
