@@ -46,7 +46,7 @@ def new_pass():
         key = base64.urlsafe_b64encode(kdf.derive(password))
         with open(f"{homepath}Textfiles/pass.key", 'wb') as f:
             f.write(key)
-        with open(f"{homepath}Textfiles/pass.key", 'wb') as f:
+        with open(f"{homepath}Textfiles/salt.txt", 'wb') as f:
             f.write(salt)
         messagebox.showinfo("Password Set", "New Password Set!")
 
@@ -60,7 +60,7 @@ def check_pass():
     else:
         with open(f"{homepath}Textfiles/pass.key", "rb") as f:
             passwrd = f.read()
-        with open(f"{homepath}Textfiles/pass.key", 'rb') as f:
+        with open(f"{homepath}Textfiles/salt.txt", 'rb') as f:
             salt=f.read()
         
         password = str.encode(dialog)
@@ -87,6 +87,8 @@ def change_password():
 
 def password_ui():
     if not exists(f"{homepath}Textfiles/pass.key"):
+        new_pass()
+    elif not exists(f"{homepath}Textfiles/salt.txt"):
         new_pass()
     else:
         check_pass()
