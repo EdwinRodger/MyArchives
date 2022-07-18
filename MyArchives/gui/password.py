@@ -9,6 +9,7 @@ from customtkinter import CTk
 
 # MyArchives Libraries
 from .home_dir import home_directory
+from .encrypt_decrypt import decrypt
 
 import base64
 import os
@@ -74,7 +75,11 @@ def check_pass():
 
         # Password checking
         if key == passwrd:
-            pass
+            # If the files are not encrypted, decrypt will raise an error but files will get decrypted once the program get closed and after that decrypt won't give any more errors, try-except block is used for backward compatibility
+            try:
+                decrypt()
+            except:
+                pass
 
         else:
             messagebox.showwarning(

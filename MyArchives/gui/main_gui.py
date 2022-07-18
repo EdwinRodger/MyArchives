@@ -21,6 +21,7 @@ from .import_export import *
 from .online_sites import *
 from .password import new_pass, change_password
 from .themes import *
+from .encrypt_decrypt import encrypt
 
 homepath = home_directory()
 
@@ -335,10 +336,12 @@ def main():
             dark_theme(window, entry_box, text_box)
 
     check_theme()
-
+    def end_processes():
+        encrypt() # encrypt_decrypt.py/encrypt()
+        exit() # sys.exit()
     # If we comment the below line, the window will get close but the whole program
     # will remain to run in background (In windows, you can see it using task manager
     # under "background processes"). While developing, you will know it when you will
     # close main window but the program won't get out of terminal
-    window.protocol("WM_DELETE_WINDOW", exit)  # sys.exit()
+    window.protocol("WM_DELETE_WINDOW", end_processes) 
     window.mainloop()
