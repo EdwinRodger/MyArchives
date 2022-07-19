@@ -2,7 +2,6 @@
 import tkinter as tk
 from os import remove
 from sys import exit
-from time import strftime
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
 import threading
