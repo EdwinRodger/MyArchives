@@ -167,8 +167,20 @@ def main():
     # Text-To-Speech (threading)
     def ttst():
         def tts():
-            engine.say(text_box.get(0.0, tk.END))
-            engine.runAndWait()
+            voices = engine.getProperty('voices') 
+            with open(f"{homepath}Textfiles/voices.txt", 'r') as f:
+                voice = f.read()
+            if voice == '0':
+                engine.setProperty('voice', voices[0].id) # changing index, changes voices. 0 for male
+                engine.say(text_box.get(0.0, tk.END))
+                engine.runAndWait()
+            elif voice == '1':
+                engine.setProperty('voice', voices[1].id) # changing index, changes voices. 1 for female
+                engine.say(text_box.get(0.0, tk.END))
+                engine.runAndWait()
+            else:
+                engine.say('There is some problem with Text To Speech, Try to change narrators voice and try again')
+                engine.runAndWait()
 
         tts_threading = threading.Thread(target=tts)
         tts_threading.start()
@@ -240,12 +252,25 @@ def main():
             stt_threading.start()
         else:
             pass
+    def narrator(voice):
+        if voice == 'male':
+            with open(f"{homepath}Textfiles/voices.txt", "w") as f:
+                f.write("0")
+        elif voice == 'female':
+            with open(f"{homepath}Textfiles/voices.txt", "w") as f:
+                f.write("1")
+        else:
+            showerror('Error!', "There is some error while changing narrator's voice")
 
     # MyArchives menu
     myarchives_menu = tk.Menu(my_menu, tearoff=False)
     my_menu.add_cascade(label="File", menu=myarchives_menu)
-    myarchives_menu.add_command(label="Text-To-Speech", command=ttst)
     myarchives_menu.add_command(label="Speech-To-Text", command=sttt)
+    myarchives_menu.add_command(label="Text-To-Speech", command=ttst)
+    narrator_menu = tk.Menu(my_menu, tearoff=False)
+    myarchives_menu.add_cascade(label="Narrator's Voice", menu=narrator_menu)
+    narrator_menu.add_command(label="Male", command=lambda:narrator('male'))
+    narrator_menu.add_command(label="Female", command=lambda:narrator('female'))
     myarchives_menu.add_separator()
     import_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Import", menu=import_menu)

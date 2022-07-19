@@ -13,3 +13,7 @@ def files_setup():
     if not exists(f"{homepath}Textfiles/weekly_backup_day.txt"):
         with open(f"{homepath}Textfiles/weekly_backup_day.txt", "w") as f:
             f.write("none")
+    # Creates a file for voice of Speech Narrator
+    if not exists(f"{homepath}Textfiles/voices.txt"):
+        with open(f"{homepath}Textfiles/voices.txt", "w") as f:
+            f.write("0")
