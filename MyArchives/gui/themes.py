@@ -52,37 +52,43 @@ def dark_theme(window, entry_box, text_box, cal):
     with open(f"{homepath}Textfiles/theme.txt", "w") as f:
         f.write("1")
 
-'''Use below template to create custom themes. Replace custom_theme with your theme name and replace the "color name/hash" with your desired theme colors. You can remove the options which you didn't used.'''
+
+"""Use below template to create custom themes. Replace
+custom_theme with your theme name and replace the
+"color name/hash" with your desired theme colors. You
+can remove the options which you didn't used."""
+
+
 def custom_theme(window, entry_box, text_box, cal):
-    window.config(bg="color name/hash") # backgroud color of main window
+    window.config(bg="color name/hash")  # backgroud color of main window
     entry_box.config(
-        bg="color name/hash", # backgroud color.
-        foreground="color name/hash" # font color.
+        bg="color name/hash",  # backgroud color.
+        foreground="color name/hash",  # font color.
     )
     text_box.config(
-        bg="color name/hash", # backgroud Color.
-        foreground="color name/hash" # font color.
+        bg="color name/hash",  # backgroud Color.
+        foreground="color name/hash",  # font color.
     )
     cal.config(
-        background = "color name/hash", # background color of calendar border and month/year name
-        foreground = "color name/hash", # foreground color of month/year name
-        disabledbackground = "color name/hash", # background color of calendar border and month/year name in disabled state
-        disabledforeground = "color name/hash", # foreground color of month/year name in disabled state
-        bordercolor = "color name/hash", # day border color
-        headersbackground = "color name/hash", # background color of day names and week numbers
-        headersforeground = "color name/hash", # foreground color of day names and week numbers
-        selectbackground = "color name/hash", # background color of selected day
-        selectforeground = "color name/hash", # foreground color of selected day
-        disabledselectbackground = "color name/hash", # background color of selected day in disabled state
-        disabledselectforeground = "color name/hash", # foreground color of selected day in disabled state
-        normalbackground = "color name/hash", # background color of normal week days
-        normalforeground = "color name/hash", # foreground color of normal week days
-        weekendbackground = "color name/hash", # background color of week-end days
-        weekendforeground = "color name/hash", # foreground color of week-end days
-        othermonthforeground = "color name/hash", # foreground color of normal week days belonging to the previous/next month
-        othermonthbackground = "color name/hash", # background color of normal week days belonging to the previous/next month
-        othermonthweforeground = "color name/hash", # foreground color of week-end days belonging to the previous/next month
-        othermonthwebackground = "color name/hash", # background color of week-end days belonging to the previous/next month
-        disableddaybackground = "color name/hash", # background color of days in disabled state
-        disableddayforeground = "color name/hash", # foreground color of days in disabled state
+        background="color name/hash",  # background color of calendar border and month/year name
+        foreground="color name/hash",  # foreground color of month/year name
+        disabledbackground="color name/hash",  # background color of calendar border and month/year name in disabled state
+        disabledforeground="color name/hash",  # foreground color of month/year name in disabled state
+        bordercolor="color name/hash",  # day border color
+        headersbackground="color name/hash",  # background color of day names and week numbers
+        headersforeground="color name/hash",  # foreground color of day names and week numbers
+        selectbackground="color name/hash",  # background color of selected day
+        selectforeground="color name/hash",  # foreground color of selected day
+        disabledselectbackground="color name/hash",  # background color of selected day in disabled state
+        disabledselectforeground="color name/hash",  # foreground color of selected day in disabled state
+        normalbackground="color name/hash",  # background color of normal week days
+        normalforeground="color name/hash",  # foreground color of normal week days
+        weekendbackground="color name/hash",  # background color of week-end days
+        weekendforeground="color name/hash",  # foreground color of week-end days
+        othermonthforeground="color name/hash",  # foreground color of normal week days belonging to the previous/next month
+        othermonthbackground="color name/hash",  # background color of normal week days belonging to the previous/next month
+        othermonthweforeground="color name/hash",  # foreground color of week-end days belonging to the previous/next month
+        othermonthwebackground="color name/hash",  # background color of week-end days belonging to the previous/next month
+        disableddaybackground="color name/hash",  # background color of days in disabled state
+        disableddayforeground="color name/hash",  # foreground color of days in disabled state
     )

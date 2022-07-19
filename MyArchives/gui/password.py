@@ -25,8 +25,6 @@ except:
     pass
 
 
-
-
 def new_pass():
     dialog = askstring(title="Password", prompt="\t\tEnter New Password\t\t", show="●")
 
@@ -45,11 +43,12 @@ def new_pass():
             iterations=390000,
         )
         key = base64.urlsafe_b64encode(kdf.derive(password))
-        with open(f"{homepath}Textfiles/pass.key", 'wb') as f:
+        with open(f"{homepath}Textfiles/pass.key", "wb") as f:
             f.write(key)
-        with open(f"{homepath}Textfiles/salt.txt", 'wb') as f:
+        with open(f"{homepath}Textfiles/salt.txt", "wb") as f:
             f.write(salt)
         messagebox.showinfo("Password Set", "New Password Set!")
+
 
 def check_pass():
     dialog = askstring(
@@ -61,9 +60,9 @@ def check_pass():
     else:
         with open(f"{homepath}Textfiles/pass.key", "rb") as f:
             passwrd = f.read()
-        with open(f"{homepath}Textfiles/salt.txt", 'rb') as f:
-            salt=f.read()
-        
+        with open(f"{homepath}Textfiles/salt.txt", "rb") as f:
+            salt = f.read()
+
         password = str.encode(dialog)
         kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
@@ -85,6 +84,8 @@ def check_pass():
             messagebox.showwarning(
                 "Wrong Password", "The password you have entered is wrong... Try Again!"
             )
+
+
 def change_password():
     check_pass()
     new_pass()

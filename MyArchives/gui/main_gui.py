@@ -167,19 +167,25 @@ def main():
     # Text-To-Speech (threading)
     def ttst():
         def tts():
-            voices = engine.getProperty('voices') 
-            with open(f"{homepath}Textfiles/voices.txt", 'r') as f:
+            voices = engine.getProperty("voices")
+            with open(f"{homepath}Textfiles/voices.txt", "r") as f:
                 voice = f.read()
-            if voice == '0':
-                engine.setProperty('voice', voices[0].id) # changing index, changes voices. 0 for male
+            if voice == "0":
+                engine.setProperty(
+                    "voice", voices[0].id
+                )  # changing index, changes voices. 0 for male
                 engine.say(text_box.get(0.0, tk.END))
                 engine.runAndWait()
-            elif voice == '1':
-                engine.setProperty('voice', voices[1].id) # changing index, changes voices. 1 for female
+            elif voice == "1":
+                engine.setProperty(
+                    "voice", voices[1].id
+                )  # changing index, changes voices. 1 for female
                 engine.say(text_box.get(0.0, tk.END))
                 engine.runAndWait()
             else:
-                engine.say('There is some problem with Text To Speech, Try to change narrators voice and try again')
+                engine.say(
+                    "There is some problem with Text To Speech, Try to change narrators voice and try again"
+                )
                 engine.runAndWait()
 
         tts_threading = threading.Thread(target=tts)
@@ -252,15 +258,16 @@ def main():
             stt_threading.start()
         else:
             pass
+
     def narrator(voice):
-        if voice == 'male':
+        if voice == "male":
             with open(f"{homepath}Textfiles/voices.txt", "w") as f:
                 f.write("0")
-        elif voice == 'female':
+        elif voice == "female":
             with open(f"{homepath}Textfiles/voices.txt", "w") as f:
                 f.write("1")
         else:
-            showerror('Error!', "There is some error while changing narrator's voice")
+            showerror("Error!", "There is some error while changing narrator's voice")
 
     # MyArchives menu
     myarchives_menu = tk.Menu(my_menu, tearoff=False)
@@ -269,8 +276,8 @@ def main():
     myarchives_menu.add_command(label="Text-To-Speech", command=ttst)
     narrator_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Narrator's Voice", menu=narrator_menu)
-    narrator_menu.add_command(label="Male", command=lambda:narrator('male'))
-    narrator_menu.add_command(label="Female", command=lambda:narrator('female'))
+    narrator_menu.add_command(label="Male", command=lambda: narrator("male"))
+    narrator_menu.add_command(label="Female", command=lambda: narrator("female"))
     myarchives_menu.add_separator()
     import_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Import", menu=import_menu)
@@ -360,12 +367,14 @@ def main():
             dark_theme(window, entry_box, text_box, cal)
 
     check_theme()
+
     def end_processes():
-        encrypt() # encrypt_decrypt.py/encrypt()
-        exit() # sys.exit()
+        encrypt()  # encrypt_decrypt.py/encrypt()
+        exit()  # sys.exit()
+
     # If we comment the below line, the window will get close but the whole program
     # will remain to run in background (In windows, you can see it using task manager
     # under "background processes"). While developing, you will know it when you will
     # close main window but the program won't get out of terminal
-    window.protocol("WM_DELETE_WINDOW", end_processes) 
+    window.protocol("WM_DELETE_WINDOW", end_processes)
     window.mainloop()
