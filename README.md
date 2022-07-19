@@ -20,7 +20,7 @@ Write as many entries as you want until you run out of space on your computer
 # Features
 - [x] Weekly Backups
 - [x] Calendar
-- [x] Changeable themes (Dark/Light/[Community Made](https://github.com/EdwinRodger/MyArchives/blob/main/MyArchives/gui/themes.py#L55))
+- [x] Changeable themes (Dark/Light/[Community Made](https://github.com/EdwinRodger/MyArchives/blob/main/MyArchives/gui/themes.py#L56))
 - [x] Commented Code
 - [ ] Different voices for TTS
 - [ ] Entry encryption
