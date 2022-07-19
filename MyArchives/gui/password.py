@@ -1,20 +1,21 @@
 # Python Libraries
+import base64
+import os
 from os.path import exists
 from sys import exit
 from tkinter import messagebox
 from tkinter.simpledialog import askstring
 
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
 # Third Party Libraries
 from customtkinter import CTk
 
-# MyArchives Libraries
-from .home_dir import home_directory
 from .encrypt_decrypt import decrypt
 
-import base64
-import os
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+# MyArchives Libraries
+from .home_dir import home_directory
 
 homepath = home_directory()
 

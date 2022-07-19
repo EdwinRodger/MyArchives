@@ -1,10 +1,10 @@
 # Python Libraries
+import threading
 import tkinter as tk
 from os import remove
 from sys import exit
 from tkinter.messagebox import askyesno, showerror
 from tkinter.scrolledtext import ScrolledText
-import threading
 
 # Third Party Libraries
 import customtkinter as ctk
@@ -15,12 +15,12 @@ from tkcalendar import Calendar
 from wavio import write
 
 # MyArchives Libraries
+from .encrypt_decrypt import encrypt
 from .home_dir import home_directory
 from .import_export import *
 from .online_sites import *
-from .password import new_pass, change_password
+from .password import change_password
 from .themes import *
-from .encrypt_decrypt import encrypt
 
 homepath = home_directory()
 

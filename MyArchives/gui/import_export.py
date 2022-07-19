@@ -1,16 +1,15 @@
 # Python Libraries
-from json import load, dump
+import calendar
+from datetime import date, datetime
+from json import dump, load
 from os import listdir
 from shutil import make_archive
 from tkinter.filedialog import askdirectory, askopenfilename
 from tkinter.messagebox import showerror
 from zipfile import ZipFile
-import datetime
-import calendar
 
 # MyArchives Libraries
 from .home_dir import home_directory
-from datetime import datetime, date
 
 # returns current date and time
 now = datetime.now()
