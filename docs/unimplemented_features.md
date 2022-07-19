@@ -19,4 +19,5 @@ Reason - Saving multiple entries will affect saving and backup settings for prev
 ---
 
 ###### Why these features won't get added you say? because I am not experienced enough ಥ益ಥ
+
 ###### but you can add them and send a pull request so all can benefit from it ( ･ω･)
