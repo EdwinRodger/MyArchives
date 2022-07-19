@@ -55,7 +55,7 @@ def export_txt():
                 outfile.write(f"{fname1}")
                 outfile.write("\n")
                 outfile.write(infile.read())
-                outfile.write("-----\n\n")
+                outfile.write("\n\n-----\n\n")
 
 
 def export_json():
