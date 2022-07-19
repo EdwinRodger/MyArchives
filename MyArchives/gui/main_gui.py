@@ -14,6 +14,9 @@ from speech_recognition import AudioFile, Recognizer
 from tkcalendar import Calendar
 from wavio import write
 
+# This is Pyinstaller special import and doesn't come with python and can be downloaded with package manager, for testing purposes, comment out this import
+# import pyi_splash
+
 # MyArchives Libraries
 from .encrypt_decrypt import encrypt
 from .home_dir import home_directory
@@ -26,6 +29,10 @@ homepath = home_directory()
 
 # pyttsx3.init()
 engine = init()
+
+
+# Close the splash screen
+# pyi_splash.close()
 
 
 def main():
