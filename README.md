@@ -31,6 +31,7 @@ Write as many entries as you want until you run out of space on your computer
 - [x] Text-To-Speech (Currenly only female voice available)
 - [ ] Diary Templates
 - [x] Zero buttons, everything done with mouse cursor
+* [Features that won't be implemented](docs/unimplemented_features.md)
 
 # Want to Contribute?
 Firstly, check the [contributing guidlines](.github/CONTRIBUTING.md)
