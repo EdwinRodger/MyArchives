@@ -5,16 +5,17 @@ from cryptography.fernet import Fernet
 from .home_dir import home_directory
 
 homepath = home_directory()
+try:
+    with open(f"{homepath}Textfiles/pass.key", "rb") as f:
+        key = f.read()
+    f = Fernet(key)
+    dir = f"{homepath}MyArchive/"
+    files = []
 
-with open(f"{homepath}Textfiles/pass.key", "rb") as f:
-    key = f.read()
-
-f = Fernet(key)
-dir = f"{homepath}MyArchive/"
-files = []
-
-for i in listdir(f"{homepath}MyArchive/"):
-    files.append(i)
+    for i in listdir(f"{homepath}MyArchive/"):
+        files.append(i)
+except:
+    pass
 
 
 def encrypt():

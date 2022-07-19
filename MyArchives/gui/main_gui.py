@@ -369,8 +369,11 @@ def main():
     check_theme()
 
     def end_processes():
-        encrypt()  # encrypt_decrypt.py/encrypt()
-        exit()  # sys.exit()
+        try:
+            encrypt()  # encrypt_decrypt.py/encrypt()
+            exit()  # sys.exit()
+        except:
+            exit()  # sys.exit()
 
     # If we comment the below line, the window will get close but the whole program
     # will remain to run in background (In windows, you can see it using task manager
