@@ -294,10 +294,10 @@ def main():
     theme_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Theme", menu=theme_menu)
     theme_menu.add_command(
-        label="Light", command=lambda: light_theme(window, entry_box, text_box)
+        label="Light", command=lambda: light_theme(window, entry_box, text_box, cal)
     )
     theme_menu.add_command(
-        label="Dark", command=lambda: dark_theme(window, entry_box, text_box)
+        label="Dark", command=lambda: dark_theme(window, entry_box, text_box, cal)
     )
     backup_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Weekly Backup", menu=backup_menu)
@@ -355,9 +355,9 @@ def main():
         with open(f"{homepath}Textfiles/theme.txt", "r") as f:
             mode = f.read()
         if mode == "0":
-            light_theme(window, entry_box, text_box)
+            light_theme(window, entry_box, text_box, cal)
         elif mode == "1":
-            dark_theme(window, entry_box, text_box)
+            dark_theme(window, entry_box, text_box, cal)
 
     check_theme()
     def end_processes():
