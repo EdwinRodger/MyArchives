@@ -85,6 +85,7 @@ def check_pass():
             messagebox.showwarning(
                 "Wrong Password", "The password you have entered is wrong... Try Again!"
             )
+            check_pass()
 
 
 def change_password():
