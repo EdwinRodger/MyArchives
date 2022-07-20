@@ -35,11 +35,9 @@ File option in Menu Bar consists of -
 - Change Password
   - To change the existing password
 
-Edit option in Menu Bar consists of basic text related features
+Edit option in Menu Bar consists of basic text editing features
 
-Help option in Menu Bar send you to web-pages according to title
-
-There is a live clock just for help
+Help option in Menu Bar will send you to web-pages according to the title
 
 If you have further questions, you can ask in the [disscussion](https://github.com/EdwinRodger/MyArchives/discussions/categories/q-a) section.
 

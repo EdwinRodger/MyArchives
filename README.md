@@ -62,6 +62,10 @@ pip install -r requirements.txt
 
 and after that you are ready to make a software changing commit
 
+# Story
+
+If not already obvious, this project is completely inspired by [mini-diary](https://github.com/samuelmeuli/mini-diary) project, made by [Samuel Meuli](https://github.com/samuelmeuli). I know HTML but not CSS or Javascript so I tried to mirror whole project in python, though there are some things that are not matching/available in MyArchives as comapred to mini-diary, I tried hard to make MyArchives as close as to mini-diary. On the positive side there are many things which are not present in mini-diary but present in MyArchives ;)
+
 # License
 
 [MIT](LICENSE)
