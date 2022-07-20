@@ -53,6 +53,31 @@ def dark_theme(window, entry_box, text_box, cal):
         f.write("1")
 
 
+def hacker_theme(window, entry_box, text_box, cal):
+    window.config(bg="black")
+    entry_box.config(bg="black", foreground="lime")
+    text_box.config(bg="black", foreground="lime")
+    cal.config(
+        background="black",
+        foreground="lime",
+        bordercolor="black",
+        headersbackground="black",
+        headersforeground="lime",
+        selectbackground="green",
+        selectforeground="lime",
+        normalbackground="black",
+        normalforeground="lime",
+        weekendbackground="black",
+        weekendforeground="lime",
+        othermonthforeground="3b3a3c",
+        othermonthweforeground="3b3a3c",
+        othermonthbackground="black",
+        othermonthwebackground="black",
+    )
+    with open(f"{homepath}Textfiles/theme.txt", "w") as f:
+        f.write("2")
+
+
 """Use below template to create custom themes. Replace
 custom_theme with your theme name and replace the
 "color name/hash" with your desired theme colors. You

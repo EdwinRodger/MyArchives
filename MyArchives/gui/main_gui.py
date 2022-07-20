@@ -151,6 +151,9 @@ def main():
     theme_menu.add_command(
         label="Dark", command=lambda: dark_theme(window, entry_box, text_box, cal)
     )
+    theme_menu.add_command(
+        label="Hacker", command=lambda: hacker_theme(window, entry_box, text_box, cal)
+    )
     backup_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Weekly Backup", menu=backup_menu)
     backup_menu.add_command(label="Monday", command=monday_backup)
@@ -218,6 +221,8 @@ def main():
             light_theme(window, entry_box, text_box, cal)
         elif mode == "1":
             dark_theme(window, entry_box, text_box, cal)
+        elif mode == "2":
+            hacker_theme(window, entry_box, text_box, cal)
 
     check_theme()
 
