@@ -18,6 +18,12 @@ Reason - Saving multiple entries will affect saving and backup settings for prev
 
 ---
 
+Feature - Different Fonts
+
+Reason - Different fonts have different widths and heights, changing them disorientes title box and entry box making whole UI not good to look
+
+---
+
 ###### Why these features won't get added you say? because I am not experienced enough ಥ益ಥ
 
 ###### but you can add them and send a pull request so all can benefit from it ( ･ω･)
