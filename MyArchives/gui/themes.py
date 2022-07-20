@@ -55,8 +55,8 @@ def dark_theme(window, entry_box, text_box, cal):
 
 def hacker_theme(window, entry_box, text_box, cal):
     window.config(bg="black")
-    entry_box.config(bg="black", foreground="lime")
-    text_box.config(bg="black", foreground="lime")
+    entry_box.config(bg="black", foreground="lime", insertbackground="lime")
+    text_box.config(bg="black", foreground="lime", insertbackground="lime")
     cal.config(
         background="black",
         foreground="lime",
@@ -89,10 +89,12 @@ def custom_theme(window, entry_box, text_box, cal):
     entry_box.config(
         bg="color name/hash",  # backgroud color.
         foreground="color name/hash",  # font color.
+        insertbackground="color name/hash",  # cursor color
     )
     text_box.config(
         bg="color name/hash",  # backgroud Color.
         foreground="color name/hash",  # font color.
+        insertbackground="color name/hash",  # cursor color
     )
     cal.config(
         background="color name/hash",  # background color of calendar border and month/year name
