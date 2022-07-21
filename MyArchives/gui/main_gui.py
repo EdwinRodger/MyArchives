@@ -72,11 +72,9 @@ def main():
         window,
         font="Calibri 21 bold",
         width=48,
-        bg="#353538",
-        foreground="white",
         relief=tk.FLAT,
     )
-    entry_box.insert(0, "Title")
+    entry_box.insert(0, "Important Instructions")
     entry_box.place(x=400)
 
     # tkinter.scrolledtext.ScrolledText()
@@ -85,14 +83,12 @@ def main():
         width=82,
         height=20,
         font="Calibri",
-        bg="#353538",
-        foreground="white",
         undo=True,
         relief=tk.FLAT,
     )
     text_box.insert(
         0.0,
-        "Choose a date then leave the calendar with cursor to see the entry\n\nIf you edit the title then write something in entry to avoid bugs\n\nAvoid having <space>, <backspace> or any non-ascii character to be typped in the end to avoid bugs\n\nThat is all for instructions and bugs, you can start writing your entry :)",
+        "Choose a date then leave the calendar with cursor to see the entry\n\nIf you edit the title then write something in entry to avoid bugs\n\nAvoid having <space>, <backspace> or any non-ascii character to be typed in the end to avoid bugs\n\nIf you edited already saved entry, make sure you delete the blank space at the end of the title and write something in the entry box to avoid bugs\n\nThat is all for instructions and bugs, you can start writing your entry :)",
     )
     text_box.place(x=400, y=39)
 
