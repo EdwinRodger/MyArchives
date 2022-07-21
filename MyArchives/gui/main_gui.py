@@ -118,7 +118,7 @@ def main():
     myarchives_menu.add_command(
         label="Speech-To-Text", command=lambda: sttt(text_box, cal)
     )
-    myarchives_menu.add_command(label="Text-To-Speech", command=lambda: ttst(text_box))
+    myarchives_menu.add_command(label="Text-To-Speech", command=lambda: ttst(text_box, entry_box))
     narrator_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Narrator's Voice", menu=narrator_menu)
     narrator_menu.add_command(label="Male", command=lambda: narrator("male"))

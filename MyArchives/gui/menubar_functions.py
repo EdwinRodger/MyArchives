@@ -78,7 +78,7 @@ def clear_all(text_box):
 
 
 # Text-To-Speech (threading)
-def ttst(text_box):
+def ttst(text_box, entry_box):
     def tts():
         voices = engine.getProperty("voices")
         with open(f"{homepath}Textfiles/voices.txt", "r") as f:
@@ -87,12 +87,14 @@ def ttst(text_box):
             engine.setProperty(
                 "voice", voices[0].id
             )  # changing index, changes voices. 0 for male
+            engine.say(entry_box.get())
             engine.say(text_box.get(0.0, tk.END))
             engine.runAndWait()
         elif voice == "1":
             engine.setProperty(
                 "voice", voices[1].id
             )  # changing index, changes voices. 1 for female
+            engine.say(entry_box.get())
             engine.say(text_box.get(0.0, tk.END))
             engine.runAndWait()
         else:
