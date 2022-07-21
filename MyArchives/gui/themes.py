@@ -81,7 +81,8 @@ def hacker_theme(window, entry_box, text_box, cal):
 """Use below template to create custom themes. Replace
 custom_theme with your theme name and replace the
 "color name/hash" with your desired theme colors. You
-can remove the options which you didn't used."""
+can remove the options which you didn't used.
+To try the theme, go to line no. 153 in main_gui.py"""
 
 
 def custom_theme(window, entry_box, text_box, cal):
@@ -119,3 +120,6 @@ def custom_theme(window, entry_box, text_box, cal):
         disableddaybackground="color name/hash",  # background color of days in disabled state
         disableddayforeground="color name/hash",  # foreground color of days in disabled state
     )
+    # Don't change anything below
+    with open(f"{homepath}Textfiles/theme.txt", "w") as f:
+        f.write("99")

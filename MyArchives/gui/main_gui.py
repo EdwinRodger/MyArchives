@@ -150,6 +150,10 @@ def main():
     theme_menu.add_command(
         label="Hacker", command=lambda: hacker_theme(window, entry_box, text_box, cal)
     )
+    # Un-comment(remove hashtag and correct the indent) below three lines of code and write your theme name in the place of 'Theme Name'(write inside apostropies) and custom_theme then go to line no. 226 of this file
+    # theme_menu.add_command(
+    #     label="Theme Name", command=lambda: custom_theme(window, entry_box, text_box, cal)
+    # )
     backup_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Weekly Backup", menu=backup_menu)
     backup_menu.add_command(label="Monday", command=monday_backup)
@@ -219,6 +223,9 @@ def main():
             dark_theme(window, entry_box, text_box, cal)
         elif mode == "2":
             hacker_theme(window, entry_box, text_box, cal)
+        # Un-comment(remove hashtag and correct the indent) below 2 lines and rename custome_theme with your theme name then run the program and try your theme
+        # elif mode == "99":
+        #     custom_theme(window, entry_box, text_box, cal)
 
     check_theme()
 
