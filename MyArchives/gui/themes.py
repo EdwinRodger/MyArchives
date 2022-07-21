@@ -5,8 +5,8 @@ homepath = home_directory()
 
 def light_theme(window, entry_box, text_box, cal):
     window.config(bg="#e2e2e2")
-    entry_box.config(bg="#f9f9f9", foreground="black")
-    text_box.config(bg="#f9f9f9", foreground="black")
+    entry_box.config(bg="#f9f9f9", foreground="black", insertbackground="black")
+    text_box.config(bg="#f9f9f9", foreground="black", insertbackground="black")
     cal.config(
         background="#e2e2e2",
         foreground="black",
@@ -30,8 +30,8 @@ def light_theme(window, entry_box, text_box, cal):
 
 def dark_theme(window, entry_box, text_box, cal):
     window.config(bg="#1f1e21")
-    entry_box.config(bg="#353538", foreground="white")
-    text_box.config(bg="#353538", foreground="white")
+    entry_box.config(bg="#353538", foreground="white", insertbackground="white")
+    text_box.config(bg="#353538", foreground="white", insertbackground="white")
     cal.config(
         background="#1f1e21",
         foreground="white",
