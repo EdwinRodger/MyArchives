@@ -82,7 +82,7 @@ def hacker_theme(window, entry_box, text_box, cal):
 custom_theme with your theme name and replace the
 "color name/hash" with your desired theme colors. You
 can remove the options which you didn't used.
-To try the theme, go to line no. 153 in main_gui.py"""
+To try the theme, go to line no. 155 in main_gui.py"""
 
 
 def custom_theme(window, entry_box, text_box, cal):

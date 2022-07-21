@@ -114,7 +114,9 @@ def main():
     myarchives_menu.add_command(
         label="Speech-To-Text", command=lambda: sttt(text_box, cal)
     )
-    myarchives_menu.add_command(label="Text-To-Speech", command=lambda: ttst(text_box, entry_box))
+    myarchives_menu.add_command(
+        label="Text-To-Speech", command=lambda: ttst(text_box, entry_box)
+    )
     narrator_menu = tk.Menu(my_menu, tearoff=False)
     myarchives_menu.add_cascade(label="Narrator's Voice", menu=narrator_menu)
     narrator_menu.add_command(label="Male", command=lambda: narrator("male"))
@@ -150,7 +152,7 @@ def main():
     theme_menu.add_command(
         label="Hacker", command=lambda: hacker_theme(window, entry_box, text_box, cal)
     )
-    # Un-comment(remove hashtag and correct the indent) below three lines of code and write your theme name in the place of 'Theme Name'(write inside apostropies) and custom_theme then go to line no. 226 of this file
+    # Un-comment(remove hashtag and correct the indent) below three lines of code and write your theme name in the place of 'Theme Name'(write inside apostropies) and custom_theme then go to line no. 228 of this file
     # theme_menu.add_command(
     #     label="Theme Name", command=lambda: custom_theme(window, entry_box, text_box, cal)
     # )

@@ -29,7 +29,7 @@ Once you picked a name of your choice, edit the given options to your desire. If
 
 ## Step 3 -
 
-While editing the colors, you also have to try them, to do that, open main_gui.py file and go to line number 153. Do as written there -
+While editing the colors, you also have to try them, to do that, open main_gui.py file and go to line number 155. Do as written there -
 
 - Change the 'Theme Name' with your desired name (Write the name inside apostropy)
 - Rename 'custom_theme' with the name you used in theme.py
@@ -46,7 +46,7 @@ theme_menu.add_command(
 
 ## Step 4 -
 
-After completing step 3, go to line number 226 of main_gui.py and do as directed. Rename the 'custom_theme' with your theme name which you used in step 2 and step 3 then run the program
+After completing step 3, go to line number 228 of main_gui.py and do as directed. Rename the 'custom_theme' with your theme name which you used in step 2 and step 3 then run the program
 
 For example -
 
