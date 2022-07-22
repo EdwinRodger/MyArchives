@@ -2,7 +2,7 @@
 
 # **MyArchives**
 
-![MyArchives GUI](.github/images/MyArchives(2022-07-17).png "MyArchives GUI")
+![MyArchives GUI](.github/images/MyArchives(2022-07-22).png "MyArchives GUI")
 MyArchives is a software to write your entries in a simple, minimalistic and easy way
 
 </div>
@@ -26,14 +26,13 @@ Write as many entries as you want until you run out of space on your computer
 - [x] Calendar
 - [x] Changeable themes (Dark/Light/[Community Made](docs/making_custom_theme.md))
 - [x] Commented Code
-- [ ] Different voices for TTS
-- [ ] Entry encryption
+- [x] Different voices for TTS
+- [x] Entry encryption
 - [x] Export/Imports
 - [x] Help section
 - [x] Password
 - [x] Speech-To-Text (uses google api for STT)
 - [x] Text-To-Speech (Currenly only female voice available)
-- [ ] Diary Templates
 - [x] Zero buttons, everything done with mouse cursor
 
 - [Features that won't be implemented](docs/unimplemented_features.md)

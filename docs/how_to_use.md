@@ -14,7 +14,7 @@ After setting the password, when you will run the program again, you will be ask
 
 After you give the correct password, you will find the user interface as defined below
 
-![MyArchives Graphical User Interface](../.github/images/MyArchives(2022-07-17).png "MyArchives GUI")
+![MyArchives Graphical User Interface](../.github/images/MyArchives(2022-07-22).png "MyArchives GUI")
 
 To see a respective day entry, select the date from calendar and leave the calendar with mouse cursor to see that day entry
 
@@ -28,16 +28,32 @@ File option in Menu Bar consists of -
   - Converts your speech to text using google api
 - Text-To-Speech
   - Speeks the text present in selected date entry
-- Import
-  - Imports zip file
+- Narrator's voice
+  - Changes narrator's voice to male or female
+- Import -
+  - Imports following files
+    - zip file
+    - json file
 - Export
-  - Exports zip file and text file
+  - Exports following files
+    - zip file
+    - json file
+    - text file
 - Change Password
-  - To change the existing password
+  - Changes existing password existing password
+- Theme
+  - Currently MyArchives have 3 themes -
+    - Light
+    - Dark
+    - Hacker
+- Weekly Backup
+  - Backup your data weekly (**unencrypted**)
 
 Edit option in Menu Bar consists of basic text editing features
 
 Help option in Menu Bar will send you to web-pages according to the title
+
+---
 
 If you have further questions, you can ask in the [disscussion](https://github.com/EdwinRodger/MyArchives/discussions/categories/q-a) section.
 

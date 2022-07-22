@@ -1,3 +1,27 @@
+# 3.5.0
+
+###### Released: 21 July 2022
+
+### What’s New -
+
+- 🔐 Entry Encryption. No more unencrypted data
+- ✨ Female voice in Text To Speech
+- 📅 New calendar themes
+  - Also added calendar theming guide
+- 🎴 Splash Screen
+
+### Enhancements -
+
+- Password encryption now uses cryptography
+  - in short enhanced protection :)
+- Using TTS will now also speak Title of the entry
+  - Previously it only spoke entry and not title
+- Added cursor color in different themes
+
+### Fixes -
+
+- Uneven lines between entries in text export won’t happen any longer
+
 # 3.4.0
 
 ###### Released: 17 July 2022
@@ -12,7 +36,7 @@
 
 - Updated “Software Update” Message box
 - Changing password will now require current password
-    - Previously it directly prompts for new password
+  - Previously it directly prompts for new password
 - More precise Import Error message
 - Updated Import Export menu names and order
 - Code Enhancements
@@ -39,19 +63,19 @@
 
 - Default theme is now dark theme
 - Removed partition between title box and entry box
-    - Now it looks more clean
+  - Now it looks more clean
 - Changed the guide in the Text Box
 - When using STT, the text will be placed at the cursor position
-    - Previously it was used to be placed at beginning of the entry
+  - Previously it was used to be placed at beginning of the entry
 - Code enhancements
-    - ~~Tried~~ Code commenting
-    - Adjusted Imports
-    - Corrected Grammar
+  - ~~Tried~~ Code commenting
+  - Adjusted Imports
+  - Corrected Grammar
 
 ### Fixed -
 
 - Using Text-To-Speech and Speech-To-Text will no longer stop the program
-    - Previously, the program would not respond while using STT and TTS
+  - Previously, the program would not respond while using STT and TTS
 - Typos in README.md
 - Wrong syntax
 
@@ -73,49 +97,57 @@
 ### What’s New -
 
 - 📄➡🔊 Text To Speech Feature
-    - Currently available in female voice only
+  - Currently available in female voice only
 - 🗣➡📄 Speech To Text Feature
-    - Uses google speech recognizer to extract text from audio
-    - Requires internet connection
+  - Uses google speech recognizer to extract text from audio
+  - Requires internet connection
 - 🔔🔔🔔 Automatically notifies when there is new version update
-    - Prevents manual checking for updates
-    - Requires internet connection
+  - Prevents manual checking for updates
+  - Requires internet connection
 - ✨✨✨ Added new Title Box
-    - Summarise your entry in one line using titles
+  - Summarise your entry in one line using titles
 - 📤📤📤 Export to -
-    - zip file
-    - plain text file
+  - zip file
+  - plain text file
 - 📥📥📥 Import from -
-    - zip file
+  - zip file
 
 ### **Enhanced Features -**
 
 - Window will now spawn in the middle of the screen
-    - Previously it was used to spawn anywhere
+  - Previously it was used to spawn anywhere
 - Password will be hidden when typing
-    - Previously password would have shown if written in password box
+  - Previously password would have shown if written in password box
 - Code enhancements
-    - Code cleanup
-    - Removal of unused and bad code
-    - Changed some Menu Bar titles
+  - Code cleanup
+  - Removal of unused and bad code
+  - Changed some Menu Bar titles
 
 # 3.1.0
+
 ###### Released: 23 June 2022
+
 ### What’s New -
+
 - 📅Added Calendar
 - 🕛Added clock
 - 🔐Added password feature
 - ✨Added menu bar for different functions
 - ✨New Icon (may change in future)
+
 ### Enhanced Features -
+
 - Added shortcuts for text box
 - Added scrollbar in text box
 - Main window will always spawn at top right corner of screen
 - **Massive** code improvements
 
 # 3.0.0🎉🎉🎉
+
 ###### Released: 16 June 2022
+
 ### What's new -
+
 - ✨ **A whole new GUI**
 - ❌ Removed command line operations
 - 📅 Changing date is now done with date spinbox
@@ -130,17 +162,17 @@
 - 🔑🔒 Added **Password** feature 🎉🥳
 - ⚙⚙ Added `Change Password` setting
 - 📁📁 New folder location compatible with all computer OS.
-    - Files will now store in “./username/CMD-Diary/” in user directory instead of 'C:/CMD-Diary' directory (which was windows only)
+  - Files will now store in “./username/CMD-Diary/” in user directory instead of 'C:/CMD-Diary' directory (which was windows only)
 - ⚙⚙ Re-added `Entry Folder Path` setting
-    - `Entry Folder Path` is renamed as `Change Diary Folder`
+  - `Entry Folder Path` is renamed as `Change Diary Folder`
 - 🔼🔼 Updated clear function
-    - No logging will be there in the prompt
+  - No logging will be there in the prompt
 - 📁📁 Separate folder for source code/files in github
 - 🖼📄 Added images, Updated README.md and .gitignore in github
 - 📈📈 Enhanced code
-    - Fixed typos
-    - Organized imports
-    - Code cleanup
+  - Fixed typos
+  - Organized imports
+  - Code cleanup
 
 # 2.0.0🎉🎉🎉
 
@@ -149,14 +181,15 @@
 ## CMD-Diary gets new GUI 🥳
 
 Options which got a new GUI -
-* Today Entry
-* Another Day Entry
-* Edit Entry
-* View Entry
+- Today Entry
+- Another Day Entry
+- Edit Entry
+- View Entry
 
 New section - Online Help (in settings)
 
 Get direct links to following sites -
+
 1. Website
 2. Changelog
 3. Code of Conduct
@@ -168,21 +201,21 @@ Get direct links to following sites -
 
 ###### Released: 14 May 2022
 
-* 📄 Added templates
-* 🥳 New Icon
-* 📜🔫 Removed unnecessary scripts
+- 📄 Added templates
+- 🥳 New Icon
+- 📜🔫 Removed unnecessary scripts
 
 # 1.2.0
 
 ###### Released: 8 May 2022
 
-* ✨Code enhancements
+- ✨Code enhancements
 
 # 1.1.0
 
 ###### Released: 3 May 2022
 
-* ✨Code enhancements
+- ✨Code enhancements
 
 # 1.0.0
 
