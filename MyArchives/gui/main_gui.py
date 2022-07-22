@@ -88,7 +88,7 @@ def main():
     )
     text_box.insert(
         0.0,
-        "Choose a date then leave the calendar with cursor to see the entry\n\nIf you edit the title then write something in entry to avoid bugs\n\nAvoid having <space>, <backspace> or any non-ascii character to be typed in the end to avoid bugs\n\nIf you edited already saved entry, make sure you delete the blank space at the end of the title and write something in the entry box to avoid bugs\n\nThat is all for instructions and bugs, you can start writing your entry :)",
+        "Choose a date then leave the calendar with cursor to see the entry\n\nIf you edit the title then write something in entry to avoid bugs\n\nAvoid having <space>, <backspace> or any non-ascii character to be typed in the end to avoid bugs\n\nIf you edited already saved entry, make sure you delete the blank space at the end of the title and\nwrite something in the entry box to avoid bugs\n\nThat is all for instructions and bugs, you can start writing your entry :)",
     )
     text_box.place(x=400, y=39)
 
