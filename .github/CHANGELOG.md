@@ -1,3 +1,17 @@
+# 3.5.1
+
+###### Released: 24 August 2022
+
+### Enhancements -
+
+- Updated .gitignore
+- Updated custom theme guide
+
+### Fixes -
+
+- Removed extra character at the end of title when loading the entry which leads to other bugs
+- Fixed functions of update prompt
+
 # 3.5.0
 
 ###### Released: 22 July 2022
@@ -181,6 +195,7 @@
 ## CMD-Diary gets new GUI 🥳
 
 Options which got a new GUI -
+
 - Today Entry
 - Another Day Entry
 - Edit Entry
