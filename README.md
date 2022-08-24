@@ -22,17 +22,19 @@ Write as many entries as you want until you run out of space on your computer
 
 # Features
 
-- [x] Weekly Backups
 - [x] Calendar
 - [x] Changeable themes (Dark/Light/[Community Made](docs/making_custom_theme.md))
 - [x] Commented Code
 - [x] Different voices for TTS
 - [x] Entry encryption
 - [x] Export/Imports
+- [ ] Exports for other diary applications
 - [x] Help section
+- [ ] Imports from other diary applications
 - [x] Password
 - [x] Speech-To-Text (uses google api for STT)
 - [x] Text-To-Speech (Currenly only female voice available)
+- [x] Weekly Backups
 - [x] Zero buttons, everything done with mouse cursor
 
 - [Features that won't be implemented](docs/unimplemented_features.md)
