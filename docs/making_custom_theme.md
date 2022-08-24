@@ -33,9 +33,17 @@ While editing the colors, you also have to try them, to do that, open main_gui.p
 
 - Change the 'Theme Name' with your desired name (Write the name inside apostropy)
 - Rename 'custom_theme' with the name you used in theme.py
+- Don't forget to remove the hashtag (#) from the lines
 
 For example -
 
+Change This ⬇⬇
+```python
+# theme_menu.add_command(
+#     label="Theme Name", command=lambda: custom_theme(window, entry_box, text_box, cal)
+# )
+```
+To This ⬇⬇
 ```python
 theme_menu.add_command(
         label="Firey Red", command=lambda: firey_red(window, entry_box, text_box, cal)
@@ -46,10 +54,16 @@ theme_menu.add_command(
 
 ## Step 4 -
 
-After completing step 3, go to line number 228 of main_gui.py and do as directed. Rename the 'custom_theme' with your theme name which you used in step 2 and step 3 then run the program
+After completing step 3, go to line number 228 of main_gui.py and do as directed. Rename the 'custom_theme' with your theme name which you used in step 2 and step 3 then run the program (Don't forget to remove the hashtag (#) from the lines)
 
 For example -
 
+Change This ⬇⬇
+```python
+# elif mode == "99":
+#     custom_theme(window, entry_box, text_box, cal)
+```
+To This ⬇⬇
 ```python
 elif mode == "99":
     firey_red(window, entry_box, text_box, cal)
