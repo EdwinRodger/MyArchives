@@ -57,7 +57,7 @@ def main():
                 lines = f.readlines()
             entry_box.delete(0, tk.END)
             text_box.delete(0.0, tk.END)
-            entry_box.insert(0, lines[0].rstrip('\n'))
+            entry_box.insert(0, lines[0].rstrip("\n"))
             for j in lines[-1:0:-1]:
                 text_box.insert(0.0, j)
         except:

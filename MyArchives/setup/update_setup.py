@@ -49,7 +49,9 @@ def update():
                     message="A new version of MyArchives has been released!\nDo you want to download it?\n\nYes = Will take you to download website\nNo = Will promt you when next update will be available\nCancel = Will prompt you next time you open MyArchives",
                 )
 
-                if upd == True: # Leads to project's latest release page and updates hash
+                if (
+                    upd == True
+                ):  # Leads to project's latest release page and updates hash
                     open_new_tab(
                         "https://github.com/EdwinRodger/MyArchives/releases/latest/"
                     )
@@ -62,8 +64,8 @@ def update():
 
                     with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
                         f.write(currentHash)
-                
-                elif upd == False: # Only updates hash
+
+                elif upd == False:  # Only updates hash
                     # Again read the website
                     response = urlopen(url).read()
 
@@ -72,8 +74,10 @@ def update():
 
                     with open(f"{homepath}Textfiles/versionhash.txt", "w") as f:
                         f.write(currentHash)
-            
-                elif upd == None: # Gives update prompt whenever you open MyArchives next time
+
+                elif (
+                    upd == None
+                ):  # Gives update prompt whenever you open MyArchives next time
                     pass
 
                 else:
