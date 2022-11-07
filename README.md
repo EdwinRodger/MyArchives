@@ -49,7 +49,7 @@ You can download the repository by going into 'Code' and then clicking 'Download
 
 Don't want to download the code? No worries!
 
-If you have [git](https://git-scm.com/) installed on your device, you can clone the github repository by copying and pasteing the command below into your terminal -
+If you have [git](https://git-scm.com/) installed on your device, you can clone the github repository by running the command below into your terminal -
 
 ```git
 git clone https://github.com/EdwinRodger/MyArchives.git
